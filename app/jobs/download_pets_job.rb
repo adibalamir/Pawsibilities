@@ -11,8 +11,15 @@ class DownloadPetsJob < ApplicationJob
     xml_doc.xpath('//pet').each do |pet_xml|
       pet_attributes = {
         petfinder_id: pet_xml.xpath('id/text()').to_s.to_i,
+        city: pet_xml.xpath('contact/city/text()').to_s,
+        animal_type: pet_xml.xpath('animal/text()').to_s,
+        breed: pet_xml.xpath('breeds/breed/text()')[0].to_s,
         name: pet_xml.xpath('name/text()').to_s,
-        breed: pet_xml.xpath('breeds/breed/text()')[0].to_s
+        gender: pet_xml.xpath('sex/text()').to_s,
+        size: pet_xml.xpath('size/text()').to_s,
+        age: pet_xml.xpath('age/text()').to_s,
+        status: pet_xml.xpath('status/text()').to_s,
+        photo: pet_xml.xpath('media/photos/photo[2]/text()').to_s
       }
       # save in DB
       #Pet.find_or_create_by!(petfinder_id: pet_id) do |pet|
