@@ -1,4 +1,8 @@
 class MatchController < ApplicationController
-  def show
+  def index
+
+  end
+
+  def create
   end
 end

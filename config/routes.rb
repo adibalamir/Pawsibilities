@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  # root to: '/'
+  get "/" => "home#index"
 
   resources :pets, only: [:index, :show]
 
-  resources :match, only: [:show]
+  resources :match, only: [:index, :create]
 
-  resources :search, only: [:show]
+  resources :search, only: [:index, :show]
 
 end
