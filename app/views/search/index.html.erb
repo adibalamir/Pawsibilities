@@ -8,11 +8,13 @@
 
 <h1> SEARCHING TIME </h1>
 
-<%= render 'search/location_species_form' %>
+<%= render 'search/initial_form' %>
+
+<%= render 'search/filtered_form' %>
 
 <% @pets.each do |pet| %>
 
-<p><%= pet.city %></p>
+<p><%= pet.name %></p>
 
 <% end %>
 
