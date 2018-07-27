@@ -1,16 +1,23 @@
 class SearchController < ApplicationController
   def index
-    @pets = Pet.where(nil)
-    filtering_params(params).each do |key, value|
-      @pets = @pets.public_send(key, value) if value.present?
-    end
+    @pets = Pet.where(city: params[:city], animal_type: params[:animal_type])
+
   end
 
   def show
   end
 
-  private
-  def filtering_params(params)
-    params.slice(:city, :animal_type, :breed, :gender, :size, :age, :status)
+ private
+  def search_params
+    params.permit(:city, :animal_type, :breed, :gender, :size, :age, :status)
   end
+
+  # def filtering_params(params)
+  #   params.slice(:city, :animal_type, :breed, :gender, :size, :age, :status)
+  # end
+
 end
+
+
+
+# "%#{params[:type]}%"
