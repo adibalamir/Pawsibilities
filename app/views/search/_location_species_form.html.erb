@@ -1,0 +1,12 @@
+<!-- get request to search endpoint, pass option for method: get -->
+
+<%= form_for("/search", method: "get") do |f| %>
+
+  <p>
+    Animal Type : <%= f.select :animal_type, ["Dog", "Cat", "Other"]%>
+    City : <%= f.select :city, ["Toronto", "Scarborough"]%>
+    <%= submit_tag("Search") %>
+  </p>
+
+<% end %>
+
