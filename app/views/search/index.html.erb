@@ -12,9 +12,13 @@
 
 <%= render 'search/filtered_form' %>
 
+
+<p>Found <b><%= @pets.count %></b> matches.</p>
 <% @pets.each do |pet| %>
 
-<p><%= pet.name %></p>
+<p><%= pet.name %>:
+<img src=<%= pet.photo %>/></p>
+
 
 <% end %>
 
