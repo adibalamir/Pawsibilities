@@ -1,9 +1,6 @@
 class SearchController < ApplicationController
   def index
-    @pets = Pet.where(nil)
-    filtering_params(params).each do |key, value|
-      @pets = @pets.public_send(key, value) if value.present?
-    end
+    @pets = Pet.where('city LIKE ? OR animal_type LIKE ?', "%#{params[:city]}%","%#{params[:animal_type]}%")
   end
 
   def show
