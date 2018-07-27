@@ -3,8 +3,8 @@
 <%= form_tag("/search", method: "get") do %>
 
   <p>
-    Animal Type : <%= f.select params[:animal_type], ["Dog", "Cat", "Other"]%>
-    City : <%= f.select params[:city], ["Toronto", "Scarborough"]%>
+    Animal Type : <%= select_tag "animal_type", options_for_select(["Dog", "Cat", "Other"]) %>
+    City : <%= select_tag "city", options_for_select(["Toronto", "Scarborough"]) %>
     <%= submit_tag("Search") %>
   </p>
 <% end %>

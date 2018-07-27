@@ -11,12 +11,14 @@
 <%= render 'search/location_species_form' %>
 
 
-<%= @pets.count %>
+<p>Found <b><%= @pets.count %></b> matches.</p>
 <% @pets.each do |pet| %>
 
-<p><%= pet.city %></p>
+<p><%= pet.name %>:
+<img src=<%= pet.photo %>/></p>
 
 <% end %>
+
 
 
 </body>
