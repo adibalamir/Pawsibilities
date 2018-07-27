@@ -9,18 +9,35 @@
 <h1> SEARCHING TIME </h1>
 
 <%= render 'search/initial_form' %>
-
 <%= render 'search/filtered_form' %>
 
+ <% if @filtered %>
+  <p>Found <b><%= @filtered.count %></b> matches.</p>
+  <% @filtered.each do |pet| %>
 
-<p>Found <b><%= @pets.count %></b> matches.</p>
-<% @pets.each do |pet| %>
-
-<p><%= pet.name %>:
-<img src=<%= pet.photo %>/></p>
+  <p><%= pet.name %>:
+  <img src=<%= pet.photo %>/></p>
 
 
+  <% end %>
+
+
+ <% else %>
+  <p>Found <b><%= @pets.count %></b> matches.</p>
+  <% @pets.each do |pet| %>
+
+  <p><%= pet.name %>:
+  <img src=<%= pet.photo %>/></p>
+
+
+  <% end %>
 <% end %>
+
+
+
+
+
+
 
 
 

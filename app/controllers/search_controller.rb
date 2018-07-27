@@ -3,12 +3,10 @@ class SearchController < ApplicationController
     @pets = Pet.where(
       city: params[:city],
       animal_type: params[:animal_type],
-      breed: params[:breed],
-      gender: params[:gender],
-      size: params[:size],
-      age: params[:age],
-      status: "A"
       )
+    @filtered = @pets.where(breed: params[:breed], gender: params[:gender], age: params[:age], size: params[:size])
+    puts "-------filtered--------"
+    puts @filtered
   end
 
   def show
