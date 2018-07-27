@@ -10,7 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_26_205059) do
+ActiveRecord::Schema.define(version: 2018_07_27_163425) do
+
+  create_table "dog_breed_traits", force: :cascade do |t|
+    t.string "breed"
+    t.integer "adaptability"
+    t.integer "friendliness"
+    t.integer "grooming"
+    t.integer "trainability"
+    t.integer "activityLevel"
+    t.integer "goodForApartment"
+    t.integer "goodForNoviceOwner"
+    t.integer "sensitivity"
+    t.integer "toleratesBeingAlone"
+    t.integer "toleratesCold"
+    t.integer "toleratesHot"
+    t.integer "likesFamily"
+    t.integer "likesKids"
+    t.integer "likesDogs"
+    t.integer "likesStrangers"
+    t.integer "sheds"
+    t.integer "drools"
+    t.integer "easyToGroom"
+    t.integer "potentialForWeightGain"
+    t.integer "size"
+    t.integer "easyToTrain"
+    t.integer "intelligent"
+    t.integer "likesFetch"
+    t.integer "preyDrive"
+    t.integer "barks"
+    t.integer "wanders"
+    t.integer "energyLevel"
+    t.integer "exerciseIntensity"
+    t.integer "exerciseNeeds"
+    t.integer "playfulness"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "petfinder_services", force: :cascade do |t|
     t.datetime "created_at", null: false
