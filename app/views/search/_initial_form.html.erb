@@ -1,14 +1,23 @@
 <%= form_tag("/search", method: "get") do %>
 
   <p>
-<<<<<<< HEAD
-    Animal Type : <%= select_tag "animal_type", options_for_select(["Dog", "Cat", "Rabbit", ["Small an Furry", "Small &amp; Furry"], "Reptile", "Horse", "Barnyard"], params[:animal_type]) %>
+    Animal Type : <%= select_tag "animal_type", options_for_select(["Dog", "Cat", "Rabbit", ["Small and Furry", "Small &amp; Furry"], "Reptile", "Horse", "Barnyard"], params[:animal_type]) %>
     City : <%= select_tag "city", options_for_select(["Toronto", "Scarborough", "Pickering"], params[:city]) %>
 
   <% if params[:animal_type] %>
 
     Age : <%= select_tag "age", options_for_select(["", "Baby", "Young", "Adult", "Senior"], params[:age]) %>
-    Size : <%= select_tag "size", options_for_select(["", "S", "M", "L", "XL"], params[:size]) %>
+
+    Size :
+    <%= check_box_tag("size", value = "S", checked = false) %>
+    <%= label_tag("small") %>
+    <%= check_box_tag("size", value = "M", checked = false) %>
+    <%= label_tag("medium") %>
+    <%= check_box_tag("size", value = "L", checked = false) %>
+    <%= label_tag("large") %>
+    <%= check_box_tag("size", value = "XL", checked = false) %>
+    <%= label_tag("xl") %>
+
     Gender : <%= select_tag "gender", options_for_select(["", "M", "F"], params[:gender]) %>
 
   <% if params[:animal_type] == "Dog" %>
