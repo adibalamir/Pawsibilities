@@ -2,11 +2,11 @@
 
   <p>
     Animal Type : <%= select_tag "animal_type", options_for_select(["Dog", "Cat", "Other"]) %>
-    City : <%= select_tag "city", options_for_select(["Toronto", "Scarborough"]) %>
-    Age : <%= select_tag "age", options_for_select(["Baby", "Young", "Adult", "Senior"]) %>
-    Size : <%= select_tag "size", options_for_select(["S", "M", "L", "XL"]) %>
-    Gender : <%= select_tag "gender", options_for_select(["M", "F"]) %>
-    Breed : <%= select_tag "breed", options_for_select([
+    City : <%= select_tag "city", options_for_select(["Toronto", "Scarborough"], "Scarborough") %>
+    Age : <%= select_tag "age", options_for_select(["", "Baby", "Young", "Adult", "Senior"]) %>
+    Size : <%= select_tag "size", options_for_select(["", "S", "M", "L", "XL"]) %>
+    Gender : <%= select_tag "gender", options_for_select(["", "M", "F"]) %>
+    Breed : <%= select_tag "breed", options_for_select(["",
  "Affenpinscher",
  "Afghan Hound",
  "Airedale Terrier",
@@ -259,4 +259,5 @@
     <%= submit_tag("Search") %>
   </p>
 <% end %>
+
 
