@@ -6,12 +6,18 @@
 
   <% if params[:animal_type] %>
 
-  <% ages = ["Baby", "Young", "Adult", "Senior"] %>
+    Age : <%= select_tag "age", options_for_select(["", "Baby", "Young", "Adult", "Senior"], params[:age]) %>
 
-    Age : <%= check_box_tag(["Baby"]) %>
-          <%= label_tag(:"Baby", "Baby") %>
+    Size :
+    <%= check_box_tag("size", value = "S", checked = false) %>
+    <%= label_tag("small") %>
+    <%= check_box_tag("size", value = "M", checked = false) %>
+    <%= label_tag("medium") %>
+    <%= check_box_tag("size", value = "L", checked = false) %>
+    <%= label_tag("large") %>
+    <%= check_box_tag("size", value = "XL", checked = false) %>
+    <%= label_tag("xl") %>
 
-    Size : <%= select_tag "size", options_for_select(["", "S", "M", "L", "XL"], params[:size]) %>
     Gender : <%= select_tag "gender", options_for_select(["", "M", "F"], params[:gender]) %>
 
   <% if params[:animal_type] == "Dog" %>
