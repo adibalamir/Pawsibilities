@@ -23,6 +23,8 @@ class SearchController < ApplicationController
     end
 
     @pets = Pet.where(query)
+
+    @age = ["Baby", "Young", "Adult", "Senior"]
   end
 
   def show
