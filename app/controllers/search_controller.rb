@@ -7,7 +7,13 @@ class SearchController < ApplicationController
 
 
     if (!params[:size].nil? && !params[:size].empty?)
-      query[:size] = params[:size]
+      puts "-------params[:size]--------"
+      puts params[:size]
+      puts "-------params[:size].class--------"
+      puts params[:size].class
+      size_params = []
+      size_params.push(params[:size])
+      query[:size] = size_params
     end
 
     if (!params[:breed].nil? && !params[:breed].empty?)
@@ -23,8 +29,6 @@ class SearchController < ApplicationController
     end
 
     @pets = Pet.where(query)
-
-    @age = ["Baby", "Young", "Adult", "Senior"]
   end
 
   def show
