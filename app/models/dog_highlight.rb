@@ -1,0 +1,2 @@
+class DogHighlight < ApplicationRecord
+end

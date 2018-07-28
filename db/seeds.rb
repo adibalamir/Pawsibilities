@@ -54,3 +54,26 @@ end
 
 
 puts "Seeding for dog traits done!!!"
+
+puts "Seeding Dog Highlights------------------------------------"
+
+doghighlights = []
+@start = 1
+@end = 195
+
+mypets = Roo::Excelx.new("./db/pets_highlights.xlsx")
+
+key = [:breed, :highlights]
+
+
+until @start > @end do
+  doghighlights << Hash[key.zip (mypets.row(@start))]
+  @start += 1
+end
+
+doghighlights.each do |passage|
+  DogHighlight.create!(passage)
+end
+
+
+puts "Seeding DogHighlights done"
