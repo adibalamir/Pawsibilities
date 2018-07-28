@@ -9,13 +9,13 @@
     Age : <%= select_tag "age", options_for_select(["", "Baby", "Young", "Adult", "Senior"], params[:age]) %>
 
     Size :
-    <%= check_box_tag("size[]", value = "S", checked = false) %>
+    <%= check_box_tag("size[]", value = "S", @selected_sizes.include?("S")) %>
     <%= label_tag("small") %>
-    <%= check_box_tag("size[]", value = "M", checked = false) %>
+    <%= check_box_tag("size[]", value = "M", @selected_sizes.include?("M")) %>
     <%= label_tag("medium") %>
-    <%= check_box_tag("size[]", value = "L", checked = false) %>
+    <%= check_box_tag("size[]", value = "L", @selected_sizes.include?("L")) %>
     <%= label_tag("large") %>
-    <%= check_box_tag("size[]", value = "XL", checked = false) %>
+    <%= check_box_tag("size[]", value = "XL", @selected_sizes.include?("XL")) %>
     <%= label_tag("xl") %>
 
     Gender : <%= select_tag "gender", options_for_select(["", "M", "F"], params[:gender]) %>

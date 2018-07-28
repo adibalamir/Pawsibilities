@@ -5,15 +5,14 @@ class SearchController < ApplicationController
       animal_type: params[:animal_type],
     }
 
+    @selected_sizes = (params[:size].present? ? params[:size] : [])
 
     if (!params[:size].nil? && !params[:size].empty?)
       puts "-------params[:size]--------"
       puts params[:size]
       puts "-------params[:size].class--------"
       puts params[:size].class
-      size_params = []
-      size_params.push(params[:size])
-      query[:size] = size_params
+      query[:size] = params[:size]
     end
 
     if (!params[:breed].nil? && !params[:breed].empty?)
