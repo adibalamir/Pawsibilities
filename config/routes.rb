@@ -5,6 +5,6 @@ Rails.application.routes.draw do
 
   resources :match, only: [:index, :create]
 
-  resource :search, only: [:index]
+  resources :search, only: [:index, :show]
 
 end
