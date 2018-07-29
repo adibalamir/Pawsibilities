@@ -6,7 +6,8 @@ class PetsController < ApplicationController
     @pet = Pet.find params[:id]
 
     if @pet.animal_type == "Dog"
-      @highlights = Dog_highlight.find
+      @highlights = DogHighlight.find_by(breed: "siberian-husky").highlights
+    end
   end
 
 end
