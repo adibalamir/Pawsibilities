@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(version: 2018_07_29_190111) do
     t.string "address"
     t.float "latitude"
     t.float "longitude"
+    t.string "province"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["shelter_id"], name: "index_shelters_on_shelter_id"
