@@ -29,7 +29,9 @@
 
 <div>
   <dt>Breed Information: <%=@pet.breed%></dt>
-  <dd><%= @highlights %></dd>
+  <% @highlights.each do |highlight| %>
+    <dd><%= highlight %></dd>
+  <% end %>
 </div>
 
 
