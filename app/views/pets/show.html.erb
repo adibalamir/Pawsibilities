@@ -25,6 +25,8 @@
   <dd><%= @pet.gender %></dd>
   <dt>Location</dt>
   <dd><%= @pet.city %></dd>
+  <dt>Description</dt>
+  <dd><%= @pet.description.slice(9, @pet.description.length - 12) %></dd>
 </div>
 
 <div>

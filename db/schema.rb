@@ -71,6 +71,8 @@ ActiveRecord::Schema.define(version: 2018_07_29_190111) do
     t.string "age"
     t.string "status"
     t.string "photo"
+    t.string "description"
+    t.string "shelter_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["petfinder_id"], name: "index_pets_on_petfinder_id"

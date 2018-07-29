@@ -19,7 +19,9 @@ class DownloadPetsJob < ApplicationJob
         size: pet_xml.xpath('size/text()').to_s,
         age: pet_xml.xpath('age/text()').to_s,
         status: pet_xml.xpath('status/text()').to_s,
-        photo: pet_xml.xpath('media/photos/photo[3]/text()').to_s
+        photo: pet_xml.xpath('media/photos/photo[3]/text()').to_s,
+        description: pet_xml.xpath('description/text()').to_s,
+        shelter_id: pet_xml.xpath('shelterId/text()').to_s
       }
       # save in DB
       #Pet.find_or_create_by!(petfinder_id: pet_id) do |pet|
