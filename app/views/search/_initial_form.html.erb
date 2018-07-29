@@ -6,19 +6,26 @@
 
   <% if params[:animal_type] %>
 
-    Age : <%= select_tag "age", options_for_select(["", "Baby", "Young", "Adult", "Senior"], params[:age]) %>
+    Age :
+    <% ages = ["Baby", "Young", "Adult", "Senior"] %>
+    <% ages.each do |age| %>
+      <%= check_box_tag("age[]", value = age, @selected_ages.include?(age)) %>
+      <%= label_tag(age) %>
+    <% end %>
 
     Size :
-    <%= check_box_tag("size[]", value = "S", @selected_sizes.include?("S")) %>
-    <%= label_tag("small") %>
-    <%= check_box_tag("size[]", value = "M", @selected_sizes.include?("M")) %>
-    <%= label_tag("medium") %>
-    <%= check_box_tag("size[]", value = "L", @selected_sizes.include?("L")) %>
-    <%= label_tag("large") %>
-    <%= check_box_tag("size[]", value = "XL", @selected_sizes.include?("XL")) %>
-    <%= label_tag("xl") %>
+    <% sizes = ["S", "M", "L", "XL"] %>
+    <% sizes.each do |size| %>
+      <%= check_box_tag("size[]", value = size, @selected_sizes.include?(size)) %>
+      <%= label_tag(size) %>
+    <% end %>
 
-    Gender : <%= select_tag "gender", options_for_select(["", "M", "F"], params[:gender]) %>
+    Gender :
+    <% genders = ["M", "F"] %>
+    <% genders.each do |gender| %>
+      <%= check_box_tag("gender[]", value = gender, @selected_genders.include?(gender)) %>
+      <%= label_tag(gender) %>
+    <% end %>
 
   <% if params[:animal_type] == "Dog" %>
 
