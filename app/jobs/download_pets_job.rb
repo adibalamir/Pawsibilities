@@ -3,7 +3,7 @@ class DownloadPetsJob < ApplicationJob
 
   def perform(*args)
     # call petfinder
-    response = HTTParty.get('http://api.petfinder.com/pet.find?key=49b6e87785e4e2811b2d5a9668eee5af&format=xml&location=ontario&count=200')
+    response = HTTParty.get('http://api.petfinder.com/pet.find?key=49b6e87785e4e2811b2d5a9668eee5af&format=xml&location=ontario&count=1000')
     # parse xml
     xml_doc = Nokogiri::XML(response.body)
 

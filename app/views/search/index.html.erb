@@ -7,9 +7,17 @@
 <nav> Nav Bar</nav>
 
 <h1> SEARCHING TIME </h1>
-<h4>location</h4>
-<h4>animal</h4>
-<h4>SEARCH SUBMIT</h4>
+
+<%= render 'search/initial_form' %>
+
+  <p>Found <b><%= @pets.count %></b> matches.</p>
+
+  <% @pets.each do |pet| %>
+    <p>
+      <%= pet.name %>:
+      <img src=<%= pet.photo %>/>
+    </p>
+  <% end %>
 
 
 </body>
