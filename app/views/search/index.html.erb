@@ -18,8 +18,10 @@
 
   <% @pets.each do |pet| %>
     <p>
-      <%= pet.name %>:
-      <img src=<%= pet.photo %>/>
+      <%= link_to pet do %>
+        <%= pet.name %>:
+        <img src=<%= pet.photo %>/>
+      <% end %>
     </p>
   <% end %>
 

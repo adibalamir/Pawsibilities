@@ -16,10 +16,10 @@
 
 <p style="text-align: left">Where is your location</p>
 
-<%= check_box_tag(:location, value ="Toronto") %>
-<%= label_tag(:location, "Toronto") %>
-<%= check_box_tag(:location, value ="Scarborough") %>
-<%= label_tag(:location, "Scarborough") %>
+<%= check_box_tag(:city, value ="Toronto") %>
+<%= label_tag(:city, "Toronto") %>
+<%= check_box_tag(:city, value ="Scarborough") %>
+<%= label_tag(:city, "Scarborough") %>
 
 <p style="text-align: left">Are you a first-time pet owner? </p>
 
@@ -45,7 +45,6 @@
 <%= label_tag(:coat_size, "Short") %>
 <%= radio_button_tag(:coat_size, "Medium") %>
 <%= label_tag(:coat_size, "Medium") %>
-
 <%= radio_button_tag(:coat_size, "Long") %>
 <%= label_tag(:coat_size, "Long") %>
 <%= radio_button_tag(:coat_size, "Ignore") %>
@@ -111,6 +110,15 @@
 </div>
 
 <% end %>
+
+<p>Found <b><%= @pets.count %></b> matches.</p>
+
+  <% @pets.each do |pet| %>
+    <p>
+      <%= pet.name %>:
+      <img src=<%= pet.photo %>/>
+    </p>
+  <% end %>
 
 
 </body>

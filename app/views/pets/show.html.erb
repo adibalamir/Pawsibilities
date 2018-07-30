@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pawsibilities</title>
+</head>
+<body>
+<nav> Nav Bar</nav>
+
+<h1> <%= @pet.name %> </h1>
+
+<img src=<%= @pet.photo %> />
+
+<div>
+  <dt>Shelter Information:</dt>
+
+  <% if !@shelter.name.blank? %>
+    <dt>Name</dt>
+    <dd><%= @shelter.name %></dd>
+  <% end %>
+
+  <% if !@shelter.phone.blank? %>
+    <dt>Phone</dt>
+    <dd><%= @shelter.phone %></dd>
+  <% end %>
+
+  <% if !@shelter.email.blank? %>
+    <dt>Email</dt>
+    <dd><%= @shelter.email %></dd>
+  <% end %>
+
+  <% if !@shelter.address.blank? %>
+    <dt>Address</dt>
+    <dd><%= @shelter.address %></dd>
+  <% end %>
+</div>
+
+<div>
+  <dt>Name</dt>
+  <dd><%= @pet.name %></dd>
+  <dt>Breed</dt>
+  <dd><%= @pet.breed %></dd>
+  <dt>Age</dt>
+  <dd><%= @pet.age %></dd>
+  <dt>Size</dt>
+  <dd><%= @pet.size %></dd>
+  <dt>Gender</dt>
+  <dd><%= @pet.gender %></dd>
+  <dt>Location</dt>
+  <dd><%= @pet.city %></dd>
+  <dt>Description</dt>
+  <dd><%= @pet.description.slice(9, @pet.description.length - 12) %></dd>
+</div>
+
+<div>
+  <dt>Breed Information: <%=@pet.breed%></dt>
+  <% @highlights.each do |highlight| %>
+    <dd><%= highlight %></dd>
+  <% end %>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  shelter_id: MyString
+  email: MyString
+  phone: MyString
+  address: MyString
+  latitude: 1.5
+  longitude: 1.5
+
+two:
+  name: MyString
+  shelter_id: MyString
+  email: MyString
+  phone: MyString
+  address: MyString
+  latitude: 1.5
+  longitude: 1.5
