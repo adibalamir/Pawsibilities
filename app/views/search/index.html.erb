@@ -4,21 +4,24 @@
   <title>Pawsibilities</title>
 </head>
 <body>
-<nav> Nav Bar</nav>
 
-<h1> SEARCHING TIME </h1>
+<h1 class="search-title"> Find-A-Pet </h1>
 
 <%= render 'search/initial_form' %>
 
   <p>Found <b><%= @pets.count %></b> matches.</p>
 
   <% @pets.each do |pet| %>
+  <div class="card">
     <p>
+
       <%= link_to pet do %>
         <%= pet.name %>:
         <img src=<%= pet.photo %>/>
       <% end %>
+
     </p>
+  </div>
   <% end %>
 
 
