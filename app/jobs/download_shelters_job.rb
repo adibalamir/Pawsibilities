@@ -9,8 +9,8 @@ class DownloadSheltersJob < ApplicationJob
       shelter_attributes = {
         shelter_id: shelter_xml.xpath('id/text()').to_s,
         name: shelter_xml.xpath('name/text()').to_s,
-        email: shelter_xml.xpath('animal/text()').to_s,
-        phone: shelter_xml.xpath('email/text()').to_s,
+        email: shelter_xml.xpath('email/text()').to_s,
+        phone: shelter_xml.xpath('phone/text()').to_s,
         address: shelter_xml.xpath('address1/text()').to_s,
         latitude: shelter_xml.xpath('latitude/text()').to_s.to_f,
         longitude: shelter_xml.xpath('longitude/text()').to_s.to_f,

@@ -10,7 +10,29 @@
 
 <img src=<%= @pet.photo %> />
 
-<p> <%= @shelter.name %> </p>
+<div>
+  <dt>Shelter Information:</dt>
+
+  <% if !@shelter.name.blank? %>
+    <dt>Name</dt>
+    <dd><%= @shelter.name %></dd>
+  <% end %>
+
+  <% if !@shelter.phone.blank? %>
+    <dt>Phone</dt>
+    <dd><%= @shelter.phone %></dd>
+  <% end %>
+
+  <% if !@shelter.email.blank? %>
+    <dt>Email</dt>
+    <dd><%= @shelter.email %></dd>
+  <% end %>
+
+  <% if !@shelter.address.blank? %>
+    <dt>Address</dt>
+    <dd><%= @shelter.address %></dd>
+  <% end %>
+</div>
 
 <div>
   <dt>Name</dt>
