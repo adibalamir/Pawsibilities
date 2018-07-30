@@ -65,25 +65,7 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  config.action_mailer.delivery_method = :smtp
-  # SMTP settings for gmail
-  config.action_mailer.smtp_settings = {
-   :address              => "noreply.pawsibilities@gmail.com",
-   :port                 => 587,
-   :user_name            => ENV['gmail_username'],
-   :password             => ENV['gmail_password'],
-   :authentication       => "plain",
-  :enable_starttls_auto => true
-  }
 
-  ActionMailer::Base.smtp_settings = {
-  :port           => 587,
-  :address        => "smtp.mailgun.org",
-  :domain         => ENV['domain'],
-  :user_name      => ENV['username'],
-  :password       => ENV['password'],
-  :authentication => :plain,
-  }}
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
