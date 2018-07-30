@@ -1,5 +1,18 @@
 @import "bootstrap";
 
-p {
+
+body {
   text-align: center;
+  font-family: 'Nunito', serif;
+  background-color: pink;
+}
+
+img {
+  /*width:375px;
+  height:275px;*/
+  overflow:hidden;
+}
+
+.search-title {
+  color: grey;
 }
