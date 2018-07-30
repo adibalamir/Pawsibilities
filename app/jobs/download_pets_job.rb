@@ -1,6 +1,10 @@
 class DownloadPetsJob < ApplicationJob
   queue_as :default
 
+  # after_perform do |job|
+  #   Pet.destroy(Pet.where(shelter_id: "ON217"))
+  # end
+
   def perform(*args)
     # call petfinder
     response = HTTParty.get('http://api.petfinder.com/pet.find?key=49b6e87785e4e2811b2d5a9668eee5af&format=xml&location=ontario&count=1000')
@@ -27,7 +31,7 @@ class DownloadPetsJob < ApplicationJob
       #Pet.find_or_create_by!(petfinder_id: pet_id) do |pet|
       #  pet.update(pet_attributes)
       #end
-      Pet.create!(pet_attributes) unless Pet.exists?(petfinder_id: pet_attributes[:petfinder_id])
+      Pet.create!(pet_attributes) unless (Pet.exists?(petfinder_id: pet_attributes[:petfinder_id]) || !Shelter.exists?(shelter_id: pet_attributes[:shelter_id]))
     end
   end
 end
