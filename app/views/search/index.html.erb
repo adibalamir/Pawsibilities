@@ -13,14 +13,9 @@
 
   <% @pets.each do |pet| %>
   <div class="card">
-    <p>
-
       <%= link_to pet do %>
-        <%= pet.name %>:
-        <img src=<%= pet.photo %>/>
+        <img src=<%= pet.photo %> title=<%= pet.name %>/><br/>
       <% end %>
-
-    </p>
   </div>
   <% end %>
 
