@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_28_221238) do
+ActiveRecord::Schema.define(version: 2018_07_30_184741) do
+
+  create_table "cat_highlights", force: :cascade do |t|
+    t.string "breed"
+    t.string "highlights"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "dog_breed_traits", force: :cascade do |t|
     t.string "breed"
