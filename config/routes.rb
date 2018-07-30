@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get "/" => "home#index"
 
-  resources :pets, only: [:index, :show]
+  resources :pets, only: [:show]
 
   resources :match, only: [:index, :create]
 

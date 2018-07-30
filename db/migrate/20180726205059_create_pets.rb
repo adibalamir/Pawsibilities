@@ -11,8 +11,11 @@ class CreatePets < ActiveRecord::Migration[5.2]
       t.string :age
       t.string :status
       t.string :photo
+      t.string :description
+      t.string :shelter_id
 
       t.timestamps
     end
+    add_foreign_key :pets, :shelters, column: :shelter_id, primary_key: :shelter_id
   end
 end

@@ -78,9 +78,25 @@ ActiveRecord::Schema.define(version: 2018_07_30_184741) do
     t.string "age"
     t.string "status"
     t.string "photo"
+    t.string "description"
+    t.string "shelter_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["petfinder_id"], name: "index_pets_on_petfinder_id"
+  end
+
+  create_table "shelters", force: :cascade do |t|
+    t.string "name"
+    t.string "shelter_id"
+    t.string "email"
+    t.string "phone"
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "province"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["shelter_id"], name: "index_shelters_on_shelter_id"
   end
 
 end
