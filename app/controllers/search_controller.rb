@@ -8,6 +8,7 @@ class SearchController < ApplicationController
     @selected_sizes = (params[:size].present? ? params[:size] : [])
     @selected_ages = (params[:age].present? ? params[:age] : [])
     @selected_genders = (params[:gender].present? ? params[:gender] : [])
+    @selected_breeds = (params[:breed].present? ? params[:breed] : [])
 
     if (!params[:size].nil? && !params[:size].empty?)
       query[:size] = params[:size]

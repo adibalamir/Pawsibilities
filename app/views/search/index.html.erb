@@ -4,26 +4,22 @@
   <title>Pawsibilities</title>
 </head>
 <body>
-
+<%= render 'layouts/top_nav' %>
 <h1 class="search-title"> Find-A-Pet </h1>
 
 <%= render 'search/initial_form' %>
 
   <p>Found <b><%= @pets.count %></b> matches.</p>
 
+  <div id="all-pets-container">
   <% @pets.each do |pet| %>
-  <div class="card">
-    <p>
-
+  <div class="card" title=<%= pet.name %>>
       <%= link_to pet do %>
-        <%= pet.name %>:
-        <img src=<%= pet.photo %>/>
+        <img src=<%= pet.photo %> width="250" height="250"/><br/>
       <% end %>
-
-    </p>
   </div>
   <% end %>
-
+  </div>
 
 </body>
 </html>

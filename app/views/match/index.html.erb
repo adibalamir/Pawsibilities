@@ -5,7 +5,11 @@
 </head>
 <body>
 
+
   <h3>Find your purrrfect pet </h3>
+
+  <%= render 'layouts/top_nav' %>
+
 
   <div id= "quiz-board">
     <%= form_tag("/match", method: "get") do %>
@@ -38,7 +42,7 @@
         <%= label_tag(:first_pet, "No") %>
       </div>
 
-<button class="next">NEXT</button>
+      <button class="next">NEXT</button>
 
 
     </article>
@@ -93,10 +97,10 @@
         <%= radio_button_tag(:independence, "No_time") %>
         <%= label_tag(:independence, "More than 10 hours a day") %>
       </div>
-<span>
-      <button class="prev">PREV</button>
+      <span>
+        <button class="prev">PREV</button>
 
-      <button class= "next">NEXT</button>
+        <button class= "next">NEXT</button>
       </span>
     </article>
 
