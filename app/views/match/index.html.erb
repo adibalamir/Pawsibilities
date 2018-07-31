@@ -5,119 +5,160 @@
 </head>
 <body>
 
-<%= form_tag("/match", method: "get") do %>
+  <h3>Find your purrrfect pet </h3>
 
-<p style="text-align: left">What kind of pet would you like to get matched to?</p>
-<%= check_box_tag(:animal_type, value = "Dog") %>
-<%= label_tag(:animal_type, "Dog") %>
-<%= check_box_tag(:animal_type, value = "Cat") %>
-<%= label_tag(:animal_type, "Cat") %>
+  <div id= "quiz-board">
+    <%= form_tag("/match", method: "get") do %>
 
+    <article  id= "one" class= "section-wrapper">
 
-<p style="text-align: left">Where is your location</p>
+      <div class = "question">
+        <p> What kind of pet would you like to get matched to?</p>
+        <%= check_box_tag(:animal_type, value = "Dog") %>
+        <%= label_tag(:animal_type, "Dog") %>
+        <%= check_box_tag(:animal_type, value = "Cat") %>
+        <%= label_tag(:animal_type, "Cat") %>
+      </div>
 
-<%= check_box_tag(:city, value ="Toronto") %>
-<%= label_tag(:city, "Toronto") %>
-<%= check_box_tag(:city, value ="Scarborough") %>
-<%= label_tag(:city, "Scarborough") %>
+      <div class = "question">
+        <p> Where is your location? </p>
 
-<p style="text-align: left">Are you a first-time pet owner? </p>
+        <%= check_box_tag(:city, value ="Toronto") %>
+        <%= label_tag(:city, "Toronto") %>
+        <%= check_box_tag(:city, value ="Scarborough") %>
+        <%= label_tag(:city, "Scarborough") %>
+      </div>
 
-<%= radio_button_tag(:first_pet, true) %>
-<%= label_tag(:first_pet, "Yes") %>
-<%= radio_button_tag(:first_pet, false) %>
-<%= label_tag(:first_pet, "No") %>
+      <div class = "question">
+        <p>Are you a first-time pet owner? </p>
 
-<p style="text-align: left">New pet's social circle? (Select all that apply): </p>
+        <%= radio_button_tag(:first_pet, true) %>
+        <%= label_tag(:first_pet, "Yes") %>
+        <%= radio_button_tag(:first_pet, false) %>
+        <%= label_tag(:first_pet, "No") %>
+      </div>
 
-<%= check_box_tag(:family_members, value = "Kids") %>
-<%= label_tag(:family_members, "Surrounded by young children") %>
-<%= check_box_tag(:family_members, value = "Other_pets") %>
-<%= label_tag(:family_members, "Other pets to accompany") %>
-<%= check_box_tag(:family_members, value = "Stranger") %>
-<%= label_tag(:family_members, "Have regular visitors") %>
-
-
-<p style="text-align: left">What's your coat size? </p>
-
-
-<%= radio_button_tag(:coat_size, "Short") %>
-<%= label_tag(:coat_size, "Short") %>
-<%= radio_button_tag(:coat_size, "Medium") %>
-<%= label_tag(:coat_size, "Medium") %>
-<%= radio_button_tag(:coat_size, "Long") %>
-<%= label_tag(:coat_size, "Long") %>
-<%= radio_button_tag(:coat_size, "Ignore") %>
-<%= label_tag(:coat_size, "No Preference") %>
+<button class="next">NEXT</button>
 
 
+    </article>
 
-<p style="text-align: left">What size of pet are you looking for? </p>
+    <article class= "section-wrapper">
 
-<%= radio_button_tag(:breed_size, "Small") %>
-<%= label_tag(:breed_size, "Small (10 lbs or less)") %>
-<%= radio_button_tag(:breed_size, "Medium ") %>
-<%= label_tag(:breed_size, "Medium (11 - 40 lbs)") %>
-<%= radio_button_tag(:breed_size, "Large") %>
-<%= label_tag(:breed_size, "Large (50+ lbs") %>
-<%= radio_button_tag(:breed_size, "Ignore") %>
-<%= label_tag(:breed_size, "No Preference") %>
+      <div class = "question">
+        <p>New pet's social circle? (Select all that apply): </p>
 
+        <%= check_box_tag(:family_members, value = "Kids") %>
+        <%= label_tag(:family_members, "Surrounded by young children") %>
+        <%= check_box_tag(:family_members, value = "Other_pets") %>
+        <%= label_tag(:family_members, "Other pets to accompany") %>
+        <%= check_box_tag(:family_members, value = "Stranger") %>
+        <%= label_tag(:family_members, "Have regular visitors") %>
+      </div>
 
-<p style="text-align: left">On average, how much time do you think your pet will be spending alone? </p>
-
-<%= radio_button_tag(:independence, "Plenty_time") %>
-<%= label_tag(:independence, "Less than 5 hours a day)" )%>
-<%= radio_button_tag(:independence, "Moderate_time") %>
-<%= label_tag(:independence, "5 - 10 hours a day") %>
-<%= radio_button_tag(:independence, "No_time") %>
-<%= label_tag(:independence, "More than 10 hours a day") %>
-
-<p style="text-align: left">What kind of personality traits should your pet have? </p>
-
-<%= radio_button_tag(:attention, "Chilled") %>
-<%= label_tag(:attention, "Chilled") %>
-<%= radio_button_tag(:attention, "Curious") %>
-<%= label_tag(:attention, "Asking questions") %>
-<%= radio_button_tag(:attention, "Needy") %>
-<%= label_tag(:attention, "Center of the universe") %>
-<%= radio_button_tag(:attention, "Ignore") %>
-<%= label_tag(:attention, "No Preference") %>
+      <div class = "question">
+        <p>What's your preferable coat size? </p>
 
 
-<p style="text-align: left">Are you looking for lively conversations between you and your pet? </p>
+        <%= radio_button_tag(:coat_size, "Short") %>
+        <%= label_tag(:coat_size, "Short") %>
+        <%= radio_button_tag(:coat_size, "Medium") %>
+        <%= label_tag(:coat_size, "Medium") %>
+        <%= radio_button_tag(:coat_size, "Long") %>
+        <%= label_tag(:coat_size, "Long") %>
+        <%= radio_button_tag(:coat_size, "Ignore") %>
+        <%= label_tag(:coat_size, "No Preference") %>
+      </div>
 
-<%= radio_button_tag(:noise_level, "Noisy") %>
-<%= label_tag(:noise_level, "Absolutely") %>
-<%= radio_button_tag(:noise_level, "Quiet") %>
-<%= label_tag(:noise_level, "No, silence is golden") %>
-<%= radio_button_tag(:noise_level, "Ignore") %>
-<%= label_tag(:noise_level, "No Preference") %>
+      <div class = "question">
+        <p>What size of pet are you looking for? </p>
+
+        <%= radio_button_tag(:breed_size, "Small") %>
+        <%= label_tag(:breed_size, "Small (10 lbs or less)") %>
+        <%= radio_button_tag(:breed_size, "Medium ") %>
+        <%= label_tag(:breed_size, "Medium (11 - 40 lbs)") %>
+        <%= radio_button_tag(:breed_size, "Large") %>
+        <%= label_tag(:breed_size, "Large (50+ lbs") %>
+        <%= radio_button_tag(:breed_size, "Ignore") %>
+        <%= label_tag(:breed_size, "No Preference") %>
+      </div>
+
+      <div class = "question">
+        <p>On average, how much time do you think your pet will be spending alone? </p>
+
+        <%= radio_button_tag(:independence, "Plenty_time") %>
+        <%= label_tag(:independence, "Less than 5 hours a day)" )%>
+        <%= radio_button_tag(:independence, "Moderate_time") %>
+        <%= label_tag(:independence, "5 - 10 hours a day") %>
+        <%= radio_button_tag(:independence, "No_time") %>
+        <%= label_tag(:independence, "More than 10 hours a day") %>
+      </div>
+<span>
+      <button class="prev">PREV</button>
+
+      <button class= "next">NEXT</button>
+      </span>
+    </article>
 
 
-<p style="text-align: left">From the description below, select all that apply: </p>
+    <article class= "section-wrapper">
 
-<%= radio_button_tag(:trainability, "Trained") %>
-<%= label_tag(:trainability, "My new pet has to be completely trained") %>
-<%= radio_button_tag(:trainability, "Moderate") %>
-<%= label_tag(:trainability, "My new pet has some training") %>
-<%= radio_button_tag(:trainability, "Ignore") %>
-<%= label_tag(:trainability, "No Preference") %>
+      <div class = "question">
+        <p>What kind of personality traits should your pet have? </p>
+
+        <%= radio_button_tag(:attention, "Chilled") %>
+        <%= label_tag(:attention, "Chilled") %>
+        <%= radio_button_tag(:attention, "Curious") %>
+        <%= label_tag(:attention, "Asking questions") %>
+        <%= radio_button_tag(:attention, "Needy") %>
+        <%= label_tag(:attention, "Center of the universe") %>
+        <%= radio_button_tag(:attention, "Ignore") %>
+        <%= label_tag(:attention, "No Preference") %>
+      </div>
+
+      <div class = "question">
+        <p>Are you looking for lively conversations between you and your pet? </p>
+
+        <%= radio_button_tag(:noise_level, "Noisy") %>
+        <%= label_tag(:noise_level, "Absolutely") %>
+        <%= radio_button_tag(:noise_level, "Quiet") %>
+        <%= label_tag(:noise_level, "No, silence is golden") %>
+        <%= radio_button_tag(:noise_level, "Ignore") %>
+        <%= label_tag(:noise_level, "No Preference") %>
+      </div>
+
+      <div class = "question">
+        <p>From the description below, select all that apply: </p>
+
+        <%= radio_button_tag(:trainability, "Trained") %>
+        <%= label_tag(:trainability, "My new pet has to be completely trained") %>
+        <%= radio_button_tag(:trainability, "Moderate") %>
+        <%= label_tag(:trainability, "My new pet has some training") %>
+        <%= radio_button_tag(:trainability, "Ignore") %>
+        <%= label_tag(:trainability, "No Preference") %>
+      </div>
+      <span>  <button class="prev">PREV</button>
 
 
-<div>
-<%= submit_tag("Match!!") %>
-</div>
+        <%= submit_tag("Match!!") %>
+      </span>
 
-<% end %>
 
-<p>Found <b><%= @pets.count %></b> matches.</p>
+    </article>
+
+
+
+    <% end %>
+
+  </div>
+
+  <p>Found <b><%= @pets.count %></b> matches.</p>
 
   <% @pets.each do |pet| %>
-    <p>
-      <%= pet.name %>:
-      <img src=<%= pet.photo %>/>
-    </p>
+  <p>
+    <%= pet.name %>:
+    <img src=<%= pet.photo %>/>
+  </p>
   <% end %>
 
 

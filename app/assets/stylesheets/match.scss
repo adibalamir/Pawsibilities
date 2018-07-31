@@ -1,3 +1,59 @@
-// Place all the styles related to the match controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+div#quiz-board{
+  width: 80%;
+  background-color: white;
+  margin: 10%;
+  padding: 1rem;
+  border-radius: 1rem;
+
+  article.section-wrapper{
+    border: 5px;
+    background-color: #ffff0038;
+    padding: 5%;
+    margin: 5%;
+
+    button.next{
+      background-color: red;
+      position: absolute;
+      right: 20%;
+    }
+
+    button.prev{
+      background-color: green;
+      position: absolute;
+      left: 20%;
+    }
+  }
+
+
+
+  div.question {
+    text-align: left;
+    margin: 1rem;
+
+    p{
+      margin-top: 0;
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      font-weight: bolder;
+    }
+  }
+
+}
+/*
+form#slider{width:524px; margin:0 auto; clear:left;}
+form#slider article{background: white; padding:30px; float:left; margin-top: 20px; width:100%;}
+form#slider label{width:144px; float:left; margin-right: 20px; color:#474747;}
+form#slider input{float:left; width:300px; font-size:13px;border:none; background:#ececec; padding:7px 13px; border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px;}
+form#slider select{float:left; width:300px;}
+form#slider textarea{float:left; width:300px; height: 150px; border:none; background:#ececec; padding:7px 13px; border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px;}
+.form-item{margin-bottom: 10px; float:left;}
+input.form-submit{background:#f36b06!important; color:white; float:right!important;}
+a.next{background:#f36b06; display:block; width:300px; float:left; margin: 10px 0 0 164px; text-align:center;  clear:left; padding:7px 13px; border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; color:white; text-decoration: none}
+#page{float:left; margin: 10px 0 0 0}
+#page li{float:left; margin:0 5px 0 0; padding:5px 15px;  background:#ccc;  text-align:center;  border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; color:white; }
+#page li.active{ background:#f36b06;  }
+#page li a{ color:white; text-decoration: none}*/
+
+
