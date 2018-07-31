@@ -11,14 +11,15 @@
 
   <p>Found <b><%= @pets.count %></b> matches.</p>
 
+  <div id="all-pets-container">
   <% @pets.each do |pet| %>
   <div class="card">
       <%= link_to pet do %>
-        <img src=<%= pet.photo %> title=<%= pet.name %>/><br/>
+        <img src=<%= pet.photo %> title=<%= pet.name %> width="250" height="250"/><br/>
       <% end %>
   </div>
   <% end %>
-
+  </div>
 
 </body>
 </html>
