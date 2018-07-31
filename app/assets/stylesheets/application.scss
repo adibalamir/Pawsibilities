@@ -1,19 +1,38 @@
 @import "bootstrap";
 @import "./search";
+@import "./home";
 
 
 body {
   text-align: center;
   font-family: 'Nunito', serif;
-  background-color: pink;
+  /*background-image: image-url("home-background.jpeg");*/
+  background-color: lightblue;
 }
 
-img {
-  /*width:375px;
-  height:275px;*/
-  overflow:hidden;
+nav {
+  position: fixed;
+  background: #117a8b;
+  width: 100%;
+  z-index: 100;
+  bottom: 600px;
 }
 
-.search-title {
-  color: grey;
+#app {
+  padding-top: 80px;
 }
+
+.navbar-brand {
+  float: left;
+  padding-top: 1rem;
+  font-size: 30px;
+  color: #d39e00;
+}
+
+.nav-options {
+  padding: 0rem 4rem 1rem 1rem;
+  position: relative;
+  top: 1.5rem;
+  color: #d39e00;
+}
+
