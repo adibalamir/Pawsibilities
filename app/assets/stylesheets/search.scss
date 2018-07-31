@@ -1,8 +1,14 @@
 /*SEARCH PARAMETERS*/
 
-.checkbox-container {
+.search-parameter {
+  display: inline-grid;
+
+  .checkbox-container {
   z-index: 2;
+  }
 }
+
+
 
 /*PET PHOTOS*/
 
