@@ -1,7 +1,10 @@
-/*Place all the styles related to the search controller here.
-They will automatically be included in application.css.
-You can use Sass (SCSS) here: http://sass-lang.com/
-*/
+/*SEARCH PARAMETERS*/
+
+.checkbox-container {
+  z-index: 2;
+}
+
+/*PET PHOTOS*/
 
 #all-pets-container {
   text-align: center;
@@ -24,25 +27,14 @@ You can use Sass (SCSS) here: http://sass-lang.com/
     img {
       object-fit: cover;
     }
-
-
-
-    /*DISPLAY PET'S NAME UNDER PHOTO - WORK IN PROGRESS*/
-    /*img::after {
-      font-size: 20px;
-      content: attr(title);
-      position: relative;
-      top:15px;
-    }*/
-
   }
 
-    .card::after {
-      content: attr(title);
-      z-index: 1;
-      position: inherit;
-      top: 1.75rem;
-    }
+  .card::after {
+    content: attr(title);
+    z-index: 1;
+    position: inherit;
+    top: 1.75rem;
+  }
 
   .card:hover {
     img {
