@@ -1,6 +1,7 @@
 @import "bootstrap";
 @import "./search";
 @import "./home";
+@import "./match";
 
 
 body {
@@ -12,10 +13,10 @@ body {
 
 nav {
   position: fixed;
-  top: 0;
   background: #117a8b;
   width: 100%;
   z-index: 100;
+  top: 0;
 }
 
 #app {
@@ -35,4 +36,10 @@ nav {
   top: 1.5rem;
   color: #d39e00;
 }
+
+
+.search-title {
+  color: grey;
+}
+
 
