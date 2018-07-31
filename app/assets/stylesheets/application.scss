@@ -12,10 +12,10 @@ body {
 
 nav {
   position: fixed;
+  top: 0;
   background: #117a8b;
   width: 100%;
   z-index: 100;
-  bottom: 600px;
 }
 
 #app {
