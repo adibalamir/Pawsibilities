@@ -18,7 +18,8 @@ class UserNotificationMailer < ApplicationMailer
     message_params = {:from    => ENV['mailgun_username'],
                       :to      => @user.email,
                       :subject => 'New matches found!',
-                      :text    => 'This mail is sent using Mailgun API via mailgun-ruby'}
+                      :text    => 'A new match has been found for you search, visit this URL to check it out: #{@user.query}'
+                    }
     puts message_params.inspect
     puts ENV['domain']
     mg_client.send_message ENV['domain'], message_params
