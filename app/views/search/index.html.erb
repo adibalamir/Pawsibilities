@@ -12,6 +12,10 @@
 
   <p>Found <b><%= @pets.count %></b> matches.</p>
 
+<% if @pets.count == 0 %>
+  <%= render 'search/user_form' %>
+<% end %>
+
   <% @pets.each do |pet| %>
     <p>
       <%= link_to pet do %>

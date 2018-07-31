@@ -99,4 +99,12 @@ ActiveRecord::Schema.define(version: 2018_07_30_184741) do
     t.index ["shelter_id"], name: "index_shelters_on_shelter_id"
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "query"
+    t.boolean "found", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
 end

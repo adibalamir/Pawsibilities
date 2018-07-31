@@ -1,7 +1,9 @@
 namespace :pet_sync do
   desc "Sync DB with petFinder"
   task download: :environment do
-    DownloadPetsJob.perform_later
+    puts "Downloading ..."
+    DownloadPetsJob.perform_now
+    puts "Pets updated"
   end
 
 end

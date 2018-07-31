@@ -1,0 +1,6 @@
+<%= form_for :user, url: '/users', html: {class: "nifty_form"} do |f| %>
+  Email: <%= f.text_field :email %>
+  <%= f.hidden_field :query, value: ((request.original_url).sub! 'search', 'pets_count')   %>
+  <%= f.hidden_field :found, value: 'false' %>
+  <%= f.submit "Create" %>
+<% end %>

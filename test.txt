@@ -1,0 +1,6 @@
+curl -s --user 'api:1b6df11693a102d9b1c961370152976e-a5d1a068-4308aef7' \
+    https://api.mailgun.net/v3/sandbox985b26f4509f45be8ef23624ed57390f.mailgun.org/messages \
+    -F from='Excited User <mailgun@sandbox985b26f4509f45be8ef23624ed57390f.mailgun.org>' \
+    -F to=noreply.pawsibilities@gmail.com \
+    -F subject='Hello' \
+    -F text='Testing some Mailgun awesomeness!'
