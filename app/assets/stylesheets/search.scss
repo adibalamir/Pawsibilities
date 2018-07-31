@@ -26,6 +26,7 @@ You can use Sass (SCSS) here: http://sass-lang.com/
     }
 
 
+
     /*DISPLAY PET'S NAME UNDER PHOTO - WORK IN PROGRESS*/
     /*img::after {
       font-size: 20px;
@@ -35,6 +36,13 @@ You can use Sass (SCSS) here: http://sass-lang.com/
     }*/
 
   }
+
+    .card::after {
+      content: attr(title);
+      z-index: 1;
+      position: inherit;
+      top: 1.75rem;
+    }
 
   .card:hover {
     img {
