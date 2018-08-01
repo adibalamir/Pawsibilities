@@ -11,7 +11,7 @@ class PetsController < ApplicationController
     end
 
     if @pet.animal_type == "Cat"
-      @highlights = CatHighlight.find_by(breed: @pet.breed).highlights
+      @highlights = JSON.parse(CatHighlight.find_by(breed: @pet.breed).highlights)
     end
   end
 

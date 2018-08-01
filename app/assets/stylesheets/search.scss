@@ -8,13 +8,20 @@
 
   .dropdown {
     display: inline-grid;
+    margin-left: 2.5%;
 
     .dropdown-menu {
-    z-index: 2;
-    height: auto;
-    max-height: 200px;
-    overflow-x: hidden;
+      z-index: 2;
+      height: auto;
+      max-height: 200px;
+      overflow-x: hidden;
+      white-space: nowrap;
+      min-width: 100%
     }
+
+    /*.search {
+      margin-left: 2.5%;
+    }*/
   }
 }
 
