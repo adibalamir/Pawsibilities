@@ -1,15 +1,17 @@
-<%= form_tag("/search", method: "get") do %>
+<%= form_tag("/search", method: "get", class: 'search-form') do %>
 
     <div class="dropdown">
       <button type=button class="btn btn-light dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Animal Type
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"">
-          <% animal_types = ["Dog", "Cat", "Rabbit", ["Small and Furry", "Small &amp; Furry"]] %>
+          <% animal_types = ["Dog", "Cat", "Rabbit", "Reptile", "Horse", "Barnyard"] %>
           <% animal_types.each do |animal_type| %>
             <%= radio_button_tag("animal_type", value = animal_type, params[:animal_type] == animal_type ? params[:animal_type] : nil, class: 'dropdown-item') %>
             <%= label_tag(animal_type) %> <br/>
           <% end %>
+          <%= radio_button_tag("animal_type", "Small &amp; Furry", params[:animal_type] == "Small &amp; Furry" ? params[:animal_type] : nil, class: 'dropdown-item') %>
+          <%= label_tag("Small and Furry") %> <br/>
       </div>
     </div>
 

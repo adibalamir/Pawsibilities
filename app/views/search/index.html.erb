@@ -6,20 +6,18 @@
 <body>
 <%= render 'layouts/top_nav' %>
 <h1 class="search-title"> Find-A-Pet </h1>
-
-<%= render 'search/initial_form' %>
-
+<div class="search-parameters">
+  <%= render 'search/initial_form' %>
   <p>Found <b><%= @pets.count %></b> matches.</p>
-
-  <div id="all-pets-container">
+</div>
+<div id="all-pets-container">
   <% @pets.each do |pet| %>
   <div class="card" title=<%= pet.name %>>
-      <%= link_to pet do %>
-        <img src=<%= pet.photo %> width="250" height="250"/><br/>
-      <% end %>
+    <%= link_to pet do %>
+      <img src=<%= pet.photo %> width="250" height="250"/><br/>
+    <% end %>
   </div>
-  <% end %>
-  </div>
-
+<% end %>
+</div>
 </body>
 </html>

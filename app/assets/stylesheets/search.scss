@@ -1,16 +1,22 @@
 /*SEARCH PARAMETERS*/
 
-.dropdown {
-  display: inline-grid;
+.search-parameters {
+  position: sticky;
+  top: 9%;
+  z-index: 1;
+  background-color: cyan;
 
-  .dropdown-menu {
-  z-index: 2;
-  height: auto;
-  max-height: 200px;
-  overflow-x: hidden;
+  .dropdown {
+    display: inline-grid;
+
+    .dropdown-menu {
+    z-index: 2;
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+    }
   }
 }
-
 
 
 /*PET PHOTOS*/
