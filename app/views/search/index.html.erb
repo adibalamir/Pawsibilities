@@ -6,26 +6,28 @@
 <body>
 
 <%= image_tag "adoption.jpg", class: "title-image" %>
+
 <%= render 'layouts/top_nav' %>
 
 <h1 class="title"> Adoption </h1>
+
 <div class="search-parameters">
   <%= render 'search/initial_form' %>
   <p>Found <b><%= @pets.count %></b> matches.</p>
-
-<% if @pets.count == 0 %>
-  <%= render 'search/user_form' %>
-<% end %>
-
+  <% if @pets.count == 0 %>
+    <%= render 'search/user_form' %>
+  <% end %>
 </div>
+
 <div id="all-pets-container">
   <% @pets.each do |pet| %>
-  <div class="card" title=<%= pet.name %>>
-    <%= link_to pet do %>
-      <img src=<%= pet.photo %> width="250" height="250"/><br/>
-    <% end %>
-  </div>
-<% end %>
+    <div class="card" title=<%= pet.name %>>
+      <%= link_to pet do %>
+        <img src=<%= pet.photo %> width="250" height="250"/><br/>
+      <% end %>
+    </div>
+  <% end %>
 </div>
+
 </body>
 </html>

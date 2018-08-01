@@ -7,10 +7,14 @@
 }
 
 h1.title {
-  position: absolute;
   color: white;
   font-size: 7rem;
-  margin: 30% 30% 0%;
+  font-family: "Helvetica";
+  font-weight: 500;
+  margin-top: 25%;
+  width: 100%;
+  position: absolute;
+  justify-content: center;
 }
 
 /*SEARCH PARAMETERS*/
@@ -20,6 +24,7 @@ h1.title {
   top: 9%;
   background-color: cyan;
   margin-top: 40%;
+  z-index: 2;
 
   .dropdown {
     display: inline-grid;
@@ -27,7 +32,6 @@ h1.title {
     margin-right: 1.25%;
 
     .dropdown-menu {
-      z-index: 2;
       height: auto;
       max-height: 200px;
       overflow-x: hidden;
