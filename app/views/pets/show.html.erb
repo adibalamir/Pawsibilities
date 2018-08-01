@@ -50,7 +50,28 @@
     <dd><%= @shelter.address %></dd>
   <% end %>
 </div>
+<% if !@shelter.address %>
+<iframe
+  width="450"
+  height="250"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/search?key=AIzaSyDU7B-xwlFfCWf7ghZzbPhUC9pGyDf0WFo
+  &q=<%= @shelter.latitude %>,<%= @shelter.longitude %>
+  &zoom=15" allowfullscreen>
+</iframe>
+<% else %>
+<iframe
+  width="450"
+  height="250"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/search?key=AIzaSyDU7B-xwlFfCWf7ghZzbPhUC9pGyDf0WFo
+  &q=<%= @shelter.address %>
+  &zoom=15" allowfullscreen>
+</iframe>
+<% end %>
+
 </div>
+
 
 <% if @highlights %>
 <div class="breed-info">
