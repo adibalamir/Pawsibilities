@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
-  $(".reveal-checkbox-container").click(function() {
-     $(this).siblings(".checkbox-container").slideToggle();
+  $(".dropdown-toggle").click(function() {
+     $(this).siblings(".dropdown-menu").slideToggle();
   });
 
 });
