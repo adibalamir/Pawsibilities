@@ -1,3 +1,56 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#home-section {
+  border: 1px solid #b8a8a8;
+  margin-top: 8%;
+
+}
+
+.video {
+   position: fixed;
+   top: 50%; left: 50%;
+   z-index: -1;
+   min-width: 100%;
+   min-height: 100%;
+   width: auto;
+   height: auto;
+   transform: translate(-50%, -50%);
+}
+
+.title-home {
+  font-size: 60px;
+  letter-spacing: 7px;
+  width: 100%;
+  color: white;
+}
+
+.fade-in {
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 2s;
+}
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+hr {
+  border-color: grey;
+}
+
+.nav-home a {
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 25px;
+  font-weight: 800;
+  color: white;
+  display: inline-block;
+  text-align: center;
+  margin: 50px;
+  text-decoration: none;
+}

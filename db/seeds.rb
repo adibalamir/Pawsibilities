@@ -82,7 +82,7 @@ puts "Seeding Cat Highlights------------------------------------"
 
 cathighlights = []
 @start = 1
-@end = 50
+@end = 55
 
 mypets = Roo::Excelx.new("./db/Cat_highlights.xlsx")
 

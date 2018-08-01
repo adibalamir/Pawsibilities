@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   resources :pets, only: [:show]
 
-  resources :match, only: [:index, :create]
+  resources :match, only: [:index]
+
+  resources :result, only: [:index]
 
   resources :search, only: [:index, :show]
 
