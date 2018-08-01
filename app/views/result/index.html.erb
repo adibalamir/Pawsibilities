@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pawsibilities</title>
+</head>
+<body>
+ <% if @pets.empty? %>
+ <p> No matches found</p>
+
+ <% end %>
+
+<p>Found <b><%= @pets.count %></b> matches.</p>
+
+  <% @pets.each do |pet| %>
+  <p>
+    <%= pet.name %>:
+    <img src=<%= pet.photo %>/>
+  </p>
+  <% end %>
+
+  </body>
+</html>
