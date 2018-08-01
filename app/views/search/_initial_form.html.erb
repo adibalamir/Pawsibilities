@@ -24,8 +24,10 @@
           <% cities = ["Ajax", "Courtice", "Pickering", "Oshawa", "Port Perry", "Bowmanville", "Ballantree", "Markham", "Uxbridge", "Scarborough", "Toronto", "Richmond Hill",  "Vaughan", "Newmarket", "Pefferlaw", "Lindsay", "Port Hope", "Etobicoke", "Omemee", "Whitby", "York", "Zephyr"] %>
           <% cities.sort_by! {|word| word} %>
           <% cities.each do |city| %>
-            <%= check_box_tag("city[]", city, @selected_cities.include?(city), class: 'dropdown-item') %>
+          <div class="dropdown-item">
+            <%= check_box_tag("city[]", city, @selected_cities.include?(city)) %>
             <%= label_tag(city) %>
+          </div>
           <% end %>
       </div>
     </div>
@@ -151,7 +153,7 @@
 
   <% if params[:animal_type] == "Barnyard" %>
 
-  <div class="search-parameter dropdown">
+  <div class="dropdown">
       <button type=button class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Breed
       </button>
@@ -170,7 +172,7 @@
 
   <% if params[:animal_type] == "Horse" %>
 
-  <div class="search-parameter dropdown">
+  <div class="dropdown">
       <button type=button class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Breed
       </button>
@@ -189,7 +191,7 @@
 
   <% if params[:animal_type] == "Reptile" %>
 
-  <div class="search-parameter dropdown">
+  <div class="dropdown">
       <button type=button class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Breed
       </button>
@@ -206,7 +208,7 @@
 
  <% end %>
 
-    <%= submit_tag("Search", class: "btn btn-light search") %>
+    <%= submit_tag("Search", class: "btn btn-light dropdown") %>
 <% end %>
 
 
