@@ -5,8 +5,7 @@ class SearchController < ApplicationController
       animal_type: params[:animal_type],
     }
 
-    @selected_animal_type = (params[:animal_type].present? ? params[:animal_type] : [])
-    @selected_cities = (params[:cities].present? ? params[:cities] : [])
+    @selected_cities = (params[:city].present? ? params[:city] : [])
     @selected_sizes = (params[:size].present? ? params[:size] : [])
     @selected_ages = (params[:age].present? ? params[:age] : [])
     @selected_genders = (params[:gender].present? ? params[:gender] : [])
