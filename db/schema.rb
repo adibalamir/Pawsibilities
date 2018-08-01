@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_30_184741) do
+ActiveRecord::Schema.define(version: 2018_08_01_160114) do
 
   create_table "cat_highlights", force: :cascade do |t|
     t.string "breed"
@@ -105,6 +105,7 @@ ActiveRecord::Schema.define(version: 2018_07_30_184741) do
     t.boolean "found", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
 
 end
