@@ -1,13 +1,37 @@
 <%= form_tag("/search", method: "get") do %>
 
-  <p>
-    Animal Type : <%= select_tag "animal_type", options_for_select(["Dog", "Cat", "Rabbit", ["Small and Furry", "Small &amp; Furry"], "Reptile", "Horse", "Barnyard"], params[:animal_type]) %>
-    City : <%= select_tag "city", options_for_select(["Toronto", "Scarborough", "Pickering"], params[:city]) %>
+    <div class="search-parameter dropdown">
+      <button type=button class="reveal-checkbox-container btn btn-light dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Animal Type
+      </button>
+      <div class="checkbox-container dropdown-menu" aria-labelledby="dropdownMenuButton"">
+          <% animal_types = ["Dog", "Cat", "Rabbit", ["Small and Furry", "Small &amp; Furry"]] %>
+          <% animal_types.each do |animal_type| %>
+            <%= radio_button_tag("animal_type", value = animal_type, params[:animal_type] == animal_type ? params[:animal_type] : nil, class: 'dropdown-item') %>
+            <%= label_tag(animal_type) %> <br/>
+          <% end %>
+      </div>
+    </div>
+
+
+<div class="search-parameter dropdown">
+      <button type=button class="reveal-checkbox-container btn btn-light dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        City
+      </button>
+      <div class="checkbox-container dropdown-menu" aria-labelledby="dropdownMenuButton"">
+          <% cities = ["Ajax", "Courtice", "Pickering", "Oshawa", "Port Perry", "Bowmanville", "Ballantree", "Markham", "Uxbridge", "Scarborough", "Toronto", "Richmond Hill",  "Vaughan", "Newmarket", "Pefferlaw", "Lindsay", "Port Hope", "Etobicoke", "Omemee", "Whitby", "York", "Zephyr"] %>
+          <% cities.sort_by! {|word| word} %>
+          <% cities.each do |city| %>
+            <%= check_box_tag("city[]", value = city, @selected_cities.include?(city), class: 'dropdown-item') %>
+            <%= label_tag(city) %> <br/>
+          <% end %>
+      </div>
+    </div>
 
 
   <% if params[:animal_type] %>
     <div class="search-parameter dropdown">
-      <button type=button class="reveal-checkbox-container btn btn-secondary dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button type=button class="reveal-checkbox-container btn btn-light dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Age
       </button>
       <div class="checkbox-container dropdown-menu" aria-labelledby="dropdownMenuButton"">
@@ -21,7 +45,7 @@
 
 
     <div class="search-parameter dropdown">
-      <button type=button class="reveal-checkbox-container btn btn-secondary dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button type=button class="reveal-checkbox-container btn btn-light dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Size
       </button>
       <div class="checkbox-container dropdown-menu" aria-labelledby="dropdownMenuButton"">
@@ -35,7 +59,7 @@
 
 
     <div class="search-parameter dropdown">
-      <button type=button class="reveal-checkbox-container btn btn-secondary dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button type=button class="reveal-checkbox-container btn btn-light dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Gender
       </button>
       <div class="checkbox-container dropdown-menu" aria-labelledby="dropdownMenuButton"">
@@ -51,7 +75,7 @@
   <% if params[:animal_type] == "Dog" %>
 
     <div class="search-parameter dropdown">
-      <button type=button class="reveal-checkbox-container btn btn-secondary dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button type=button class="reveal-checkbox-container btn btn-light dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Breed
       </button>
       <div class="checkbox-container dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -69,7 +93,7 @@
   <% if params[:animal_type] == "Cat" %>
 
     <div class="search-parameter dropdown">
-      <button type=button class="reveal-checkbox-container btn btn-secondary dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button type=button class="reveal-checkbox-container btn btn-light dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Breed
       </button>
 
@@ -88,7 +112,7 @@
   <% if params[:animal_type] == "Rabbit" %>
 
   <div class="search-parameter dropdown">
-      <button type=button class="reveal-checkbox-container btn btn-secondary dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button type=button class="reveal-checkbox-container btn btn-light dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Breed
       </button>
 
@@ -107,7 +131,7 @@
   <% if params[:animal_type] == "Small &amp; Furry" %>
 
     <div class="search-parameter dropdown">
-      <button type=button class="reveal-checkbox-container btn btn-secondary dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button type=button class="reveal-checkbox-container btn btn-light dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Breed
       </button>
 
@@ -126,7 +150,7 @@
   <% if params[:animal_type] == "Barnyard" %>
 
   <div class="search-parameter dropdown">
-      <button type=button class="reveal-checkbox-container btn btn-secondary dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button type=button class="reveal-checkbox-container btn btn-light dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Breed
       </button>
 
@@ -145,7 +169,7 @@
   <% if params[:animal_type] == "Horse" %>
 
   <div class="search-parameter dropdown">
-      <button type=button class="reveal-checkbox-container btn btn-secondary dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button type=button class="reveal-checkbox-container btn btn-light dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Breed
       </button>
 
@@ -164,7 +188,7 @@
   <% if params[:animal_type] == "Reptile" %>
 
   <div class="search-parameter dropdown">
-      <button type=button class="reveal-checkbox-container btn btn-secondary dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button type=button class="reveal-checkbox-container btn btn-light dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Breed
       </button>
 
@@ -180,8 +204,7 @@
 
  <% end %>
 
-    <%= submit_tag("Search") %>
-  </p>
+    <%= submit_tag("Search", class: "btn btn-light") %>
 <% end %>
 
 
