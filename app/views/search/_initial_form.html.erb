@@ -8,10 +8,10 @@
           <% animal_types = ["Dog", "Cat", "Rabbit", "Reptile", "Horse", "Barnyard"] %>
           <% animal_types.each do |animal_type| %>
             <%= radio_button_tag("animal_type", value = animal_type, params[:animal_type] == animal_type ? params[:animal_type] : nil, class: 'dropdown-item') %>
-            <%= label_tag(animal_type) %> <br/>
+            <%= label_tag(animal_type) %>
           <% end %>
           <%= radio_button_tag("animal_type", "Small &amp; Furry", params[:animal_type] == "Small &amp; Furry" ? params[:animal_type] : nil, class: 'dropdown-item') %>
-          <%= label_tag("Small and Furry") %> <br/>
+          <%= label_tag "Small and Furry" %>
       </div>
     </div>
 
@@ -24,8 +24,8 @@
           <% cities = ["Ajax", "Courtice", "Pickering", "Oshawa", "Port Perry", "Bowmanville", "Ballantree", "Markham", "Uxbridge", "Scarborough", "Toronto", "Richmond Hill",  "Vaughan", "Newmarket", "Pefferlaw", "Lindsay", "Port Hope", "Etobicoke", "Omemee", "Whitby", "York", "Zephyr"] %>
           <% cities.sort_by! {|word| word} %>
           <% cities.each do |city| %>
-            <%= check_box_tag("city[]", value = city, @selected_cities.include?(city), class: 'dropdown-item') %>
-            <%= label_tag(city) %> <br/>
+            <%= check_box_tag("city[]", city, @selected_cities.include?(city), class: 'dropdown-item') %>
+            <%= label_tag(city) %>
           <% end %>
       </div>
     </div>
