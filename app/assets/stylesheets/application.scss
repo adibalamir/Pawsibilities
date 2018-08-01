@@ -2,12 +2,13 @@
 @import "./search";
 @import "./home";
 @import "./match";
+@import "./pet";
+@import "./result";
 
 
 body {
   text-align: center;
   font-family: 'Nunito', serif;
-  /*background-image: image-url("home-background.jpeg");*/
   background-color: cyan;
 }
 

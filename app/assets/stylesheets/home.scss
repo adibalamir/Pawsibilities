@@ -1,5 +1,5 @@
 #home-section {
-  border: 1px solid black;
+  border: 1px solid #b8a8a8;
   margin-top: 8%;
 
 }
@@ -19,7 +19,7 @@
   font-size: 60px;
   letter-spacing: 7px;
   width: 100%;
-  color: darkgreen;
+  color: white;
 }
 
 .fade-in {
@@ -46,8 +46,9 @@ hr {
   border: 1px solid grey;
   border-radius: 10px;
   padding: 10px;
-  background-color: #dee4e4;
   font-size: 25px;
+  font-weight: 800;
+  color: white;
   display: inline-block;
   text-align: center;
   margin: 50px;

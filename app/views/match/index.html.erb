@@ -12,7 +12,7 @@
 
 
   <div id= "quiz-board">
-    <%= form_tag("/match", method: "get") do %>
+    <%= form_tag("/result", method: "get") do %>
 
     <article  id= "one" class= "section-wrapper">
 
@@ -91,7 +91,7 @@
         <p>On average, how much time do you think your pet will be spending alone? </p>
 
         <%= radio_button_tag(:independence, "Plenty_time") %>
-        <%= label_tag(:independence, "Less than 5 hours a day)" )%>
+        <%= label_tag(:independence, "Less than 5 hours a day" )%>
         <%= radio_button_tag(:independence, "Moderate_time") %>
         <%= label_tag(:independence, "5 - 10 hours a day") %>
         <%= radio_button_tag(:independence, "No_time") %>
@@ -155,16 +155,6 @@
     <% end %>
 
   </div>
-
-  <p>Found <b><%= @pets.count %></b> matches.</p>
-
-  <% @pets.each do |pet| %>
-  <p>
-    <%= pet.name %>:
-    <img src=<%= pet.photo %>/>
-  </p>
-  <% end %>
-
 
 </body>
 </html>
