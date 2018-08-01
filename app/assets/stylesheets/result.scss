@@ -1,0 +1,41 @@
+
+/*PET PHOTOS*/
+
+#all-pets-container {
+  text-align: center;
+
+  .card {
+    background: white;
+    display: inline-block;
+    margin: 0 35px 30px;
+    padding: 1% 1% 5%;
+    text-align: center;
+    text-decoration: none;
+    -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+    -moz-box-shadow: 0 4px 6px rgba(0,0,0,.3);
+    box-shadow: 0 4px 6px rgba(0,0,0,.3);
+    z-index: 0;
+    position: relative;
+    overflow: hidden;
+    min-width: 280px;
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  .card::after {
+    content: attr(title);
+    z-index: 1;
+    position: inherit;
+    top: 1.75rem;
+  }
+
+  .card:hover {
+    img {
+      height: 250;
+      width: auto;
+    }
+  }
+
+}
