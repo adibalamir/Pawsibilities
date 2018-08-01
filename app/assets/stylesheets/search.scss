@@ -9,11 +9,17 @@
   .dropdown {
     display: inline-grid;
 
+    #dropdownMenuButton {
+
+    }
+
     .dropdown-menu {
     z-index: 2;
     height: auto;
     max-height: 200px;
     overflow-x: hidden;
+    white-space: nowrap;
+    min-width: 100%
     }
   }
 }
