@@ -7,6 +7,13 @@
       <a class="nav-options" href="/">Home</a>
       <a class="nav-options" href="/search">Adopt a pet!</a>
       <a class="nav-options" href="/match">Match Pet</a>
+      <% if current_user %>
+      <span>Signed in as <%= current_user.email %> | <a href="/logout">Logout</a></span>
+      <% else %>
+      <a class="nav-options" href="/login">Login</a>
+      <a class="nav-options" href="/signup">Registration</a>
+
+      <% end %>
     </ul>
   </div>
 </nav>
