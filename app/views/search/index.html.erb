@@ -5,10 +5,10 @@
 </head>
 <body>
 
-  <%= image_tag "adoption.jpg", class: "title-image" %>
+<%= image_tag "adoption.jpg", class: "title-image" %>
 <%= render 'layouts/top_nav' %>
 
-<h1 class="search-title"> Find-A-Pet </h1>
+<h1 class="title"> Adoption </h1>
 <div class="search-parameters">
   <%= render 'search/initial_form' %>
   <p>Found <b><%= @pets.count %></b> matches.</p>

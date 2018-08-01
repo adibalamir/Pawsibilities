@@ -1,20 +1,25 @@
-/*TITLE IMAGE*/
+/*TITLE IMAGE AND TEXT*/
 
 .title-image {
-  z-index: -1;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
 }
 
+h1.title {
+  position: absolute;
+  color: white;
+  font-size: 7rem;
+  margin: 30% 30% 0%;
+}
 
 /*SEARCH PARAMETERS*/
 
 .search-parameters {
   position: sticky;
   top: 9%;
-  z-index: 1;
   background-color: cyan;
+  margin-top: 40%;
 
   .dropdown {
     display: inline-grid;
@@ -27,12 +32,14 @@
       max-height: 200px;
       overflow-x: hidden;
       white-space: nowrap;
-      min-width: 100%
+      min-width: 100%;
     }
   }
-  /*.search {
-    margin-left: 2.5%;
-  }*/
+}
+
+.btn.btn-light {
+  background-color: cyan;
+  border-color: black;
 }
 
 
@@ -51,10 +58,9 @@
     -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
     -moz-box-shadow: 0 4px 6px rgba(0,0,0,.3);
     box-shadow: 0 4px 6px rgba(0,0,0,.3);
-    z-index: 0;
-    position: relative;
     overflow: hidden;
     min-width: 280px;
+}
 
     img {
       object-fit: cover;
@@ -75,4 +81,3 @@
     }
   }
 
-}
