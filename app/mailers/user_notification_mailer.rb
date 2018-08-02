@@ -1,15 +1,16 @@
 class UserNotificationMailer < ApplicationMailer
   default from: 'notifications@pawsibilities.com'
 
-  # def notification(user_id)
-
-  #   @user = User.find_by_id user_id
-
-  #   if (@user)
-  #     to = @user.email
-
-  #     mail(to: @user.email, subject: 'New matches found!')
-  #   end
+  # def contact(email, subject, body)
+  #   mg_client = Mailgun::Client.new ENV['api_key']
+  #   message_params = {:from    => email,
+  #                     :to      => 'noreply.pawsibilities@gmail.com',
+  #                     :subject => subject,
+  #                     :text    => body
+  #                   }
+  #   puts message_params.inspect
+  #   puts ENV['domain']
+  #   mg_client.send_message ENV['domain'], message_params
   # end
 
   def notification(user_id)
