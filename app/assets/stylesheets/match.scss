@@ -1,3 +1,7 @@
+body.quiz-body {
+  background-color: white;
+}
+
 h3.subtitle {
   color: white;
   font-size: 2rem;
@@ -17,7 +21,7 @@ button#pet-matcher-start {
 
 div#quiz-board{
   width: 80%;
-  background-color: #f0f1f0;
+  background-color: white;
   margin: 10%;
   padding: 1rem;
   border: 3px solid #008000;
@@ -27,20 +31,20 @@ div#quiz-board{
   article.section-wrapper{
     border: 3px solid #008000;
     border-radius: 1rem;
-    background-color: #f0f1f0;
+    background-color: white;
     padding: 3% 5% 5%;
     margin: 1%;
 
-    button.next{
-      background-color: #f0f1f0;
+    button.next, input#search{
+      background-color: white;
       position: absolute;
-      right: 20%;
+      right: 14rem;
     }
 
-    button.prev{
-      background-color: #f0f1f0;
+    button.prev {
+      background-color: white;
       position: absolute;
-      left: 20%;
+      left: 14rem;
     }
   }
 
@@ -55,13 +59,19 @@ div#quiz-board{
       font-size: 1.4rem;
       margin-bottom: 1rem;
       font-weight: bold;
+      color: #008000;
     }
 
     label {
       font-size: 1.15rem;
       margin-right: 1.5rem;
+      color: #008000;
     }
   }
 
 }
 
+input#search {
+  border: 2px solid #008000;
+  color: #008000;
+}
