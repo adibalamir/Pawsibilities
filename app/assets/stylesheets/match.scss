@@ -22,13 +22,13 @@ div#quiz-board{
   padding: 1rem;
   border: 3px solid #008000;
   border-radius: 1rem;
-  margin-top: 11%;
+  margin-top: 15%;
 
   article.section-wrapper{
     border: 3px solid #008000;
     border-radius: 1rem;
     background-color: #f0f1f0;
-    padding: 5%;
+    padding: 3% 5% 5%;
     margin: 1%;
 
     button.next{
@@ -48,13 +48,18 @@ div#quiz-board{
 
   div.question {
     text-align: left;
-    margin: 1rem;
+    margin: 1rem 1rem 2rem;
 
     p {
       margin-top: 0;
-      font-size: 1.25rem;
+      font-size: 1.4rem;
       margin-bottom: 1rem;
-      font-weight: bolder;
+      font-weight: bold;
+    }
+
+    label {
+      font-size: 1.15rem;
+      margin-right: 1.5rem;
     }
   }
 
