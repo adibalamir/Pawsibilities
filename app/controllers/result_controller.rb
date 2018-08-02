@@ -22,7 +22,6 @@ class ResultController < ApplicationController
     @breeds.each{|x| breed_array.push(x.breed)}
 
     query = {
-      city: params[:city],
       animal_type: params[:animal_type],
       breed: breed_array
     }
