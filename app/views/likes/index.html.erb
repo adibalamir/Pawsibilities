@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pawsibilities</title>
+</head>
+<body>
+
+ <%= render 'layouts/top_nav' %>
+
+
+
+ <div>
+  <% @liked_pets.each do |pet| %>
+  <p><%= pet.name %></p>
+  <% end %>
+
+</div>
+
+
+</body>
+</html>

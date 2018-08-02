@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   :authenticate_with_credentials
   has_secure_password
-  has_many :favorites
-  has_many :favorite_pets, through: :favorites, source: :favorited, source_type: 'Pet'
+  has_many :like_pets
+  has_many :likes, through: :like_pets, source: :pet
 
   def self.authenticate_with_credentials(email, password)
     email.downcase!

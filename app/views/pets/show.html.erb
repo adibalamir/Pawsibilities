@@ -4,63 +4,73 @@
   <title>Pawsibilities</title>
 </head>
 <body>
-<%= render 'layouts/top_nav' %>
+  <%= render 'layouts/top_nav' %>
+  <div>
+    <%if @liked.exists? %>
+    <%= link_to 'Unlike', user_pet_like_path(current_user, @pet.id), method: :delete %>
 
+    <% else %>
+    <%= link_to "Like", user_pet_likes_path(current_user, @pet.id), method: :post, remote: true %>
 
-<div class="pet-grid">
-  <div class="pet-profile">
-    <h1> <%= @pet.name %> </h1>
-    <img src=<%= @pet.photo %> />
+    <% end %>
   </div>
 
-<div class="pet-info">
-  <dd><strong>Name</strong>: <%= @pet.name %></dd>
-  <dd><strong>Breed</strong>: <%= @pet.breed %></dd>
-  <dd><strong>Age</strong>: <%= @pet.age %></dd>
-  <dd><strong>Size</strong>: <%= @pet.size %></dd>
-  <dd><strong>Gender</strong>: <%= @pet.gender %></dd>
-  <dd><strong>Location</strong>: <%= @pet.city %></dd>
-</div>
 
-<div class="pet-description">
-  <dt>Description</dt>
-  <dd><%= @pet.description.slice(9, @pet.description.length - 12) %></dd>
-</div>
 
-<div class="shelter-info">
-  <%= image_tag("dog-house.png", :alt => "shelter-pic", :class => "shelter-style") %>
-  <dt>Shelter Information:</dt>
+  <div class="pet-grid">
+    <div class="pet-profile">
+      <h1> <%= @pet.name %> </h1>
+      <img src=<%= @pet.photo %> />
+    </div>
 
-  <% if !@shelter.name.blank? %>
-    <dt>Name:</dt>
-    <dd><%= @shelter.name %></dd>
-  <% end %>
+    <div class="pet-info">
+      <dd><strong>Name</strong>: <%= @pet.name %></dd>
+      <dd><strong>Breed</strong>: <%= @pet.breed %></dd>
+      <dd><strong>Age</strong>: <%= @pet.age %></dd>
+      <dd><strong>Size</strong>: <%= @pet.size %></dd>
+      <dd><strong>Gender</strong>: <%= @pet.gender %></dd>
+      <dd><strong>Location</strong>: <%= @pet.city %></dd>
+    </div>
 
-  <% if !@shelter.phone.blank? %>
-    <dt>Phone</dt>
-    <dd><%= @shelter.phone %></dd>
-  <% end %>
+    <div class="pet-description">
+      <dt>Description</dt>
+      <dd><%= @pet.description.slice(9, @pet.description.length - 12) %></dd>
+    </div>
 
-  <% if !@shelter.email.blank? %>
-    <dt>Email:</dt>
-    <dd><%= @shelter.email %></dd>
-  <% end %>
+    <div class="shelter-info">
+      <%= image_tag("dog-house.png", :alt => "shelter-pic", :class => "shelter-style") %>
+      <dt>Shelter Information:</dt>
 
-  <% if !@shelter.address.blank? %>
-    <dt>Address:</dt>
-    <dd><%= @shelter.address %></dd>
-  <% end %>
-</div>
-</div>
+      <% if !@shelter.name.blank? %>
+      <dt>Name:</dt>
+      <dd><%= @shelter.name %></dd>
+      <% end %>
 
-<% if @highlights %>
-<div class="breed-info">
-  <dt>Breed Information: <%=@pet.breed%></dt>
-  <% @highlights.each do |highlight| %>
+      <% if !@shelter.phone.blank? %>
+      <dt>Phone</dt>
+      <dd><%= @shelter.phone %></dd>
+      <% end %>
+
+      <% if !@shelter.email.blank? %>
+      <dt>Email:</dt>
+      <dd><%= @shelter.email %></dd>
+      <% end %>
+
+      <% if !@shelter.address.blank? %>
+      <dt>Address:</dt>
+      <dd><%= @shelter.address %></dd>
+      <% end %>
+    </div>
+  </div>
+
+  <% if @highlights %>
+  <div class="breed-info">
+    <dt>Breed Information: <%=@pet.breed%></dt>
+    <% @highlights.each do |highlight| %>
     <dd><%= highlight %></dd>
+    <% end %>
+  </div>
   <% end %>
-</div>
-<% end %>
 
 
 </body>

@@ -13,6 +13,17 @@ Rails.application.routes.draw do
 
   resources :pets_count, only: [:index]
 
+  resources :users do
+    resources :pets, only: [:show]  do
+      resources :likes
+    end
+  end
+
+  resources :users do
+    resources :likes, only: [:index]
+end
+
+
 
   get '/signup' => 'users#new'
   post '/users' => 'users#create'

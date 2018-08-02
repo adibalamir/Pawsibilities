@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_01_160114) do
+ActiveRecord::Schema.define(version: 2018_08_02_002604) do
 
   create_table "cat_highlights", force: :cascade do |t|
     t.string "breed"
@@ -60,6 +60,15 @@ ActiveRecord::Schema.define(version: 2018_08_01_160114) do
     t.string "highlights"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "like_pets", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "pet_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pet_id"], name: "index_like_pets_on_pet_id"
+    t.index ["user_id"], name: "index_like_pets_on_user_id"
   end
 
   create_table "petfinder_services", force: :cascade do |t|
