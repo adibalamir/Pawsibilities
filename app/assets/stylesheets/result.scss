@@ -4,7 +4,7 @@
 #all-pets-container {
   text-align: center;
 
-  .card {
+  /*.card {
     background: white;
     display: inline-block;
     margin: 0 35px 30px;
@@ -20,14 +20,14 @@
     img {
       object-fit: cover;
     }
-  }
+  }*/
 
-  .card::after {
+  /*.card::after {
     content: attr(title);
     z-index: 1;
     position: inherit;
     top: 1.75rem;
-  }
+  }*/
 
   .card:hover {
     img {
