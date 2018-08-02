@@ -14,10 +14,11 @@ body {
 
 nav {
   position: fixed;
-  background: #117a8b;
+  background: white;
   width: 100%;
   z-index: 100;
   top: 0;
+  height: 7%;
 }
 
 #app {
@@ -26,14 +27,16 @@ nav {
 
 .navbar-brand {
   float: left;
-  padding-top: 1rem;
   font-size: 30px;
-  color: #d39e00;
+  color: #008000;
+  margin-top: -1.5%;
 }
 
 .nav-options {
-  padding: 0rem 4rem 1rem 1rem;
+  padding: 0rem 3rem 1rem 1rem;
   position: relative;
   top: 1.5rem;
   color: #d39e00;
+  float: right;
+  margin-top: -2%;
 }
