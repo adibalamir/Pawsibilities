@@ -1,4 +1,14 @@
-
+h3.subtitle {
+  color: white;
+  font-size: 2rem;
+  font-family: "Helvetica";
+  font-style: italic;
+  font-weight: 400;
+  margin-top: 35%;
+  width: 100%;
+  position: absolute;
+  justify-content: center;
+}
 
 div#quiz-board{
   width: 80%;
@@ -6,6 +16,7 @@ div#quiz-board{
   margin: 10%;
   padding: 1rem;
   border-radius: 1rem;
+  margin-top: 50%;
 
   article.section-wrapper{
     border: 5px;
