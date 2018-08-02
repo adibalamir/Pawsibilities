@@ -11,6 +11,8 @@
 
   <h3 class="subtitle">Find your purrrfect pet </h3>
 
+  <button type="button" class="btn btn-light btn-lg" id="pet-matcher-start">Start</button>
+
   <%= render 'layouts/top_nav' %>
 
 
@@ -45,7 +47,7 @@
         <%= label_tag(:first_pet, "No") %>
       </div>
 
-      <button class="next">NEXT</button>
+      <button class="next btn btn-light btn-md">NEXT</button>
 
 
     </article>
@@ -101,9 +103,9 @@
         <%= label_tag(:independence, "More than 10 hours a day") %>
       </div>
       <span>
-        <button class="prev">PREV</button>
+        <button class="prev btn btn-light btn-md">PREV</button>
 
-        <button class= "next">NEXT</button>
+        <button class= "next btn btn-light btn-md">NEXT</button>
       </span>
     </article>
 
@@ -144,7 +146,7 @@
         <%= radio_button_tag(:trainability, "Ignore") %>
         <%= label_tag(:trainability, "No Preference") %>
       </div>
-      <span>  <button class="prev">PREV</button>
+      <span>  <button class="prev btn btn-light btn-md">PREV</button>
 
 
         <%= submit_tag("Match!!") %>

@@ -10,28 +10,35 @@ h3.subtitle {
   justify-content: center;
 }
 
+button#pet-matcher-start {
+  position: relative;
+  margin-top: 40%;
+}
+
 div#quiz-board{
   width: 80%;
-  background-color: white;
+  background-color: #f0f1f0;
   margin: 10%;
   padding: 1rem;
+  border: 3px solid #008000;
   border-radius: 1rem;
-  margin-top: 50%;
+  margin-top: 11%;
 
   article.section-wrapper{
-    border: 5px;
-    background-color: #ffff0038;
+    border: 3px solid #008000;
+    border-radius: 1rem;
+    background-color: #f0f1f0;
     padding: 5%;
-    margin: 5%;
+    margin: 1%;
 
     button.next{
-      background-color: red;
+      background-color: #f0f1f0;
       position: absolute;
       right: 20%;
     }
 
     button.prev{
-      background-color: green;
+      background-color: #f0f1f0;
       position: absolute;
       left: 20%;
     }
