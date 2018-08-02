@@ -7,11 +7,15 @@
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"">
           <% animal_types = ["Dog", "Cat", "Rabbit", "Reptile", "Horse", "Barnyard"] %>
           <% animal_types.each do |animal_type| %>
-            <%= radio_button_tag("animal_type", value = animal_type, params[:animal_type] == animal_type ? params[:animal_type] : nil, class: 'dropdown-item') %>
+            <div class="dropdown-item">
+            <%= radio_button_tag("animal_type", value = animal_type, params[:animal_type] == animal_type ? params[:animal_type] : nil) %>
             <%= label_tag(animal_type) %>
+            </div>
           <% end %>
-          <%= radio_button_tag("animal_type", "Small &amp; Furry", params[:animal_type] == "Small &amp; Furry" ? params[:animal_type] : nil, class: 'dropdown-item') %>
+          <div class="dropdown-item">
+          <%= radio_button_tag("animal_type", "Small &amp; Furry", params[:animal_type] == "Small &amp; Furry" ? params[:animal_type] : nil) %>
           <%= label_tag "Small and Furry" %>
+          </div>
       </div>
     </div>
 

@@ -1,6 +1,11 @@
 
 $(document).on('turbolinks:load', function(){
 
+  $("button#pet-matcher-start").on("click", function() {
+    $("html, body").animate({
+      scrollTop: $("div#quiz-board").offset().top
+    }, 750);
+  });
 
   $("article:nth-child(1n+2)").hide();
 

@@ -1,28 +1,50 @@
+body.quiz-body {
+  background-color: white;
+}
 
+h3.subtitle {
+  color: white;
+  font-size: 2rem;
+  font-family: "Helvetica";
+  font-style: italic;
+  font-weight: 400;
+  margin-top: 35%;
+  width: 100%;
+  position: absolute;
+  justify-content: center;
+}
+
+button#pet-matcher-start {
+  position: relative;
+  margin-top: 40%;
+}
 
 div#quiz-board{
   width: 80%;
   background-color: white;
   margin: 10%;
   padding: 1rem;
+  border: 2px solid #008000;
   border-radius: 1rem;
+  margin-top: 15%;
 
   article.section-wrapper{
-    border: 5px;
-    background-color: #ffff0038;
-    padding: 5%;
-    margin: 5%;
+    border: 2px solid #008000;
+    border-radius: 1rem;
+    background-color: white;
+    padding: 3% 5% 5%;
+    margin: 1%;
 
-    button.next{
-      background-color: red;
+    button.next, input#search{
+      background-color: white;
       position: absolute;
-      right: 20%;
+      right: 14rem;
     }
 
-    button.prev{
-      background-color: green;
+    button.prev {
+      background-color: white;
       position: absolute;
-      left: 20%;
+      left: 14rem;
     }
   }
 
@@ -30,15 +52,26 @@ div#quiz-board{
 
   div.question {
     text-align: left;
-    margin: 1rem;
+    margin: 1rem 1rem 2rem;
 
     p {
       margin-top: 0;
-      font-size: 1.25rem;
+      font-size: 1.4rem;
       margin-bottom: 1rem;
-      font-weight: bolder;
+      font-weight: bold;
+      color: #008000;
+    }
+
+    label {
+      font-size: 1.15rem;
+      margin-right: 1.5rem;
+      color: #008000;
     }
   }
 
 }
 
+input#search {
+  border: 2px solid #008000;
+  color: #008000;
+}
