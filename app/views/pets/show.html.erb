@@ -6,60 +6,81 @@
 <body>
 <%= render 'layouts/top_nav' %>
 
-<div class="pet-grid">
+<section class="pet-grid">
+
   <div class="pet-profile">
     <h1> <%= @pet.name %> </h1>
     <img src=<%= @pet.photo %> />
   </div>
 
-<div class="pet-info">
-  <dd><strong>Name</strong>: <%= @pet.name %></dd>
-  <dd><strong>Breed</strong>: <%= @pet.breed %></dd>
-  <dd><strong>Age</strong>: <%= @pet.age %></dd>
-  <dd><strong>Size</strong>: <%= @pet.size %></dd>
-  <dd><strong>Gender</strong>: <%= @pet.gender %></dd>
-  <dd><strong>Location</strong>: <%= @pet.city %></dd>
-</div>
+  <div class="pet-info">
+    <dd><strong>Name</strong>: <%= @pet.name %></dd>
+    <dd><strong>Breed</strong>: <%= @pet.breed %></dd>
+    <dd><strong>Age</strong>: <%= @pet.age %></dd>
+    <dd><strong>Size</strong>: <%= @pet.size %></dd>
+    <dd><strong>Gender</strong>: <%= @pet.gender %></dd>
+    <dd><strong>Location</strong>: <%= @pet.city %></dd>
+  </div>
 
-<div class="pet-description">
-  <dt>Description</dt>
-  <dd><%= @pet.description.slice(9, @pet.description.length - 12) %></dd>
-</div>
+  <div class="pet-description">
+    <h2>Description</h2>
+    <dd><%= @pet.description.slice(9, @pet.description.length - 12) %></dd>
+  </div>
 
-<div class="shelter-info">
-  <%= image_tag("dog-house.png", :alt => "shelter-pic", :class => "shelter-style") %>
-  <dt>Shelter Information:</dt>
+  <div class="shelter-info">
+    <%= image_tag("dog-house.png", :alt => "shelter-icon", :class => "shelter-style") %>
 
-  <% if !@shelter.name.blank? %>
-    <dt>Name:</dt>
-    <dd><%= @shelter.name %></dd>
-  <% end %>
+    <% if !@shelter.name.blank? %>
+      <dd><strong><%= @shelter.name %></strong></dd>
+    <% end %>
 
-  <% if !@shelter.phone.blank? %>
-    <dt>Phone</dt>
-    <dd><%= @shelter.phone %></dd>
-  <% end %>
+    <% if !@shelter.phone.blank? %>
+      <dd><strong>Phone</strong>: <%= @shelter.phone %></dd>
+    <% end %>
 
-  <% if !@shelter.email.blank? %>
-    <dt>Email:</dt>
-    <dd><%= @shelter.email %></dd>
-  <% end %>
+    <% if !@shelter.email.blank? %>
+      <dd><strong>Email</strong>: <%= @shelter.email %></dd>
+    <% end %>
 
-  <% if !@shelter.address.blank? %>
-    <dt>Address:</dt>
-    <dd><%= @shelter.address %></dd>
-  <% end %>
-</div>
-</div>
+    <% if !@shelter.address.blank? %>
+      <dd><strong>Address</strong>: <%= @shelter.address %></dd>
+    <% end %>
+    <div class="pet-map">
+    <% if @shelter.address == "" %>
+    <iframe
+      width="450"
+      height="250"
+      frameborder="0" style="border:0"
+      src="https://www.google.com/maps/embed/v1/search?key=AIzaSyDU7B-xwlFfCWf7ghZzbPhUC9pGyDf0WFo
+      &q=<%= @shelter.latitude %>,<%= @shelter.longitude %>
+      &zoom=15" allowfullscreen>
+    </iframe>
+    <% else %>
+    <iframe
+      width="450"
+      height="250"
+      frameborder="0" style="border:0"
+      src="https://www.google.com/maps/embed/v1/search?key=AIzaSyDU7B-xwlFfCWf7ghZzbPhUC9pGyDf0WFo
+      &q=<%= @shelter.address %>
+      &zoom=15" allowfullscreen>
+    </iframe>
+    <% end %>
+  </div>
+  </div>
 
-<% if @highlights %>
+
+
+</section>
+
+
 <div class="breed-info">
-  <dt>Breed Information: <%=@pet.breed%></dt>
+<% if @highlights %>
+  <h2>Breed Information: <%=@pet.breed%></h2>
   <% @highlights.each do |highlight| %>
     <dd><%= highlight %></dd>
   <% end %>
-</div>
 <% end %>
+</div>
 
 
 </body>

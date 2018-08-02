@@ -5,6 +5,7 @@ class PetsController < ApplicationController
   def show
     @pet = Pet.find params[:id]
     @shelter = Shelter.find_by(shelter_id: @pet.shelter_id)
+
     if @pet.animal_type == "Dog"
       @highlights = JSON.parse(DogHighlight.find_by(breed: @pet.breed).highlights)
     end
