@@ -12,8 +12,10 @@ class LikesController < ApplicationController
 
     def create
       @like = LikePet.new(like_params)
+      @pet = Pet.find(params[:pet_id])
 
       if @like.save
+        redirect_to @pet
         puts "-----------------------------------------------------------------"
         puts "You liked this pet"
       else
@@ -23,7 +25,9 @@ class LikesController < ApplicationController
     end
 
     def destroy
+      @pet = Pet.find(params[:pet_id])
       LikePet.where(like_params).first.destroy
+        redirect_to @pet
         puts "-----------------------------------------------------------------"
         puts "unliked :( "
     end
