@@ -20,16 +20,19 @@ h1.title {
 /*SEARCH PARAMETERS*/
 
 .search-parameters {
+  background-color: white;
+  margin-top: 38%;
+  margin-bottom: 5%;
+  z-index: 2;
   position: sticky;
   top: 9%;
-  background-color: cyan;
-  margin-top: 40%;
-  z-index: 2;
 
   .dropdown {
     display: inline-grid;
     margin-left: 1.25%;
     margin-right: 1.25%;
+    margin-bottom: 1%;
+
 
     .dropdown-menu {
       height: auto;
@@ -39,13 +42,16 @@ h1.title {
       min-width: 100%;
     }
   }
+
+  input.dropdown {
+    margin-top: 1%;
+  }
 }
 
 .btn.btn-light {
-  background-color: cyan;
+  background-color: white;
   border-color: black;
 }
-
 
 /*PET PHOTOS*/
 
