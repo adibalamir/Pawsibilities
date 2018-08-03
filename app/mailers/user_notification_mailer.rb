@@ -6,7 +6,7 @@ class UserNotificationMailer < ApplicationMailer
     message_params = {:from    => ENV["mailgun_username"],
                       :to      => 'noreply.pawsibilities@gmail.com',
                       :subject => "#{subject}",
-                      :text    => "contact info: #{email}, #{body}"
+                      :text    => "Contact info: #{email}\n\n#{body}"
                     }
     puts message_params.inspect
     puts ENV['domain']

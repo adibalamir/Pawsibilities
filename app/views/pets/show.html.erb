@@ -14,18 +14,18 @@
     <%= link_to "Like", user_pet_likes_path(current_user, @pet.id), method: :post, remote: true %>
     <% end %>
     <% else %>
-    <p> LOGIN TO LIKE THIS ADORABLE CREATURE</p>
+    <p>LOGIN TO LIKE THIS ADORABLE CREATURE</p>
 
     <% end %>
   </div>
 
-  <section class="container">
+<section class="container">
 
-    <div class="row">
-      <div class="pet-profile col-sm">
-        <img src=<%= @pet.photo %> />
-        <h1> <%= @pet.name %> </h1>
-      </div>
+  <div class="row">
+    <div class="pet-profile col-sm">
+      <img src=<%= @pet.photo %> />
+      <h1> <%= @pet.name %> </h1>
+    </div>
 
       <div class="pet-info col-sm">
         <dd><strong>Breed</strong>: <%= @pet.breed %></dd>
@@ -36,7 +36,7 @@
       </div>
     </div> <!-- row-end -->
 
-    <div class="row">
+  <div class="row">
       <div class="pet-description col-lg">
         <h2>Description</h2>
         <dd><%= (@pet.description.slice(9, @pet.description.length - 12)).gsub(/[\u0080-\u00ff]/, "") %></dd>
@@ -64,36 +64,38 @@
         <div class="pet-map">
           <% if @shelter.address == "" %>
           <iframe
-          width="250"
-          height="250"
-          frameborder="0" style="border:0"
-          src="https://www.google.com/maps/embed/v1/search?key=AIzaSyDXLuvEg0vlb2FRIcokWzNJwh5RdZpVQ6w
-          &q=<%= @shelter.latitude %>,<%= @shelter.longitude %>
-          &zoom=15" allowfullscreen>
-        </iframe>
-        <% else %>
-        <iframe
-        width="250"
-        height="250"
-        frameborder="0" style="border:0"
-        src="https://www.google.com/maps/embed/v1/search?key=AIzaSyDXLuvEg0vlb2FRIcokWzNJwh5RdZpVQ6w
-        &q=<%= @shelter.address %>
-        &zoom=15" allowfullscreen>
-      </iframe>
-      <% end %>
+            width="250"
+            height="250"
+            frameborder="0" style="border:0"
+            src="https://www.google.com/maps/embed/v1/search?key=AIzaSyDXLuvEg0vlb2FRIcokWzNJwh5RdZpVQ6w
+            &q=<%= @shelter.latitude %>,<%= @shelter.longitude %>
+            &zoom=15" allowfullscreen>
+          </iframe>
+          <% else %>
+          <iframe
+            width="250"
+            height="250"
+            frameborder="0" style="border:0"
+            src="https://www.google.com/maps/embed/v1/search?key=AIzaSyDXLuvEg0vlb2FRIcokWzNJwh5RdZpVQ6w
+            &q=<%= @shelter.address %>
+            &zoom=15" allowfullscreen>
+          </iframe>
+        <% end %>
     </div>
+
+    <hr>
 
     <div class="contact-form">
       <h3>Contact:</h3>
-      <%= form_for :contact_shelter, url: '/mail', html: {class: "nifty_form"} do |f| %>
-        Your Email: <%= f.text_field :email %><br>
-        Subject: <%= f.text_field :subject %><br>
-        Message: <%= f.text_area :body %>
-        <%= f.submit "Send" %>
+      <%= form_for :contact_shelter, url: '/mail', html: {:id => "contact-submit"} do |f| %>
+        Your Email: <%= f.email_field :email, :placeholder => "example@email.com", :required => true %><br>
+        Subject: <%= f.text_field :subject, :placeholder => "e.g. Adopting #{@pet.name}", :required => true %><br>
+        Message: <%= f.text_area :body, :placeholder => "Your message here.", :required => true %>
+        <%= f.submit "Send", :class => "contact-submit" %>
       <% end %>
     </div>
   </div>
-</div> <!-- row-end -->
+  </div> <!-- row-end -->
 
 <div class="row">
   <div class="breed-info">
@@ -104,11 +106,7 @@
     <% end %>
     <% end %>
   </div>
-</div>
-
-<div class="row">
-
-</div>
+</div><!-- row-end -->
 
 </section>
 
