@@ -19,7 +19,7 @@ h1.title {
 /*SEARCH PARAMETERS*/
 
 .search-parameters {
-  background-color: #f0f1f0;
+  background-color: white;
   margin-top: 38%;
   margin-bottom: 5%;
   z-index: 2;
@@ -48,7 +48,7 @@ h1.title {
 }
 
 .btn.btn-light {
-  background-color: #f0f1f0;
+  background-color: white;
   border-color: black;
 }
 
@@ -64,9 +64,9 @@ h1.title {
     padding: 1% 1% 2%;
     text-align: center;
     text-decoration: none;
-    -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
-    -moz-box-shadow: 0 4px 6px rgba(0,0,0,.3);
-    box-shadow: 0 4px 6px rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0 4px 6px rgba(0,0,0,1);
+    box-shadow: 0 4px 6px rgba(0,0,0,1);
     overflow: hidden;
     min-width: 280px;
 }
