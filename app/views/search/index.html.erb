@@ -13,10 +13,6 @@
 
 <div class="search-parameters">
   <%= render 'search/initial_form' %>
-    <p class="pet-count">Found <b><%= @pets.count %></b> matches.</p>
-  <% if @pets.count == 0 %>
-    <%= render 'search/user_form' %>
-  <% end %>
 </div>
 
 <div id="all-pets-container">
