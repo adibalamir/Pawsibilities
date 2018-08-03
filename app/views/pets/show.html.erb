@@ -83,13 +83,15 @@
       <% end %>
     </div>
 
+    <hr>
+
     <div class="contact-form">
       <h3>Contact:</h3>
-      <%= form_for :contact_shelter, url: '/mail', html: {class: "nifty_form"} do |f| %>
-        Your Email: <%= f.text_field :email %><br>
-        Subject: <%= f.text_field :subject %><br>
-        Message: <%= f.text_area :body %>
-        <%= f.submit "Send" %>
+      <%= form_for :contact_shelter, url: '/mail', html: {:id => "contact-submit"} do |f| %>
+        Your Email: <%= f.text_field :email, :required => true %><br>
+        Subject: <%= f.text_field :subject, :required => true %><br>
+        Message: <%= f.text_area :body, :required => true %>
+        <%= f.submit "Send", :class => "contact-submit" %>
       <% end %>
     </div>
   </div>

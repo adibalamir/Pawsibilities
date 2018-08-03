@@ -46,7 +46,6 @@
   grid-row: 1;
   align-self: start;
   place-self: center;
-  /*border: 0.5px solid #97f697;*/
   border-radius: 10px;
   padding: 3%;
   text-align: left;
@@ -90,8 +89,18 @@
     width: 50px;
     height: 50px;
   }
-  .contact-form {
+  hr {
+    border-color: #97f697;
+    margin: 5px;
+  }
+  input {
     width: 100%;
+  }
+  textarea {
+    width: 100%;
+  }
+  .contact-submit {
+    margin-top: 0.3rem;
   }
 }
 
