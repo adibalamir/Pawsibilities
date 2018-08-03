@@ -1,4 +1,5 @@
 class SearchController < ApplicationController
+
   def index
     query = {
       city: params[:city],
@@ -28,9 +29,15 @@ class SearchController < ApplicationController
     end
 
     @pets = Pet.where(query)
-    byebug
+
+    respond_to do |format|
+      format.html
+      format.json {render json: @pets}
+      format.js
+    end
   end
 
   def show
+    render json: @pets
   end
 end
