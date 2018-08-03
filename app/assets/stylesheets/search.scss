@@ -4,6 +4,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
 }
 
 h1.title {
@@ -19,7 +20,7 @@ h1.title {
 /*SEARCH PARAMETERS*/
 
 .search-parameters {
-  background-color: #f0f1f0;
+  background-color: white;
   margin-top: 38%;
   margin-bottom: 5%;
   z-index: 2;
@@ -48,47 +49,8 @@ h1.title {
 }
 
 .btn.btn-light {
-  background-color: #f0f1f0;
+  background-color: white;
   border-color: black;
 }
 
-/*PET PHOTOS*/
-
-#all-pets-container {
-  text-align: center;
-
-  .card {
-    background: white;
-    display: inline-block;
-    margin: 0 35px 30px;
-    padding: 1% 1% 2%;
-    text-align: center;
-    text-decoration: none;
-    -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
-    -moz-box-shadow: 0 4px 6px rgba(0,0,0,.3);
-    box-shadow: 0 4px 6px rgba(0,0,0,.3);
-    overflow: hidden;
-    min-width: 280px;
-}
-
-    img {
-      object-fit: cover;
-    }
-  }
-
-  .card::after {
-    content: attr(title);
-    z-index: 1;
-    position: inherit;
-    top: 0.5rem;
-    font-family: "Permanent Marker";
-    font-size: 35px;
-  }
-
-  .card:hover {
-    img {
-      height: 250;
-      width: auto;
-    }
-  }
-
+/*Pet photo SCSS is inherited from './result.scss'*/
