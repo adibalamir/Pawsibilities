@@ -13,4 +13,6 @@ Rails.application.routes.draw do
 
   resources :pets_count, only: [:index]
 
+  post "/mail" => "contact_shelter#mail"
+
 end
