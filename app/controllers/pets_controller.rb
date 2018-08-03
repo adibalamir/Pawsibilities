@@ -1,9 +1,13 @@
 class PetsController < ApplicationController
+
+
   def index
   end
 
   def show
     @pet = Pet.find params[:id]
+    @liked = LikePet.where(user_id: current_user, pet_id: @pet.id)
+
     @shelter = Shelter.find_by(shelter_id: @pet.shelter_id)
 
     if @pet.animal_type == "Dog"
@@ -14,5 +18,8 @@ class PetsController < ApplicationController
       @highlights = JSON.parse(CatHighlight.find_by(breed: @pet.breed).highlights)
     end
   end
+
+  private
+
 
 end

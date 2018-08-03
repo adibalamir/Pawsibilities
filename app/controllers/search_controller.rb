@@ -28,6 +28,7 @@ class SearchController < ApplicationController
     end
 
     @pets = Pet.where(query)
+    byebug
   end
 
   def show

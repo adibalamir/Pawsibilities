@@ -6,4 +6,8 @@ class Pet < ApplicationRecord
   # scope :size, -> (size) {where size: size}
   scope :age, -> (age) {where age: age}
   scope :status, -> (status) {where status: "A"}
+
+  has_many :like_pets
+  has_many :liked_by, through: :like_pets, source: :user
+
 end

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pawsibilities</title>
+</head>
+<body>
+
+ <%= render 'layouts/top_nav' %>
+
+
+ <h3>Thank you for liking them</h3>
+
+ <div id="all-pets-container">
+  <% @liked_pets.each do |pet| %>
+  <div class="card" title=<%= pet.name %>>
+    <%= link_to pet do %>
+    <img src=<%= pet.photo %> width="250" height="250"/><br/>
+    <% end %>
+
+  </div>
+     <% end %>
+
+
+</body>
+</html>
