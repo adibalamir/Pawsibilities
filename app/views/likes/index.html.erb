@@ -8,13 +8,17 @@
  <%= render 'layouts/top_nav' %>
 
 
+ <h3>Thank you for liking them</h3>
 
- <div>
+ <div id="all-pets-container">
   <% @liked_pets.each do |pet| %>
-  <p><%= pet.name %></p>
-  <% end %>
+  <div class="card" title=<%= pet.name %>>
+    <%= link_to pet do %>
+    <img src=<%= pet.photo %> width="250" height="250"/><br/>
+    <% end %>
 
-</div>
+  </div>
+     <% end %>
 
 
 </body>

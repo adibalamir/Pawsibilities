@@ -6,7 +6,7 @@ class PetsController < ApplicationController
 
   def show
     @pet = Pet.find params[:id]
-    @liked = current_user.like_pets.where(pet_id: @pet.id)
+    @liked = LikePet.where(user_id: current_user, pet_id: @pet.id)
 
     @shelter = Shelter.find_by(shelter_id: @pet.shelter_id)
 
