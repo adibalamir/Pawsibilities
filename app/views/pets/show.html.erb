@@ -12,14 +12,12 @@
 
     <% else %>
     <%= link_to "Like", user_pet_likes_path(current_user, @pet.id), method: :post, remote: true %>
-
     <% end %>
     <% else %>
     <p> LOGIN TO LIKE THIS ADORABLE CREATURE</p>
 
     <% end %>
   </div>
-
 
   <section class="container">
 
@@ -84,6 +82,16 @@
       </iframe>
       <% end %>
     </div>
+
+    <div class="contact-form">
+      <h3>Contact:</h3>
+      <%= form_for :contact_shelter, url: '/mail', html: {class: "nifty_form"} do |f| %>
+        Your Email: <%= f.text_field :email %><br>
+        Subject: <%= f.text_field :subject %><br>
+        Message: <%= f.text_area :body %>
+        <%= f.submit "Send" %>
+      <% end %>
+    </div>
   </div>
 </div> <!-- row-end -->
 
@@ -96,6 +104,10 @@
     <% end %>
     <% end %>
   </div>
+</div>
+
+<div class="row">
+
 </div>
 
 </section>
