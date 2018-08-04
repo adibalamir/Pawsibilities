@@ -1,0 +1,7 @@
+  <% @pets.each do |pet| %>
+    <div class="card" title="<%= pet.name %>">
+      <%= link_to pet do %>
+        <img src=<%= pet.photo %> width="250" height="250"/><br/>
+      <% end %>
+    </div>
+  <% end %>

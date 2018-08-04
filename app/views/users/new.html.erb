@@ -1,18 +1,20 @@
+<%= render 'layouts/top_nav' %>
 
 <div class="registration">
 
 <h1>Register for an account!</h1>
+<h2>Creating an account allows you to save your favourite pets</h2>
 
 <%= form_for :user, url: '/users' do |f| %>
 
-  Email: <%= f.email_field :email, :required => true %><br>
-  Password: <%= f.password_field :password, :required => true %>
-  <%= f.submit "Submit" %>
+  Email: <%= f.email_field :email, :required => true, class: "form-input" %><br>
+  Password: <%= f.password_field :password, :required => true, class: "form-input" %>
+  <%= f.submit "Submit", class: "btn btn-light btn-md submit" %>
 
 <% end %>
 
 <div>
-  Already registered? Click <a href="/login">here</a> to log in.
+  Already registered? Click <a href="/login", class="embedded-link">here</a> to log in.
 </div>
 
 </div>
