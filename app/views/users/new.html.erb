@@ -2,12 +2,13 @@
 <div class="registration">
 
 <h1>Register for an account!</h1>
+<h2>Creating an account allows you to save your favourite pets</h2>
 
 <%= form_for :user, url: '/users' do |f| %>
 
-  Email: <%= f.email_field :email, :required => true %><br>
-  Password: <%= f.password_field :password, :required => true %>
-  <%= f.submit "Submit" %>
+  Email: <%= f.email_field :email, :required => true, class: "form-control" %><br>
+  Password: <%= f.password_field :password, :required => true, class: "form-control" %>
+  <%= f.submit "Submit", class: "btn btn-light btn-md submit" %>
 
 <% end %>
 
