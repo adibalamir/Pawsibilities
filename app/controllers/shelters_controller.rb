@@ -8,6 +8,8 @@ class SheltersController < ApplicationController
 
   def create
     @shelter =  Shelter.new(shelter_params)
+    @shelter.province = "ON"
+    @shelter.owner_type = "pet_owner"
 
     if @shelter.save
       session[:shelter_id] = @shelter.id
