@@ -8,13 +8,13 @@
   <div>
     <% if current_user %>
     <%if @liked.exists? %>
-    <%= link_to 'Unlike', user_pet_like_path(current_user, @pet.id), method: :delete %>
+    <%= link_to image_tag("star-heart.png"), user_pet_like_path(current_user, @pet.id), method: :delete %>
 
     <% else %>
-    <%= link_to "Like", user_pet_likes_path(current_user, @pet.id), method: :post, remote: true %>
+    <%= link_to image_tag("star-heart.png"), user_pet_likes_path(current_user, @pet.id), method: :post, remote: true %>
     <% end %>
     <% else %>
-    <p>LOGIN TO LIKE THIS ADORABLE CREATURE</p>
+    <p>Log in to add to your favorites.</p>
 
     <% end %>
   </div>
