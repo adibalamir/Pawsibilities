@@ -28,6 +28,7 @@ end
   get '/signup' => 'users#new'
   get '/signup/pet_owners' => 'shelters#new'
   post '/users' => 'users#create'
+  put '/update' => 'users#update'
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
