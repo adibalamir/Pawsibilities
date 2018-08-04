@@ -6,7 +6,7 @@ $(document).on('turbolinks:load', function() {
      });
   });
 
-  $(".dropdown-item").click(function() {
+  $("body").on('click', ".dropdown-item", function() {
     if ($(this).children("input").is(":checked")) {
       $(this).children("input").prop('checked', false)
     } else {
@@ -14,7 +14,7 @@ $(document).on('turbolinks:load', function() {
     }
   });
 
-  $("input").click(function() {
+  $("body").on('click', "input", function() {
     if ($(this).is(":checked")) {
       $(this).prop('checked', false)
     } else {
