@@ -9,7 +9,6 @@
     <% if current_user %>
     <% if @liked.exists? %>
     <%= link_to '<i id= "to_unlike" class="fas fa-heart"></i> Unlike'.html_safe, user_pet_like_path(current_user, @pet.id), method: :delete %>
-
     <% else %>
 
     <%= link_to '<i id= "to_like" class="fas fa-heart"></i> Like'.html_safe, user_pet_likes_path(current_user, @pet.id), method: :post, remote: true %>

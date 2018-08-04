@@ -1,20 +1,36 @@
 <nav>
+
   <div class="container-fluid">
+
     <div class="navbar-header">
+
       <a class="navbar-brand" href="/">Pawsibilities</a>
+
     </div>
-    <ul class="">
-      <a class="nav-options" href="/">Home</a>
-      <a class="nav-options" href="/search">Adopt a pet!</a>
-      <a class="nav-options" href="/match">Match Pet</a>
+
+    <div>
+      <a class="nav-options" href="/search">Adoption</a>
+      <a class="nav-options" href="/match">Pet Matcher</a>
+
       <% if current_user %>
-      <span>Signed in as <%= current_user.email %> | <a href="/logout">Logout</a></span>
-      <span class = "nav-options"><%= link_to "Likes", user_likes_path(current_user)%></span>
+
+      <span class="nav-options">
+        <%= link_to "Likes", user_likes_path(current_user), { :class=>"user-options" }%>
+      </span>
+
+      <span class="nav-options">Signed in as <%= current_user.email %> |
+        <a class ="user-options" href="/logout">Logout</a>
+      </span>
+
       <% else %>
+
       <a class="nav-options" href="/login">Login</a>
       <a class="nav-options" href="/signup">Registration</a>
 
       <% end %>
-    </ul>
+
+    </div>
+
   </div>
+
 </nav>

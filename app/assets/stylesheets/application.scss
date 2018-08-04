@@ -21,25 +21,36 @@ nav {
   z-index: 100;
   top: 0;
   height: 7%;
-  border-bottom: 0.5px solid lightgrey;
+
+  nav a:hover {
+    color: #008000;
+  }
+
+  .navbar-brand {
+    float: left;
+    font-size: 30px;
+    color: #008000;
+    margin-top: -0.5%;
+  }
+
+  .nav-options {
+    padding: 0rem 3rem 1rem 1rem;
+    position: relative;
+    top: 1.5rem;
+    color: #d39e00;
+    float: right;
+    margin-top: -1%;
+  }
+
+  span {
+    margin: auto;
+
+    .user-options {
+      color: #d39e00;
+    }
+  }
 }
 
 #app {
   padding-top: 80px;
-}
-
-.navbar-brand {
-  float: left;
-  font-size: 30px;
-  color: #008000;
-  margin-top: -1.5%;
-}
-
-.nav-options {
-  padding: 0rem 3rem 1rem 1rem;
-  position: relative;
-  top: 1.5rem;
-  color: #d39e00;
-  float: right;
-  margin-top: -2%;
 }

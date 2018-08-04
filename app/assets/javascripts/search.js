@@ -6,4 +6,12 @@ $(document).on('turbolinks:load', function() {
      });
   });
 
+  $(".dropdown-item").click(function() {
+    if ($(this).children("input").is(":checked")) {
+      $(this).children("input").prop('checked', false)
+    } else {
+      $(this).children("input").prop('checked', true)
+    }
+  });
+
 });
