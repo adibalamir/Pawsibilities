@@ -1,6 +1,6 @@
-<%= form_for :user, url: '/users', html: {class: "nifty_form"} do |f| %>
-  Email: <%= f.text_field :email %>
-  <%= f.hidden_field :query, value: ((request.original_url).sub! 'search', 'pets_count')   %>
-  <%= f.hidden_field :found, value: 'false' %>
-  <%= f.submit "Create" %>
+<%= form_tag("/update", method: "put") do %>
+<%= hidden_field_tag :query, ((request.original_url).sub! 'search', 'pets_count') %>
+<%= hidden_field_tag :found, value: 'false' %>
+
+  <%= submit_tag("Notify me when match found", class: "btn btn-light dropdown") %>
 <% end %>
