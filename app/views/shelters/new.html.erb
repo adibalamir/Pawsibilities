@@ -1,0 +1,24 @@
+<%= render 'layouts/top_nav' %>
+
+<div class="registration">
+
+<h1>Register for an account!</h1>
+
+<%= form_for :shelter, url: '/shelters' do |f| %>
+
+  Name: <%= f.text_field :name, :required => true, class: "form-input" %><br>
+  Email: <%= f.email_field :email, :required => true, class: "form-input" %><br>
+  Address: <%= f.text_field :address, class: "form-input" %><br>
+  Phone: <%= f.text_field :phone, class: "form-input" %><br>
+  Password: <%= f.password_field :password, :required => true, class: "form-input" %>
+  <%= f.hidden_field :province, "NU" %>
+  <% f.hidden_field :owner_type, "pet_owner" %>
+  <%= f.submit "Submit", class: "btn btn-light btn-md submit" %>
+
+<% end %>
+
+<div>
+  Already registered? Click <a href="/login", class="embedded-link">here</a> to log in.
+</div>
+
+</div>

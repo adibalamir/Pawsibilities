@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # resources :users
   get "/" => "home#index"
 
-  resources :pets, only: [:show]
+  resources :pets, only: [:show, :create, :destroy]
 
   resources :match, only: [:index]
 
@@ -23,9 +23,10 @@ Rails.application.routes.draw do
     resources :likes, only: [:index]
 end
 
-
+  resources :shelters, only: [:show, :create, :edit]
 
   get '/signup' => 'users#new'
+  get '/signup/pet_owners' => 'shelters#new'
   post '/users' => 'users#create'
 
   get '/login' => 'sessions#new'

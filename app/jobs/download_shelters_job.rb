@@ -14,7 +14,8 @@ class DownloadSheltersJob < ApplicationJob
         address: shelter_xml.xpath('address1/text()').to_s,
         latitude: shelter_xml.xpath('latitude/text()').to_s.to_f,
         longitude: shelter_xml.xpath('longitude/text()').to_s.to_f,
-        province: shelter_xml.xpath('state/text()').to_s
+        province: shelter_xml.xpath('state/text()').to_s,
+        owner_type: "shelter"
       }
 
       Shelter.create!(shelter_attributes) unless Shelter.exists?(shelter_id: shelter_attributes[:shelter_id])
