@@ -27,6 +27,7 @@ end
 
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
+  put '/update' => 'users#update'
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
