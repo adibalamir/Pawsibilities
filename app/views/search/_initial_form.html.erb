@@ -9,7 +9,7 @@
           <% animal_types.each do |animal_type| %>
             <div class="dropdown-item">
             <%= radio_button_tag("animal_type", value = animal_type, params[:animal_type] == animal_type ? params[:animal_type] : nil) %>
-            <%= label_tag(animal_type) %>
+            <%= label_tag(:animal_type, animal_type) %>
             </div>
           <% end %>
           <div class="dropdown-item">
