@@ -14,4 +14,12 @@ $(document).on('turbolinks:load', function() {
     }
   });
 
+  $("input").click(function() {
+    if ($(this).is(":checked")) {
+      $(this).prop('checked', false)
+    } else {
+      $(this).prop('checked', true)
+    }
+  });
+
 });
