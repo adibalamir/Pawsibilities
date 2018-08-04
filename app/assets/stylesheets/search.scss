@@ -40,6 +40,14 @@ h1.title {
       overflow-x: hidden;
       white-space: nowrap;
       min-width: 100%;
+
+      .dropdown-item:hover {
+        background-color: #f0f2f4;
+      }
+
+      .dropdown-item:active {
+        color: black;
+      }
     }
   }
 
