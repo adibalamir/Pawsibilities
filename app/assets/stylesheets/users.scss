@@ -48,16 +48,17 @@
   a.embedded-link {
     color: #008000;
   }
-}
 
-div.redirect-text {
-  display: inline-block;
-}
 
-img.registration-img {
-  position: absolute;
-  height: 15rem;
-  display: inline-block;
-  left: -10rem;
-  bottom: 1rem;
+  div.redirect-text {
+    display: inline-block;
+  }
+
+  img.registration-img {
+    position: absolute;
+    height: 15rem;
+    display: inline-block;
+    left: -10rem;
+    bottom: 1rem;
+  }
 }

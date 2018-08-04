@@ -2,21 +2,21 @@
 
 <div class="registration">
 
-<h1>Register for an account!</h1>
-<h2>Creating an account allows you to save your favourite pets</h2>
+  <h1>Register for an account!</h1>
+  <h2>Creating an account allows you to save your favourite pets</h2>
 
-<%= form_for :user, url: '/users' do |f| %>
+  <%= form_for :user, url: '/users' do |f| %>
 
-  Email: <%= f.email_field :email, :required => true, class: "form-input" %><br>
-  Password: <%= f.password_field :password, :required => true, class: "form-input" %>
-  <%= f.submit "Submit", class: "btn btn-light btn-md submit" %>
+    Email: <%= f.email_field :email, :required => true, class: "form-input" %><br>
+    Password: <%= f.password_field :password, :required => true, class: "form-input" %>
+    <%= f.submit "Submit", class: "btn btn-light btn-md submit" %>
 
-<% end %>
+  <% end %>
 
-<div class="redirect-text">
-  Already registered? Click <a href="/login", class="embedded-link">here</a> to log in.
-</div>
+  <div class="redirect-text">
+    Already registered? Click <a href="/login", class="embedded-link">here</a> to log in.
+  </div>
 
-<%= image_tag "registration.png", class: "registration-img" %>
+  <%= image_tag "registration.png", class: "registration-img" %>
 
 </div>
