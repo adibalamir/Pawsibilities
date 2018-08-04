@@ -25,12 +25,16 @@
       margin-left: 4rem;
     }
 
-    .form-control {
+    .form-input {
     display: block;
     border: 0px;
     border-bottom: 2px solid #008000;
     border-radius: 0;
+    width: 100%;
+    }
 
+    .form-input:focus {
+      outline: none;
     }
 
     .submit {
