@@ -8,12 +8,13 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to '/search'
     elsif @shelter = Shelter.authenticate_with_credentials(params[:email], params[:password])
-      session[:shelter_id] = shelter.id
+      session[:user_id] = @shelter.id
       redirect_to @shelter
     else
       flash[:error] = 'Invalid email/password combination'
       redirect_to '/login'
     end
+  end
 
   def destroy
     session[:user_id] = nil

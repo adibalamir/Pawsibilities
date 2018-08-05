@@ -7,7 +7,7 @@ class Shelter < ApplicationRecord
 
   def self.authenticate_with_credentials(email, password)
     email.downcase!
-    user = User.find_by_email(email.strip)
+    user = Shelter.find_by_email(email.strip)
     return user && user.authenticate(password)
   end
 
