@@ -6,8 +6,6 @@ $(document).ready(function(){
 
   $(".card").each(function(index) {
 
-    console.log($(this).children(".pet-name").text().length)
-
     if ($(this).children(".pet-name").text().length > 60) {
       $(this).children(".pet-name").css("font-size", "0.8rem")
 

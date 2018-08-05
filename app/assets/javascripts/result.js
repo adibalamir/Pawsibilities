@@ -2,26 +2,35 @@
 // # All this logic will automatically be available in application.js.
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$(document).ready(function(){
+$(document).on('turbolinks:load', function() {
 
-  $(".card").each(function(index) {
+  alert("Turbolinks loaded")
 
-    console.log($(this).children(".pet-name").text().length)
+  $(document).ajaxComplete(function() {
 
-    if ($(this).children(".pet-name").text().length > 60) {
-      $(this).children(".pet-name").css("font-size", "0.8rem")
+    alert("Ajax complete")
 
-    } else if ($(this).children(".pet-name").text().length > 50) {
-      $(this).children(".pet-name").css("font-size", "0.9rem")
+  $("#all-pets-container").on('ajax:success', function() {
 
-    } else if ($(this).children(".pet-name").text().length > 40) {
-      $(this).children(".pet-name").css("font-size", "1rem")
+    alert("Ajax success")
 
-    } else if ($(this).children(".pet-name").text().length > 30) {
-      $(this).children(".pet-name").css("font-size", "1.5rem")
+    $(this).children(".card").each(function(index) {
 
-    } else {
-      $(this).css("font-size", "2rem")
-    }
+      if ($(this).children(".pet-name").text().length > 60) {
+        $(this).children(".pet-name").css("font-size", "0.8rem")
+
+      } else if ($(this).children(".pet-name").text().length > 50) {
+        $(this).children(".pet-name").css("font-size", "0.9rem")
+
+      } else if ($(this).children(".pet-name").text().length > 40) {
+        $(this).children(".pet-name").css("font-size", "1rem")
+
+      } else if ($(this).children(".pet-name").text().length > 30) {
+        $(this).children(".pet-name").css("font-size", "1.5rem")
+
+      } else {
+        $(this).css("font-size", "2rem")
+      }
+    })
   })
 });
