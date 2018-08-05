@@ -6,11 +6,19 @@ $(document).on('turbolinks:load', function() {
      });
   });
 
-  $(".dropdown-item").click(function() {
+  $("body").on('click', ".dropdown-item", function() {
     if ($(this).children("input").is(":checked")) {
       $(this).children("input").prop('checked', false)
     } else {
       $(this).children("input").prop('checked', true)
+    }
+  });
+
+  $("body").on('click', "input", function() {
+    if ($(this).is(":checked")) {
+      $(this).prop('checked', false)
+    } else {
+      $(this).prop('checked', true)
     }
   });
 

@@ -129,15 +129,18 @@
   line-height: 2rem;
 }
 
+i.fa-heart {
+  position: absolute;
+  right: 38%;
+  margin-top: 1rem;
+  font-size: 3rem;
+}
 
 #to_unlike {
-  font-size: 2rem;
-  color: red;
-
+  color:  #ffb3c6;
 }
 
 #to_like {
-  font-size: 2rem;
   color: grey;
 
 }
