@@ -3,6 +3,7 @@ class Shelter < ApplicationRecord
   has_secure_password
 
   validates_uniqueness_of :shelter_id
+  validates_presence_of :name, :email, :address, :phone
 
   def self.authenticate_with_credentials(email, password)
     email.downcase!
@@ -10,19 +11,4 @@ class Shelter < ApplicationRecord
     return user && user.authenticate(password)
   end
 
-  PROVINCES =
-  [
-    ["Alberta", "AB"],
-    ["British Columbia", "BC"],
-    ["Manitoba", "MB"],
-    ["New Brunswick", "NB"],
-    ["Newfoundland and Labrador", "NL"],
-    ["Northwest Territories", "NT"],
-    ["Nova Scotia", "NS"],
-    ["Nunavut", "NU"],
-    ["Ontario", "ON"],
-    ["Prince Edward Island", "PE"],
-    ["Quebec", "QC"],
-    ["Saskatchewan", "SK"],
-    ["Yukon", "YT"]
-  ]end
+end
