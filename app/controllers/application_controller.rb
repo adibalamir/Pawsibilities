@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
     user_array.each do |user|
     @current_user ||= user if session[:user_id]
     end
-    @current_user
+    return @current_user
   end
 
   helper_method :current_user

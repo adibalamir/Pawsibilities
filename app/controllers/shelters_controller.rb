@@ -13,7 +13,7 @@ class SheltersController < ApplicationController
     @shelter.shelter_id = "ON#{rand(1000..10000)}"
 
     if @shelter.save
-      session[:shelter_id] = @shelter.id
+      session[:user_id] = @shelter.id
       redirect_to @shelter
     else
       flash[:error] = "An error occured!"
