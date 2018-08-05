@@ -15,7 +15,7 @@
       <% if current_user %>
 
       <span class="nav-options">
-        <%= link_to "Likes", user_likes_path(current_user), { :class=>"user-options" }%>
+        <%= link_to "Favourites", user_likes_path(current_user), { :class=>"user-options" }%>
       </span>
 
       <span class="nav-options">Signed in as <%= current_user.email %> |

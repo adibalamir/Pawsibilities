@@ -20,15 +20,15 @@
     img {
       object-fit: cover;
     }
-  }
 
-  .card::after {
-    content: attr(title);
-    z-index: 1;
-    position: inherit;
-    top: 0.5rem;
-    font-family: "Permanent Marker";
-    font-size: 35px;
+    .pet-name {
+      width: 250px;
+      height: 40px;
+      margin: auto;
+      margin-top: 1rem;
+      font-family: "Permanent Marker";
+      font-size: 2rem;
+    }
   }
 
   .card:hover {
