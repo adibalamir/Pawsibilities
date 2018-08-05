@@ -1,5 +1,36 @@
-<p>
-  <strong>Hello </strong>
-  <%= @shelter.name %>
-</p>
+<main class="profile-grid">
 
+<section class="user-profile">
+  <div class="profile-information">
+    <dd>Name: <%= @shelter.name %></dd>
+    <dd>Email: <%= @shelter.email %></dd>
+    <dd>Phone: <%= @shelter.phone %></dd>
+    <dd>Address: <%= @shelter.address %></dd>
+  </div>
+
+  <button id="show-form">Add Pet</button>
+  <div id="pet-form">
+    Place a pet for adoption.
+    <%= form_for :pet, url: '/pets' do |f| %>
+
+      Choose your city. <%= f.select :name, Pet::CITIES %><br>
+      What type of animal is it? <%= f.select :animal_type, Pet::ANIMAL_TYPES %><br>
+      What breed is it? <%= f.select :breed, ["-Select a Breed-"] %><br>
+      Gender? <%= f.select :gender, Pet::GENDERS %><br>
+      Do they have a name? <%= f.text_field :name, class: "form-input" %><br>
+      What size are they? <%= f.select :size, Pet::SIZES %><br>
+      How old are they? <%= f.select :age, Pet::AGES %><br>
+      Please add a description: <%= f.text_area :description %>
+
+      <%= f.submit "Submit", class: "btn btn-light btn-md submit" %>
+
+    <% end %>
+  </div>
+
+</section>
+
+<section class="user-pets">
+
+</section>
+
+</main>

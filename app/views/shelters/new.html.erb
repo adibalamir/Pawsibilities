@@ -11,8 +11,7 @@
   Address: <%= f.text_field :address, class: "form-input" %><br>
   Phone: <%= f.text_field :phone, class: "form-input" %><br>
   Password: <%= f.password_field :password, :required => true, class: "form-input" %>
-  <%= f.hidden_field :province, "NU" %>
-  <% f.hidden_field :owner_type, "pet_owner" %>
+
   <%= f.submit "Submit", class: "btn btn-light btn-md submit" %>
 
 <% end %>

@@ -10,10 +10,15 @@ class SheltersController < ApplicationController
     @shelter =  Shelter.new(shelter_params)
     @shelter.province = "ON"
     @shelter.owner_type = "pet_owner"
+    @shelter.shelter_id = "ON#{rand(1000..10000)}"
 
     if @shelter.save
       session[:shelter_id] = @shelter.id
       redirect_to @shelter
+    else
+      flash[:error] = "An error occured!"
+
+      redirect_to '/signup/pet_owners'
     end
   end
 

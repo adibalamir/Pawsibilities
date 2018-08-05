@@ -2,14 +2,12 @@ class Shelter < ApplicationRecord
   :authenticate_with_credentials
   has_secure_password
 
+  validates_uniqueness_of :shelter_id
+
   def self.authenticate_with_credentials(email, password)
     email.downcase!
     user = User.find_by_email(email.strip)
     return user && user.authenticate(password)
-  end
-
-  def generate_shelter_id
-
   end
 
   PROVINCES =

@@ -1,7 +1,24 @@
 class PetsController < ApplicationController
 
-
   def index
+  end
+
+  def new
+
+  end
+
+  def create
+    @pet =  Pet.new(pet_params)
+    @pet.status = "A"
+
+    if @pet.save
+      session[:pet_id] = @pet.id
+      redirect_to :back
+    else
+      flash[:error] = "An error occured!"
+
+      redirect_to :back
+    end
   end
 
   def show
@@ -21,5 +38,8 @@ class PetsController < ApplicationController
 
   private
 
+  def pet_params
+    params.require(:pet).permit(:city, :animal_type, :breed, :name, :gender, :size, :age, :status, :description)
+  end
 
 end
