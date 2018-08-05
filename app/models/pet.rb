@@ -13,6 +13,8 @@ class Pet < ApplicationRecord
   has_many :like_pets
   has_many :liked_by, through: :like_pets, source: :user
 
+  # mount_uploader :photo, PhotoUploader
+
   #pet-form options
   CITIES = ["-City-", "Ajax", "Courtice", "Pickering", "Oshawa", "Port Perry", "Bowmanville", "Ballantree", "Markham", "Uxbridge", "Scarborough", "Toronto", "Richmond Hill",  "Vaughan", "Newmarket", "Pefferlaw", "Lindsay", "Port Hope", "Etobicoke", "Omemee", "Whitby", "York", "Zephyr"].sort_by! {|city| city}
   ANIMAL_TYPES = ["-Select an Animal-", "Dog", "Cat", "Rabbit", ["Small and Furry", "Small &amp; Furry"], "Reptile", "Horse", "Barnyard"]

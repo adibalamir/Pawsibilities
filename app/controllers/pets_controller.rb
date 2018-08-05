@@ -10,10 +10,11 @@ class PetsController < ApplicationController
   def create
     @pet =  Pet.new(pet_params)
     @pet.status = "A"
+    @pet.shelter_id = current_user.shelter_id
 
     if @pet.save
       session[:pet_id] = @pet.id
-      redirect_to :back
+      session[:return_to] = request.referer
     else
       flash[:error] = "An error occured!"
 
@@ -39,7 +40,7 @@ class PetsController < ApplicationController
   private
 
   def pet_params
-    params.require(:pet).permit(:city, :animal_type, :breed, :name, :gender, :size, :age, :status, :description)
+    params.require(:pet).permit(:city, :animal_type, :breed, :name, :gender, :size, :age, :status, :description, :photo)
   end
 
 end
