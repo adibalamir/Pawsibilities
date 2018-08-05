@@ -2,35 +2,3 @@
 // # All this logic will automatically be available in application.js.
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$(document).on('turbolinks:load', function() {
-
-  alert("Turbolinks loaded")
-
-  $(document).ajaxComplete(function() {
-
-    alert("Ajax complete")
-
-  $("#all-pets-container").on('ajax:success', function() {
-
-    alert("Ajax success")
-
-    $(this).children(".card").each(function(index) {
-
-      if ($(this).children(".pet-name").text().length > 60) {
-        $(this).children(".pet-name").css("font-size", "0.8rem")
-
-      } else if ($(this).children(".pet-name").text().length > 50) {
-        $(this).children(".pet-name").css("font-size", "0.9rem")
-
-      } else if ($(this).children(".pet-name").text().length > 40) {
-        $(this).children(".pet-name").css("font-size", "1rem")
-
-      } else if ($(this).children(".pet-name").text().length > 30) {
-        $(this).children(".pet-name").css("font-size", "1.5rem")
-
-      } else {
-        $(this).css("font-size", "2rem")
-      }
-    })
-  })
-});

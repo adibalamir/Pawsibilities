@@ -13,14 +13,6 @@ $(document).on('turbolinks:load', function(){
   $("article").first().addClass("visible").css("display", "block");
 
 
-  // $("body").on('click', ".question", function() {
-  //   if ($(this).children("input").is(":checked")) {
-  //     $(this).children("input").prop('checked', false)
-  //   } else {
-  //     $(this).children("input").prop('checked', true)
-  //   }
-  // });
-
   $("body").on('click', "input", function() {
     if ($(this).is(":checked")) {
       $(this).prop('checked', false)

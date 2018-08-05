@@ -22,4 +22,27 @@ $(document).on('turbolinks:load', function() {
     }
   });
 
+  // $("body").on('click', "#all-pets-container", function() {
+
+  //   alert("body on click all-pets-container loaded")
+
+  //   $(this).children(".card").each(function() {
+
+  //     if ($(this).children(".pet-name").text().length > 60) {
+  //       $(this).children(".pet-name").css("font-size", "0.8rem")
+
+  //     } else if ($(this).children(".pet-name").text().length > 50) {
+  //       $(this).children(".pet-name").css("font-size", "0.9rem")
+
+  //     } else if ($(this).children(".pet-name").text().length > 40) {
+  //       $(this).children(".pet-name").css("font-size", "1rem")
+
+  //     } else if ($(this).children(".pet-name").text().length > 30) {
+  //       $(this).children(".pet-name").css("font-size", "1.5rem")
+
+  //     } else {
+  //       $(this).css("font-size", "2rem")
+  //     }
+  //   })
+  // })
 });
