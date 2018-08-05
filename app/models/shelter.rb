@@ -25,5 +25,4 @@ class Shelter < ApplicationRecord
     ["Quebec", "QC"],
     ["Saskatchewan", "SK"],
     ["Yukon", "YT"]
-  ]
-end
+  ]end
