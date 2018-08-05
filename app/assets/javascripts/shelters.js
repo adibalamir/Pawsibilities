@@ -1,9 +1,9 @@
 $(document).on('turbolinks:load', function() {
 
-  $('#pet-form').hide()
+  $('.pet-form').hide()
 
-  $('#show-form').on('click', function() {
-    $('#pet-form').toggle()
+  $('.show-form').on('click', function() {
+    $('.pet-form').toggle()
   });
 
   $("#pet_animal_type").on('change', function(){
@@ -46,7 +46,7 @@ $(document).on('turbolinks:load', function() {
       })
     }
 
-    if ($animal_type == "Small and Furry") {
+    if ($animal_type == "Small &amp; Furry") {
       var smallfurry_breeds = ["Abyssinian", "Chinchilla", "Degu", "Dwarf Hamster", "Ferret", "Gerbil", "Guinea Pig", "Hamster", "Hedgehog", "Mouse", "Peruvian", "Prairie Dog", "Rat", "Rex", "Short-Haired", "Silkie / Sheltie", "Skunk", "Sugar Glider", "Teddy"]
 
       $breed.empty()

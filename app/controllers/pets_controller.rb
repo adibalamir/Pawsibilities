@@ -1,4 +1,5 @@
 class PetsController < ApplicationController
+  before_action :set_shelter
 
   def index
   end
@@ -10,6 +11,7 @@ class PetsController < ApplicationController
   def create
     @pet =  Pet.new(pet_params)
     @pet.status = "A"
+    @pet.shelter_id = @shelter.shelter_id
 
     if @pet.save
       session[:pet_id] = @pet.id
@@ -39,7 +41,11 @@ class PetsController < ApplicationController
   private
 
   def pet_params
-    params.require(:pet).permit(:city, :animal_type, :breed, :name, :gender, :size, :age, :status, :description)
+    params.require(:pet).permit(:city, :animal_type, :breed, :name, :gender, :size, :age, :status, :description, :photo)
+  end
+
+  def set_shelter
+    @shelter = Shelter.find params[:id]
   end
 
 end

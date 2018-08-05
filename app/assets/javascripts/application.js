@@ -18,5 +18,3 @@
 //= require_tree .
 //= require match
 //= require search
-
-

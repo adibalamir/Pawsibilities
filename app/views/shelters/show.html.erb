@@ -1,3 +1,5 @@
+<%= render 'layouts/top_nav' %>
+
 <main class="profile-grid">
 
 <section class="user-profile">
@@ -9,18 +11,20 @@
   </div>
 
   <button class="show-form">Add Pet</button>
-  <div id="pet-form">
+  <div class="pet-form">
     Place a pet for adoption.
     <%= form_for :pet, url: '/pets' do |f| %>
 
       Choose your city. <%= f.select :city, Pet::CITIES %><br>
-      What type of animal is it? <%= f.select :animal_type, Pet::ANIMAL_TYPES %><br>
-      What breed is it? <%= f.select :breed, ["-Select a Breed-"] %><br>
-      Gender? <%= f.select :gender, Pet::GENDERS %><br>
+      What type of animal is it? <%= f.select :animal_type, Pet::ANIMAL_TYPES, :prompt => "~select an animal_type~" %><br>
+      What breed is it? <%= f.select :breed, :prompt => "~select an breed~" %><br>
+      Gender? <%= f.select :gender, Pet::GENDERS, :prompt => "~select a gender~" %><br>
       Do they have a name? <%= f.text_field :name, class: "form-input" %><br>
-      What size are they? <%= f.select :size, Pet::SIZES %><br>
-      How old are they? <%= f.select :age, Pet::AGES %><br>
+      What size are they? <%= f.select :size, Pet::SIZES, :prompt => "~select a size~" %><br>
+      How old are they? <%= f.select :age, Pet::AGES, :prompt => "~select an age~" %><br>
       Please add a description: <%= f.text_area :description %>
+      Add a photo: <%= f.file_field :photo %>
+      <%= console %>
 
       <%= f.submit "Submit", class: "btn btn-light btn-md submit" %>
 
