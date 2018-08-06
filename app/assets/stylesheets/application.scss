@@ -15,43 +15,54 @@ body {
   background-color: white;
 }
 
-nav {
-  position: fixed;
+nav{
   background: white;
   width: 100%;
   z-index: 100;
   top: 0;
   height: 7%;
+  position: sticky;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rem 1rem;
 
-  nav a:hover {
-    color: #008000;
+  button {
+    border: none !important;
+    height: 100%;
+    float: right;
+
+    .fa-chevron-circle-down {
+      font-size: 125%;
+    }
   }
 
   .navbar-brand {
     float: left;
     font-size: 30px;
-    color: #008000;
-    margin-top: -0.5%;
+    color: #008000 !important;
   }
 
-  .nav-options {
-    padding: 0rem 3rem 1rem 1rem;
-    position: relative;
-    top: 1.5rem;
-    color: #d39e00;
+  div.navbar-collapse {
     float: right;
-    margin-top: -1%;
-  }
 
-  span {
-    margin: auto;
+    a.nav-link {
+      color: #d39e00 !important;
+      text-align: right;
+    }
 
-    .user-options {
-      color: #d39e00;
+    a.nav-link:hover {
+      text-decoration: underline;
+    }
+
+    span.nav-link {
+      color: #d39e00 !important;
+      text-align: right;
+
+      a.user-options {
+        color: #d39e00;
+      }
     }
   }
-}
-
-#app {
-  padding-top: 80px;
 }

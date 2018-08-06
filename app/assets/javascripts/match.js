@@ -13,6 +13,15 @@ $(document).on('turbolinks:load', function(){
   $("article").first().addClass("visible").css("display", "block");
 
 
+  $(".question").on('click', "input", function() {
+    if ($(this).is(":checked")) {
+      $(this).prop('checked', false)
+    } else {
+      $(this).prop('checked', true)
+    }
+  });
+
+
   //every time the next button is clicked, remove the current panels class of visible and apply it to the next and fade it in.
   $("button.next").on("click", function(e){
     e.preventDefault();
