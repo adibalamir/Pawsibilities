@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_04_164737) do
+ActiveRecord::Schema.define(version: 2018_08_06_130436) do
 
   create_table "cat_highlights", force: :cascade do |t|
     t.string "breed"
@@ -91,6 +91,7 @@ ActiveRecord::Schema.define(version: 2018_08_04_164737) do
     t.string "shelter_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "cw_photo"
     t.index ["petfinder_id"], name: "index_pets_on_petfinder_id"
   end
 

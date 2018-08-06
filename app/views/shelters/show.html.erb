@@ -6,6 +6,7 @@
     <dd>Email: <%= @shelter.email %></dd>
     <dd>Phone: <%= @shelter.phone %></dd>
     <dd>Address: <%= @shelter.address %></dd>
+    <%= link_to 'Edit Profile', edit_shelter_path(@shelter) %>
   </div>
 
   <button class="show-form">Add Pet</button>
@@ -21,7 +22,7 @@
       What size are they? <%= f.select :size, Pet::SIZES, :prompt => "~Pick a Size~" %><br>
       How old are they? <%= f.select :age, Pet::AGES, :prompt => "~Pick an Age~" %><br>
       Please add a description: <%= f.text_area :description %>
-      <%= f.file_field :photo %>
+      <%= f.file_field :cw_photo %>
 
       <%= f.submit "Submit", class: "btn btn-light btn-md submit" %>
 

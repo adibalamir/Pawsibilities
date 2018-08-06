@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     resources :likes, only: [:index]
 end
 
-  resources :shelters, only: [:show, :create, :edit]
+  resources :shelters, only: [:show, :create, :edit, :update]
 
   get '/signup' => 'users#new'
   get '/signup/pet_owners' => 'shelters#new'
