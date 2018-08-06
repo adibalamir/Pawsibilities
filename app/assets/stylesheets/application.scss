@@ -23,6 +23,16 @@ nav {
   top: 0;
   height: 7%;
 
+  button {
+    border: none !important;
+    height: 100%;
+    float: right;
+
+    .fa-chevron-circle-down {
+      font-size: 125%;
+    }
+  }
+
   nav a:hover {
     color: #008000;
   }
@@ -37,34 +47,23 @@ nav {
   div.navbar-collapse {
     float: right;
 
-    li.nav-item {
-    }
-
     a.nav-link {
       /*padding: 0rem 3rem 1rem 1rem;
       position: relative;
       top: 1.5rem;*/
-      color: #d39e00;
-      float: right;
+      color: #d39e00 !important;
+      text-align: right;
+/*      float: right;*/
      /* margin-top: -1%;*/
     }
 
-    a span {
-      margin: auto;
+    span.nav-link {
+      color: #d39e00 !important;
+      text-align: right;
 
-      .user-options {
+      a.user-options {
         color: #d39e00;
       }
-    }
-  }
-
-button {
-  border: none !important;
-  height: 100%;
-  float: right;
-
-    .fa-chevron-circle-down {
-      font-size: 125%;
     }
   }
 }
