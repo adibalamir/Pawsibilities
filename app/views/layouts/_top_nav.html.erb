@@ -1,35 +1,50 @@
-<nav>
+<nav class="navbar navbar-fixed-top navbar-expand-lg navbar-light" id="bootstrap-overrides">
 
-  <div class="container-fluid">
+  <a class="navbar-brand" href="/">Pawsibilities</a>
 
-    <div class="navbar-header">
+  <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-chevron-circle-down"></i>
+  </button>
 
-      <a class="navbar-brand" href="/">Pawsibilities</a>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-    </div>
+    <ul class="navbar-nav mr-auto">
 
-    <div>
-      <a class="nav-options" href="/search">Adoption</a>
-      <a class="nav-options" href="/match">Pet Matcher</a>
+      <li class="nav-item">
+        <a class="nav-link" href="/search">Adoption</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/match">Pet Matcher</a>
+      </li>
 
       <% if current_user %>
 
-      <span class="nav-options">
-        <%= link_to "Favourites", user_likes_path(current_user), { :class=>"user-options" }%>
-      </span>
+      <li class="nav-item">
+        <span class="nav-link">
+          <%= link_to "Favourites", user_likes_path(current_user), { :class=>"user-options" }%>
+        </span>
+      </li>
 
-      <span class="nav-options">Signed in as <%= current_user.email %> |
-        <a class ="user-options" href="/logout">Logout</a>
-      </span>
+      <li class="nav-item">
+        <span class="nav-link">Signed in as <%= current_user.email %> |
+          <a class ="user-options" href="/logout">Logout</a>
+        </span>
+      </li>
 
       <% else %>
 
-      <a class="nav-options" href="/login">Login</a>
-      <a class="nav-options" href="/signup">Registration</a>
+      <li class="nav-item">
+        <a class="nav-link" href="/login">Login</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/signup">Registration</a>
+      </li>
 
       <% end %>
 
-    </div>
+    </ul>
 
   </div>
 
