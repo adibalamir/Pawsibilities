@@ -41,8 +41,13 @@
 
     <div class="row">
       <div class="pet-description col-lg">
+        <% if @pet.petfinder_id != nil %>
         <h2>Description</h2>
         <dd><%= (@pet.description.slice(9, @pet.description.length - 12)).gsub(/[\u0080-\u00ff]/, "") %></dd>
+        <% else %>
+        <h2>Description</h2>
+        <dd><%= @pet.description %></dd>
+        <% end %>
       </div>
 
       <div class="shelter-info col-sm">

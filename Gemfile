@@ -76,3 +76,5 @@ gem 'jquery-rails'
 gem 'mailgun-ruby', '~>1.0.2', require: 'mailgun'
 
 gem 'dotenv-rails', groups: [:development, :test]
+
+gem 'carrierwave'
