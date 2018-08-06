@@ -15,14 +15,23 @@ body {
   background-color: white;
 }
 
-nav.navbar {
-  position: sticky;
+nav{
   background: white;
   width: 100%;
   z-index: 100;
   top: 0;
   height: 7%;
-  padding: 0, 10% !important;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rem 1rem;
+
+
+
+
+
 
   button {
     border: none !important;
@@ -60,5 +69,5 @@ nav.navbar {
 }
 
 #app {
-  padding-top: 80px;
+/*  padding-top: 80px;*/
 }
