@@ -1,39 +1,50 @@
+<%= render 'layouts/top_nav' %>
+
 <main class="profile-grid">
 
-<section class="user-profile">
-  <div class="profile-information">
-    <dd>Name: <%= @shelter.name %></dd>
-    <dd>Email: <%= @shelter.email %></dd>
-    <dd>Phone: <%= @shelter.phone %></dd>
-    <dd>Address: <%= @shelter.address %></dd>
-    <%= link_to 'Edit Profile', edit_shelter_path(@shelter) %>
-  </div>
+<div class="profile-information">
+  <dd>Name: <%= @shelter.name %></dd>
+  <dd>Email: <%= @shelter.email %></dd>
+  <dd>Phone: <%= @shelter.phone %></dd>
+  <dd>Address: <%= @shelter.address %></dd>
+  <%= link_to 'Edit Profile', edit_shelter_path(@shelter) %>
+</div>
 
+<section class="form-area">
   <button class="show-form">Add Pet</button>
   <div class="pet-form">
     Place a pet for adoption.
     <%= form_for :pet, url: '/pets' do |f| %>
 
-      Choose your city. <%= f.select :city, Pet::CITIES, :prompt => "~Pick your City~" %><br>
-      What type of animal is it? <%= f.select :animal_type, Pet::ANIMAL_TYPES, :prompt => "~Pick an Animal_type~" %><br>
-      What breed is it? <%= f.select :breed, ["-Select a Breed-"] %><br>
-      Gender? <%= f.select :gender, Pet::GENDERS %><br>
-      Do they have a name? <%= f.text_field :name, class: "form-input" %><br>
-      What size are they? <%= f.select :size, Pet::SIZES, :prompt => "~Pick a Size~" %><br>
-      How old are they? <%= f.select :age, Pet::AGES, :prompt => "~Pick an Age~" %><br>
-      Please add a description: <%= f.text_area :description %>
-      <%= f.file_field :cw_photo %>
+      Choose your city.<br><%= f.select :city, Pet::CITIES, :prompt => "~Pick your City~" %><br>
+      What type of animal is it?<br><%= f.select :animal_type, Pet::ANIMAL_TYPES, :prompt => "~Pick an Animal_type~" %><br>
+      What breed is it?<br><%= f.select :breed, ["-Select a Breed-"] %><br>
+      Gender?<br><%= f.select :gender, Pet::GENDERS %><br>
+      Do they have a name?<br><%= f.text_field :name, class: "form-input" %><br>
+      What size are they?<br><%= f.select :size, Pet::SIZES, :prompt => "~Pick a Size~" %><br>
+      How old are they?<br><%= f.select :age, Pet::AGES, :prompt => "~Pick an Age~" %><br>
+      Please add a description:<br><%= f.text_area :description %><br>
+      <%= f.file_field :cw_photo %><br>
 
       <%= f.submit "Submit", class: "btn btn-light btn-md submit" %>
 
     <% end %>
   </div>
+</section>
 
 </section>
 
 
 <section class="user-pets">
-
+  <h2>Your pets</h2>
+  <div class="owned-pets">
+    <% Pet.where(shelter_id: @shelter.shelter_id).each do |pet| %>
+      <%= link_to pet do %>
+      <p><%= pet.name %></p>
+      <img src=<%= pet.cw_photo %> width="250" height="250"/><br/>
+      <% end %>
+    <% end %>
+  </div>
 </section>
 
 </main>
