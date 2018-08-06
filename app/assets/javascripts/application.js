@@ -25,13 +25,8 @@
 //Making nav bar responsive - work in progress!
 $(document).on('turbolinks:load', function() {
 
-  $('nav ul li > a:not(:only-child)').click(function(e) {
-      $(this).siblings('.nav-dropdown').toggle();
-      $('.nav-dropdown').not($(this).siblings()).hide();
-      e.stopPropagation();
-    });
-    $('html').click(function() {
-      $('.nav-dropdown').hide();
-    });
+  $(".navbar-toggler").on("click", function() {
+    $(this).siblings("#navbarSupportedContent").slideToggle()
+  })
 
 });
