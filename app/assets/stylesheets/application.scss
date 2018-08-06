@@ -34,24 +34,37 @@ nav {
     margin-top: -0.5%;
   }
 
-  .nav-options {
-    padding: 0rem 3rem 1rem 1rem;
-    position: relative;
-    top: 1.5rem;
-    color: #d39e00;
+  div.navbar-collapse {
     float: right;
-    margin-top: -1%;
-  }
 
-  .nav-options i {
-    display: none;
-  }
+    li.nav-item {
+    }
 
-  span {
-    margin: auto;
-
-    .user-options {
+    a.nav-link {
+      /*padding: 0rem 3rem 1rem 1rem;
+      position: relative;
+      top: 1.5rem;*/
       color: #d39e00;
+      float: right;
+     /* margin-top: -1%;*/
+    }
+
+    a span {
+      margin: auto;
+
+      .user-options {
+        color: #d39e00;
+      }
+    }
+  }
+
+button {
+  border: none !important;
+  height: 100%;
+  float: right;
+
+    .fa-chevron-circle-down {
+      font-size: 125%;
     }
   }
 }
