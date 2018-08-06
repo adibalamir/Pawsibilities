@@ -2,6 +2,7 @@ class ResultController < ApplicationController
 
   def index
 
+
     @breed_query = Hash.new
 
     first_pet (params[:first_pet])
@@ -9,13 +10,21 @@ class ResultController < ApplicationController
     other_pets(params[:family_members])
     likes_strangers(params[:family_members])
     coat_size(params[:coat_size])
-    pet_size(params[:breed_size])
     activity_level(params[:independence])
     independence(params[:attention])
     noisy(params[:noise_level])
     trainability (params[:moderate])
 
-    @breeds = DogBreedTrait.where(@breed_query)
+    if params[:animal_type] === "Dog"
+      pet_size(params[:breed_size])
+    end
+
+
+    if params[:animal_type] === "Dog"
+      @breeds = DogBreedTrait.where(@breed_query)
+    else
+      @breeds = CatBreedTrait.where(@breed_query)
+    end
 
     breed_array = []
 
@@ -94,17 +103,12 @@ class ResultController < ApplicationController
     end
   end
 
-# ability to walk the pet
-# 4-5 more than 5 hrs with the pet
-# 1-3 less than 5 hrs with the pet
-
-
 def independence (value)
 
   if value === "Curious"
-    @breed_query[:toleratesBeingAlone] = [1, 2, 3]
+    @breed_query[:toleratesBeingAlone] = [2, 3, 4]
   elsif value === "Chilled"
-    @breed_query[:toleratesBeingAlone] = [ 1, 2 ]
+    @breed_query[:toleratesBeingAlone] = [3, 4, 5 ]
   end
 end
 
@@ -112,7 +116,7 @@ end
 def noisy (value)
 
   if value === "Quiet"
-    @breed_query[:barks] = [1, 2, 3]
+    @breed_query[:barks] = [1, 2]
   end
 end
 
