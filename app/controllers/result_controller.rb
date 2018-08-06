@@ -2,6 +2,7 @@ class ResultController < ApplicationController
 
   def index
 
+
     @breed_query = Hash.new
 
     first_pet (params[:first_pet])
@@ -9,13 +10,22 @@ class ResultController < ApplicationController
     other_pets(params[:family_members])
     likes_strangers(params[:family_members])
     coat_size(params[:coat_size])
-    pet_size(params[:breed_size])
+
     activity_level(params[:independence])
     independence(params[:attention])
     noisy(params[:noise_level])
     trainability (params[:moderate])
 
-    @breeds = DogBreedTrait.where(@breed_query)
+    if params[:animal_type] == "Dog"
+      pet_size(params[:breed_size])
+    end
+
+
+    if params[:animal_type] == "Dog"
+      @breeds = DogBreedTrait.where(@breed_query)
+    else
+      @breeds = CatBreedTrait.where(@breed_query)
+    end
 
     breed_array = []
 
