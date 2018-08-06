@@ -5,6 +5,8 @@
 </head>
 <body class="quiz-body">
 
+  <%= render 'layouts/top_nav' %>
+
   <%= image_tag "pet-matcher.jpg", class: "title-image" %>
 
   <h1 class="title">Pet Matcher</h1>
@@ -12,9 +14,6 @@
   <h3 class="subtitle">Answer a few simple questions to find your purrfect pet</h3>
 
   <button type="button" class="btn btn-light btn-lg" id="pet-matcher-start">Start</button>
-
-  <%= render 'layouts/top_nav' %>
-
 
   <div id= "quiz-board">
     <%= form_tag("/result", method: "get") do %>

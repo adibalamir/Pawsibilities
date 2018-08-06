@@ -4,7 +4,7 @@ body.quiz-body {
 
 h3.subtitle {
   color: white;
-  font-size: 2rem;
+  font-size: 2.5vw;
   font-family: "Helvetica";
   font-style: italic;
   font-weight: 400;
@@ -17,6 +17,11 @@ h3.subtitle {
 button#pet-matcher-start {
   position: relative;
   margin-top: 40%;
+  height: 4.5vw;
+  width: auto;
+  font-size: 2vw;
+  padding: 1vw;
+  padding-top: 0.7vw;
 }
 
 div#quiz-board{
