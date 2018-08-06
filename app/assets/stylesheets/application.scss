@@ -15,13 +15,14 @@ body {
   background-color: white;
 }
 
-nav {
-  position: fixed !important;
+nav.navbar {
+  position: sticky;
   background: white;
   width: 100%;
   z-index: 100;
   top: 0;
   height: 7%;
+  padding: 0, 10% !important;
 
   button {
     border: none !important;
@@ -37,11 +38,10 @@ nav {
     float: left;
     font-size: 30px;
     color: #008000 !important;
-    margin-top: -0.5%;
   }
 
   div.navbar-collapse {
-    float: right !important;
+    float: right;
 
     a.nav-link {
       color: #d39e00 !important;
