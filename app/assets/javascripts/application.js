@@ -18,5 +18,15 @@
 //= require_tree .
 //= require match
 //= require search
+//= require cable
+//= require shelters
 
 
+//Making nav bar responsive - work in progress!
+$(document).on('turbolinks:load', function() {
+
+  $(".navbar-toggler").on("click", function() {
+    $(this).siblings("#navbarSupportedContent").slideToggle()
+  })
+
+});
