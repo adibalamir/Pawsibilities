@@ -1,42 +1,42 @@
 require 'roo'
+puts "Let's start dog breed seeding"
 
 data = Roo::Excelx.new('./db/Breed_traits.xlsx')
 
-puts "Let's start dog breed seeding"
-
 DogBreedTrait.destroy_all
 
-symbols = [:breed,
- :adaptability,
- :friendliness,
- :grooming,
- :trainability,
- :activityLevel,
- :goodForApartment,
- :goodForNoviceOwner,
- :sensitivity,
- :toleratesBeingAlone,
- :toleratesCold,
- :toleratesHot,
- :likesFamily,
- :likesKids,
- :likesDogs,
- :likesStrangers,
- :sheds,
- :drools,
- :easyToGroom,
- :potentialForWeightGain,
- :size,
- :easyToTrain,
- :intelligent,
- :likesFetch,
- :preyDrive,
- :barks,
- :wanders,
- :energyLevel,
- :exerciseIntensity,
- :exerciseNeeds,
- :playfulness]
+symbols = [
+  :breed,
+  :adaptability,
+  :friendliness,
+  :grooming,
+  :trainability,
+  :activityLevel,
+  :goodForApartment,
+  :goodForNoviceOwner,
+  :sensitivity,
+  :toleratesBeingAlone,
+  :toleratesCold,
+  :toleratesHot,
+  :likesFamily,
+  :likesKids,
+  :likesDogs,
+  :likesStrangers,
+  :sheds,
+  :drools,
+  :easyToGroom,
+  :potentialForWeightGain,
+  :size,
+  :easyToTrain,
+  :intelligent,
+  :likesFetch,
+  :preyDrive,
+  :barks,
+  :wanders,
+  :energyLevel,
+  :exerciseIntensity,
+  :exerciseNeeds,
+  :playfulness]
 
  dogtraits = []
  @index = 2
@@ -51,22 +51,54 @@ dogtraits.each do |breed|
   DogBreedTrait.create!(breed)
 end
 
-
-
 puts "Seeding for dog traits done!!!"
+
+puts "Seeeding for cat traits-----------------------------------"
+
+cat_excel = Roo::Excelx.new('./db/Cat_traits.xlsx')
+
+cats_key = [
+  :breed,
+  :goodForNoviceOwner,
+  :likesKids,
+  :likesDogs,
+  :likesStrangers,
+  :likesFamily,
+  :sheds,
+  :size,
+  :activityLevel,
+  :toleratesBeingAlone,
+  :barks,
+  :easyToTrain,
+  :cleanliness]
+
+ cat_traits = []
+ @one = 2
+ @fifteen = 15
+
+until @one > @fifteen do
+  cat_traits.push(Hash[cats_key.zip cat_excel.row(@one)])
+  @one += 1
+end
+
+cat_traits.each do |breed|
+  CatBreedTrait.create!(breed)
+end
+
+puts "Cat traits done!"
 
 puts "Seeding Dog Highlights------------------------------------"
 
 doghighlights = []
 @start = 1
-@end = 197
+@final = 198
 
 mypets = Roo::Excelx.new("./db/pets_highlights.xlsx")
 
 key = [:breed, :highlights]
 
 
-until @start > @end do
+until @start > @final do
   doghighlights << Hash[key.zip (mypets.row(@start))]
   @start += 1
 end
@@ -82,15 +114,15 @@ puts "Seeding Cat Highlights------------------------------------"
 
 cathighlights = []
 @start = 1
-@end = 55
+@final = 58
 
-mypets = Roo::Excelx.new("./db/Cat_highlights.xlsx")
+mycats = Roo::Excelx.new("./db/Cat_highlights.xlsx")
 
 key = [:breed, :highlights]
 
 
-until @start > @end do
-  cathighlights << Hash[key.zip (mypets.row(@start))]
+until @start > @final do
+  cathighlights << Hash[key.zip (mycats.row(@start))]
   @start += 1
 end
 
