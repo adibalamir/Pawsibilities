@@ -52,6 +52,10 @@ nav{
       text-align: right;
     }
 
+    a.nav-link:hover {
+      text-decoration: underline;
+    }
+
     span.nav-link {
       color: #d39e00 !important;
       text-align: right;
