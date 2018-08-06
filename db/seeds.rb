@@ -1,7 +1,7 @@
 require 'roo'
 puts "Let's start dog breed seeding"
 
-data = Roo::Excelx.new('./db/Breed_traits.xlsx')
+data = Roo::Excelx.new('./db/Dog_traits.xlsx')
 
 DogBreedTrait.destroy_all
 
@@ -40,7 +40,7 @@ symbols = [
 
  dogtraits = []
  @index = 2
- @last = 200
+ @last = 203
 
 until @index > @last do
   dogtraits.push(Hash[symbols.zip data.row(@index)])
@@ -91,9 +91,9 @@ puts "Seeding Dog Highlights------------------------------------"
 
 doghighlights = []
 @start = 1
-@final = 198
+@final = 199
 
-mypets = Roo::Excelx.new("./db/pets_highlights.xlsx")
+mypets = Roo::Excelx.new("./db/Dog_highlights.xlsx")
 
 key = [:breed, :highlights]
 
