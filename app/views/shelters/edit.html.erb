@@ -17,13 +17,13 @@
       </div>
     <% end %>
       <%= form.label :name %>
-      <%= form.text_field :name, class: "form-input" %>
+      <%= form.text_field :name, class: "form-input" %><br>
       <%= form.label :phone %>
-      <%= form.text_area :phone, class: "form-input" %>
+      <%= form.text_field :phone, class: "form-input" %><br>
       <%= form.label :address %>
-      <%= form.text_area :address, class: "form-input" %>
+      <%= form.text_field :address, class: "form-input" %>
       <div class="form-submit">
-      <%= form.submit %>
+      <%= form.submit "Update Profile" %>
       </div>
 
   <% end %>
