@@ -38,10 +38,15 @@
         <a class="nav-link" href="/login">Login</a>
       </li>
 
-      <li class="nav-item dropdown id="registration-dropdown" role="button">
-        <a class="nav-link" href="/signup" aria-haspopup="true" aria-expanded="false">
+      <li class="nav-item dropdown">
+        <button class="nav-link" id="registration-dropdown" type="button" aria-controls="dropdown-menu" aria-expanded="false">
           Registration
-        </a>
+          <i class="fas fa-chevron-circle-down"></i>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/signup/">Pet Seeker</a>
+          <a class="dropdown-item" href="/signup/pet_owners">Pet Owner</a>
+        </div>
       </li>
 
       <% end %>

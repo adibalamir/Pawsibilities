@@ -64,6 +64,14 @@ nav{
         color: #d39e00;
       }
     }
+
+    button#registration-dropdown {
+      color: #d39e00;
+    }
+
+    button#registration-dropdown:active {
+      border: 0px;
+    }
   }
 }
 

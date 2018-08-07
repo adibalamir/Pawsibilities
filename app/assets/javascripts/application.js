@@ -29,4 +29,8 @@ $(document).on('turbolinks:load', function() {
     $(this).siblings("#navbarSupportedContent").slideToggle()
   })
 
+  $("#registration-dropdown").on("click", function() {
+    $(this).siblings(".dropdown-menu").slideToggle()
+  })
+
 });
