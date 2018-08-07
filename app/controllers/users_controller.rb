@@ -28,9 +28,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect_to '/search'
     else
-      flash[:error] = "An error occured!"
-
-      redirect_to '/signup'
+      redirect_to('/signup', {:flash => {:error => "Another account is using #{user_params[:email]}."}})
     end
 
   end

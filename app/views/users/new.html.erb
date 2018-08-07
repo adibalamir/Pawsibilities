@@ -5,6 +5,8 @@
   <h1>Register for an account!</h1>
   <h2>Creating an account allows you to save your favourite pets</h2>
 
+  <p id="error"><%= flash[:error] %></p>
+
   <%= form_for :user, url: '/users' do |f| %>
 
     Email: <%= f.email_field :email, :required => true, class: "form-input" %><br>

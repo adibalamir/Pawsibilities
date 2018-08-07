@@ -16,8 +16,12 @@
   <div id="all-pets-container">
   <% @pets.each do |pet| %>
   <div class="card" title=<%= pet.name %>>
-      <%= link_to pet do %>
-        <img src=<%= pet.photo %> width="250" height="250"/><br/>
+    <%= link_to pet do %>
+        <% if Shelter.where(shelter_id: pet.shelter_id).where(owner_type: "shelter").size > 0 %>
+          <img src=<%= pet.photo %> width="250" height="250"/><br/>
+        <% else %>
+          <img src=<%= pet.cw_photo %> width="250" height="250"/><br/>
+        <% end %>
       <% end %>
   </div>
    <% end %>

@@ -22,7 +22,7 @@
   </div>
 
     <div class="pet-profile">
-      <% if @shelter.owner_type == nil %>
+      <% if @shelter.owner_type == "shelter" %>
         <img src=<%= @pet.photo %> />
       <% else %>
         <img src=<%= @pet.cw_photo %> />

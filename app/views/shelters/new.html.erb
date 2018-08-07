@@ -4,6 +4,8 @@
 
 <h1>Register for an account!</h1>
 
+ <p id="error"><%= flash[:error] %></p>
+
 <%= form_for :shelter, url: '/shelters' do |f| %>
 
   Name: <%= f.text_field :name, :required => true, class: "form-input" %><br>
