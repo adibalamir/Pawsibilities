@@ -76,6 +76,7 @@
     height: 65vh;
 
     .info-group {
+      margin-top: 5vw;
 
       .info {
         margin: 1.5vw;
@@ -85,14 +86,23 @@
         }
       }
 
-      button.next-page {
+      input#photo-upload {
+        margin-left: 14vw;
+      }
+
+      button.next-page, .submit-pet {
         position: absolute;
         right: 6vw;
       }
 
       button.prev-page {
-        color: pink;
+        position: absolute;
+        left: 42vw;
       }
+    }
+
+    .large-info-group {
+      margin-top: 2vw;
     }
   }
 }

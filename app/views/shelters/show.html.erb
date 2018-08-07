@@ -77,7 +77,7 @@
 
     </article>
 
-    <article class="info-group">
+    <article class="info-group large-info-group">
 
       <div class="info">
         <p>How old are they?</p>
@@ -91,12 +91,12 @@
 
       <div class="info">
         <p>Please upload a photo:</p>
-        <%= f.file_field :cw_photo %>
+        <%= f.file_field :cw_photo, id: "photo-upload" %>
       </div>
 
       <span>
         <button class="prev-page btn btn-light btn-md">PREV</button>
-        <%= f.submit "Submit", class: "btn btn-light btn-md submit" %>
+        <%= f.submit "Submit", class: "btn btn-light btn-md submit-pet" %>
       </span>
 
     </article>
