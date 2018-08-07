@@ -20,8 +20,7 @@ class SheltersController < ApplicationController
       session[:user_id] = @shelter.id
       redirect_to @shelter
     else
-      flash[:error] = "An error occured!"
-
+      flash[:error] = "Another account is using #{shelter_params[:email]}."
       redirect_to '/signup/pet_owners'
     end
   end

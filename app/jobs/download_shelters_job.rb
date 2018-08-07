@@ -15,6 +15,7 @@ class DownloadSheltersJob < ApplicationJob
         latitude: shelter_xml.xpath('latitude/text()').to_s.to_f,
         longitude: shelter_xml.xpath('longitude/text()').to_s.to_f,
         province: shelter_xml.xpath('state/text()').to_s,
+        password: "a",
         owner_type: "shelter"
       }
 
