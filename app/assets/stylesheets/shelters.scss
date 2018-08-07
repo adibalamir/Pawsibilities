@@ -3,9 +3,88 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .profile-grid {
-
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    'a b'
+    'c c';
 }
 
-.pet-form {
+.profile-information {
+  grid-area: a;
+  text-align: left;
+  justify-self: center;
+  margin: 1rem;
+  font-size: 1.5rem;
+}
 
+.form-area {
+  grid-area: b;
+  margin: 1rem;
+  .pet-form {
+    text-align: center;
+    border: 2px solid green;
+    border-radius: 10px;
+    justify-self: center;
+    padding: 1rem;
+    font-size: 1.3rem
+  }
+}
+
+.user-pets {
+  grid-area: c;
+  .owned-pets {
+    text-decoration: none;
+  }
+}
+
+/*----------------- Edit Page -----------------*/
+.edit-profile {
+   width: 500px;
+   height: 500px;
+   margin: -200px auto auto -250px;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+
+   form {
+    color: #008000;
+    font-size: 1.5rem;
+    text-align: left;
+    width: 350px;
+    margin: auto;
+
+    form label {
+      margin-left: 4rem;
+    }
+
+    .form-input {
+    display: block;
+    border: 0px;
+    border-bottom: 2px solid #008000;
+    border-radius: 0;
+    width: 100%;
+    }
+
+    .form-input:focus {
+      outline: none;
+    }
+
+    .form-submit input {
+      border: 2px solid #008000;
+      color: #008000;
+      margin: 2rem 0rem 2rem 8rem;
+    }
+  }
+
+  a.embedded-link {
+    color: #008000;
+  }
+
+  img.login-img {
+    height: 10rem;
+    display: block;
+    margin: auto;
+  }
 }
