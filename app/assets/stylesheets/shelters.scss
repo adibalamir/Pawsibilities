@@ -23,14 +23,16 @@
 .user-pets {
   grid-area: b;
   margin: 1rem;
-  height: 65vh;
-  overflow: scroll;
+
+
 
   .owned-pets {
     text-decoration: none;
     border: 2px solid green;
     border-radius: 10px;
     padding: 2vw 2vw 0 2vw;
+    height: 65vh;
+    overflow: scroll;
 
     .card {
     background: white;
@@ -57,6 +59,7 @@
       top: 0.5rem;
       font-family: "Permanent Marker";
       font-size: 25px;
+      color: black;
     }
   }
 }
@@ -64,13 +67,33 @@
 .form-area {
   grid-area: c;
   margin: 1rem;
+
   .pet-form {
-    text-align: center;
     border: 2px solid green;
     border-radius: 10px;
-    justify-self: center;
     padding: 1rem;
-    font-size: 1.3rem
+    font-size: 2vw;
+    height: 65vh;
+
+    .info-group {
+
+      .info {
+        margin: 1.5vw;
+
+        p {
+          margin: 0.5vh;
+        }
+      }
+
+      button.next-page {
+        position: absolute;
+        right: 6vw;
+      }
+
+      button.prev-page {
+        color: pink;
+      }
+    }
   }
 }
 

@@ -27,20 +27,79 @@
 
 <section class="form-area">
   <h2>Place a pet for adoption.</h2>
+
   <div class="pet-form">
     <%= form_for :pet, url: '/pets' do |f| %>
 
-      Choose your city.<br><%= f.select :city, Pet::CITIES, :prompt => "~Pick your City~" %><br>
-      What type of animal is it?<br><%= f.select :animal_type, Pet::ANIMAL_TYPES, :prompt => "~Pick an Animal_type~" %><br>
-      What breed is it?<br><%= f.select :breed, ["-Select a Breed-"] %><br>
-      Gender?<br><%= f.select :gender, Pet::GENDERS %><br>
-      Do they have a name?<br><%= f.text_field :name, class: "form-input" %><br>
-      What size are they?<br><%= f.select :size, Pet::SIZES, :prompt => "~Pick a Size~" %><br>
-      How old are they?<br><%= f.select :age, Pet::AGES, :prompt => "~Pick an Age~" %><br>
-      Please add a description:<br><%= f.text_area :description %><br>
-      <%= f.file_field :cw_photo %><br>
+    <article class="info-group">
 
-      <%= f.submit "Submit", class: "btn btn-light btn-md submit" %>
+      <div class="info">
+        <p>Choose your city.</p>
+        <%= f.select :city, Pet::CITIES, :prompt => "" %>
+      </div>
+
+      <div class="info">
+        <p>Does the pet have a name?</p>
+        <%= f.text_field :name, class: "form-input" %>
+      </div>
+
+      <div class="info">
+        <p>What type of animal is it?</p>
+        <%= f.select :animal_type, Pet::ANIMAL_TYPES, :prompt => "" %>
+      </div>
+
+      <button class="next-page btn btn-light btn-md">NEXT</button>
+
+    </article>
+
+    <article class="info-group">
+
+      <div class="info">
+        <p>What breed is it?</p>
+        <%= f.select :breed, [""] %>
+      </div>
+
+      <div class="info">
+        <p>Gender?</p>
+        <%= f.select :gender, Pet::GENDERS %>
+      </div>
+
+      <div class="info">
+        <p>What size are they?</p>
+        <%= f.select :size, Pet::SIZES, :prompt => "" %>
+      </div>
+
+      <span>
+        <button class="prev-page btn btn-light btn-md">PREV</button>
+
+        <button class= "next-page btn btn-light btn-md">NEXT</button>
+      </span>
+
+    </article>
+
+    <article class="info-group">
+
+      <div class="info">
+        <p>How old are they?</p>
+        <%= f.select :age, Pet::AGES, :prompt => "" %>
+      </div>
+
+      <div class="info">
+        <p>Please add a description:</p>
+        <%= f.text_area :description %>
+      </div>
+
+      <div class="info">
+        <p>Please upload a photo:</p>
+        <%= f.file_field :cw_photo %>
+      </div>
+
+      <span>
+        <button class="prev-page btn btn-light btn-md">PREV</button>
+        <%= f.submit "Submit", class: "btn btn-light btn-md submit" %>
+      </span>
+
+    </article>
 
     <% end %>
   </div>

@@ -1,5 +1,18 @@
 $(document).on('turbolinks:load', function() {
 
+  //every time the next button is clicked, remove the current panels class of visible and apply it to the next and fade it in.
+  $("button.next-page").on("click", function(e){
+    e.preventDefault();
+    $(this).closest("article").removeClass("visible").hide().next().addClass("visible").fadeIn();
+  });
+
+  // every time the prev button is clicked, remove the current panels class of visible and apply it to the prev and fade it in.
+  $("button.prev-page").on("click", function(e){
+    e.preventDefault();
+    $(this).closest("article").removeClass("visible").hide().prev().addClass("visible").fadeIn();
+  });
+
+  //When an animal type is chosen, the available breeds for that animal type become available.
   $("#pet_animal_type").on('change', function(){
     var $animal_type = $(this).val()
     var $breed = $("#pet_breed")
