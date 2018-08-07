@@ -1,25 +1,42 @@
-// Place all the styles related to the pet controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
 
-/*.pet-grid {
+.pet-grid {
   display: grid;
-  grid-template-columns: 40rem 20rem;
-  grid-template-rows: auto auto auto auto;
-  }*/
+  grid-template-columns: 0.15fr 30px minmax(250px, 1fr) minmax(250px, 1fr) 30px 0.15fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    '. . like . . .'
+    '. . img shlter . .'
+    '. . info shlter . .'
+    '. desc desc desc . .'
+    '. e e e e .';
+  }
 
-  .container {
-    padding: 0px;
+  .pet-like {
+    grid-area: like;
   }
 
   .pet-profile {
-    grid-column: 1;
-    grid-row: 1;
-    align-self: center;
-    place-self: end;
-    margin: 10px 10px 10px 0px;
+    grid-area: img;
+    place-self: center;
     background: #f8f8f8;
-    margin: 0 35px 30px;
+    margin-top: -1rem;
     padding: 2% 2% 2% 2%;
     text-align: center;
     text-decoration: none;
@@ -28,54 +45,51 @@
     box-shadow: 0 4px 6px rgba(0,0,0,.3);
     border: 1px hidden;
     overflow: hidden;
-    max-width: 500px;
-    margin-left: 125px;
     h1 {
-      font-size: 40px;
+      font-size: 3.2rem;
       font-family: "Permanent Marker";
     }
     img {
       max-height: 400px;
       width: auto;
-      min-width: 300px;
     }
   }
 
   .pet-info {
-    grid-column: 2;
-    grid-row: 1;
+    grid-area: info;
     align-self: start;
-    place-self: center;
+    justify-self: center;
     border-radius: 10px;
+    margin-left: 1rem;
     padding: 3%;
     text-align: left;
     z-index: 0;
     overflow: hidden;
-    width: 250px;
-    font-size: 30px;
+    width: auto;
+    font-size: 1.5rem;
   }
 
   .pet-description {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 3;
+    grid-area: desc;
     align-self: start;
-    border: 1px solid #97f697;
-    border-radius: 10px;
-    background: white;
-    padding: 2%;
     z-index: 0;
     position: relative;
-    margin: 10px;
+    margin: 1rem;
     text-align: left;
     line-height: 2rem;
+    width: 100%;
+    .pet-dc {
+      border: 1px solid #97f697;
+      border-radius: 10px;
+      padding: 1% 2% 2% 2%;
+    }
+    h2 {
+      margin-left: 1rem;
+    }
   }
 
   .shelter-info {
-    grid-column: 2;
-    grid-row-start: 2;
-    grid-row-end: 3;
+    grid-area: shlter;
     place-self: center;
     border: 1px solid #97f697;
     border-radius: 10px;
@@ -83,9 +97,8 @@
     padding: 2%;
     z-index: 0;
     position: relative;
-    margin: 10px;
-    max-width: 300px;
-    .shelter-style {
+    margin: 1rem 2rem 1rem 1rem;
+    .shelter-icon {
       width: 50px;
       height: 50px;
     }
@@ -104,44 +117,44 @@
     }
   }
 
-
-
+/* part of shelter info */
 .pet-map {
-  min-width: 270px;
+  padding: 1rem 0rem 0.8rem 0rem;
 }
 
-
+/* part of shelter info */
 .contact-form {
   text-align: left;
   padding: 10px;
 }
 
 .breed-info {
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row: 4;
-  border: 1px solid #97f697;
-  border-radius: 10px;
+  grid-area: e;
+
   background: white;
   margin: 10px;
-  padding: 2%;
   text-align: left;
   line-height: 2rem;
+  .breed-dc {
+    border: 1px solid #97f697;
+    border-radius: 10px;
+    padding: 1% 2% 2% 2%;
+  }
+  h2 {
+    margin-left: 1rem;
+  }
 }
 
 i.fa-heart {
-  position: absolute;
-  right: 38%;
   margin-top: 1rem;
   font-size: 3rem;
   z-index: 1;
 }
 
 #to_unlike {
-  color:  #ffb3c6;
+  color:  #ff5b84;
 }
 
 #to_like {
   color: grey;
-
 }
