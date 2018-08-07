@@ -5,116 +5,119 @@
 </head>
 <body>
   <%= render 'layouts/top_nav' %>
-  <div>
+
+
+
+
+<section class="pet-grid">
+
+  <div class="pet-like">
     <% if current_user %>
     <% if @liked.exists? %>
-    <%= link_to '<i id= "to_unlike" class="fas fa-heart"></i>'.html_safe, user_pet_like_path(current_user, @pet.id), method: :delete %>
+      <%= link_to '<i id= "to_unlike" class="fas fa-heart"></i>'.html_safe, user_pet_like_path(current_user, @pet.id), method: :delete %>
     <% else %>
-
-    <%= link_to '<i id= "to_like" class="fas fa-heart"></i>'.html_safe, user_pet_likes_path(current_user, @pet.id), method: :post, remote: true %>
+      <%= link_to '<i id= "to_like" class="fas fa-heart"></i>'.html_safe, user_pet_likes_path(current_user, @pet.id), method: :post, remote: true %>
     <% end %>
     <% else %>
-
-    <i id = "login" class="fas fa-heart"></i>
-
-    <p>LOGIN TO LIKE THIS ADORABLE CREATURE</p>
-
+      <i id = "login" class="fas fa-heart"></i>
+      <p>LOGIN TO LIKE THIS ADORABLE CREATURE</p>
     <% end %>
   </div>
 
-  <section class="container">
-
-    <div class="row">
-      <div class="pet-profile col-sm">
+    <div class="pet-profile">
+      <% if @shelter.owner_type == nil %>
         <img src=<%= @pet.photo %> />
+      <% else %>
+        <img src=<%= @pet.cw_photo %> />
+      <% end %>
         <h1> <%= @pet.name %> </h1>
-      </div>
+    </div>
 
-      <div class="pet-info col-sm">
-        <dd><strong>Breed</strong>: <%= @pet.breed %></dd>
-        <dd><strong>Age</strong>: <%= @pet.age %></dd>
-        <dd><strong>Size</strong>: <%= @pet.size %></dd>
-        <dd><strong>Gender</strong>: <%= @pet.gender %></dd>
-        <dd><strong>Location</strong>: <%= @pet.city %></dd>
-      </div>
-    </div> <!-- row-end -->
+    <div class="pet-info">
+      <dd><strong>Breed</strong>: <%= @pet.breed %></dd>
+      <dd><strong>Age</strong>: <%= @pet.age %></dd>
+      <dd><strong>Gender</strong>: <%= @pet.gender %></dd>
+      <dd><strong>Size</strong>: <%= @pet.size %></dd>
+    </div>
 
-    <div class="row">
-      <div class="pet-description col-lg">
-        <% if @pet.petfinder_id != nil %>
+    <div class="pet-description">
+      <% if @pet.petfinder_id != nil %>
         <h2>Description</h2>
-        <dd><%= (@pet.description.slice(9, @pet.description.length - 12)).gsub(/[\u0080-\u00ff]/, "") %></dd>
-        <% else %>
+        <dd class="pet-dc"><%= (@pet.description.slice(9, @pet.description.length - 12)).gsub(/[\u0080-\u00ff]/, "") %></dd>
+      <% else %>
         <h2>Description</h2>
-        <dd><%= @pet.description %></dd>
-        <% end %>
-      </div>
+        <dd class="pet-dc"><%= @pet.description %></dd>
+      <% end %>
+    </div>
 
-      <div class="shelter-info col-sm">
-        <%= image_tag("dog-house.png", :alt => "shelter-icon", :class => "shelter-style") %>
+    <div class="shelter-info">
+      <%= image_tag("dog-house.png", :alt => "shelter-icon", :class => "shelter-icon") %>
 
-        <% if !@shelter.name.blank? %>
-        <dd><strong><%= @shelter.name %></strong></dd>
-        <% end %>
-
-        <% if !@shelter.phone.blank? %>
-        <dd><strong>Phone</strong>: <%= @shelter.phone %></dd>
-        <% end %>
-
-        <% if !@shelter.email.blank? %>
-        <dd><strong>Email</strong>: <%= @shelter.email %></dd>
-        <% end %>
-
-        <% if !@shelter.address.blank? %>
-        <dd><strong>Address</strong>: <%= @shelter.address %></dd>
-        <% end %>
-
-        <div class="pet-map">
-          <% if @shelter.address == "" %>
-          <iframe
-          width="250"
-          height="250"
-          frameborder="0" style="border:0"
-          src="https://www.google.com/maps/embed/v1/search?key=AIzaSyDXLuvEg0vlb2FRIcokWzNJwh5RdZpVQ6w
-          &q=<%= @shelter.latitude %>,<%= @shelter.longitude %>
-          &zoom=15" allowfullscreen>
-        </iframe>
+      <% if !@shelter.name.blank? %>
+        <% if @shelter.owner_type == nil %>
+          <dd><strong>Shelter: <%= @shelter.name %></strong></dd>
         <% else %>
-        <iframe
-        width="250"
+          <dd><strong>Owner: <%= @shelter.name %></strong></dd>
+        <% end %>
+      <% end %>
+
+      <% if !@shelter.phone.blank? %>
+      <dd><strong>Phone</strong>: <%= @shelter.phone %></dd>
+      <% end %>
+
+      <% if !@shelter.email.blank? %>
+      <dd><strong>Email</strong>: <%= @shelter.email %></dd>
+      <% end %>
+
+      <% if !@shelter.address.blank? %>
+      <dd><strong>Address</strong>: <%= @shelter.address %></dd>
+      <% end %>
+
+    <div class="pet-map">
+      <% if @shelter.address == "" %>
+      <iframe
+        width="320"
         height="250"
         frameborder="0" style="border:0"
-        src="https://www.google.com/maps/embed/v1/search?key=AIzaSyDXLuvEg0vlb2FRIcokWzNJwh5RdZpVQ6w
-        &q=<%= @shelter.address %>
+        src="https://www.google.com/maps/embed/v1/search?key=AIzaSyC2CIIDHpL8igUMGZz7_94YqybtE-5PnjU
+        &q=<%= @shelter.latitude %>,<%= @shelter.longitude %>
         &zoom=15" allowfullscreen>
       </iframe>
-      <% end %>
-    </div>
-
-    <hr>
-
-    <div class="contact-form">
-      <h3>Contact:</h3>
-      <%= form_for :contact_shelter, url: '/mail', html: {:id => "contact-submit"} do |f| %>
-      Your Email: <%= f.email_field :email, :placeholder => "example@email.com", :required => true %><br>
-      Subject: <%= f.text_field :subject, :placeholder => "e.g. Adopting #{@pet.name}", :required => true %><br>
-      Message: <%= f.text_area :body, :placeholder => "Your message here.", :required => true %>
-      <%= f.submit "Send", :class => "contact-submit" %>
-      <% end %>
-    </div>
+      <% else %>
+      <iframe
+        width="320"
+        height="250"
+        frameborder="0" style="border:0"
+        src="https://www.google.com/maps/embed/v1/search?key=AIzaSyC2CIIDHpL8igUMGZz7_94YqybtE-5PnjU
+        &q=<%= @shelter.address %>
+        &zoom=15" allowfullscreen>
+    </iframe>
+    <% end %>
   </div>
-</div> <!-- row-end -->
 
-<div class="row">
-  <div class="breed-info">
-    <% if @highlights %>
-    <h2>Breed Information: <%=@pet.breed%></h2>
+  <hr>
+
+  <div class="contact-form">
+    <h3>Contact:</h3>
+    <%= form_for :contact_shelter, url: '/mail', html: {:id => "contact-submit"} do |f| %>
+    Your Email: <%= f.email_field :email, :placeholder => "example@email.com", :required => true %><br>
+    Subject: <%= f.text_field :subject, :placeholder => "e.g. Adopting #{@pet.name}", :required => true %><br>
+    Message: <%= f.text_area :body, :placeholder => "Your message here.", :required => true %>
+    <%= f.submit "Send", :class => "contact-submit" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="breed-info">
+  <% if @highlights %>
+  <h2>Breed Information: <%=@pet.breed%></h2>
+  <div class="breed-dc">
     <% @highlights.each do |highlight| %>
     <dd><%= ((highlight).gsub(/[\u0080-\u00ff]/, "")).gsub("€", "") %></dd>
     <% end %>
-    <% end %>
   </div>
-</div><!-- row-end -->
+  <% end %>
+</div>
 
 </section>
 
