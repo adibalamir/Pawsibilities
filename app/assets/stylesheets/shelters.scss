@@ -28,7 +28,14 @@
   grid-area: b;
   margin: 1rem;
 
+  h2{
+    margin-bottom: 0.7rem;
+  }
 
+  p {
+    font-size: 1.3rem;
+    font-style: italic;
+  }
 
   .owned-pets {
     text-decoration: none;
@@ -73,12 +80,32 @@
   grid-area: c;
   margin: 1rem;
 
+  h2 {
+    margin-bottom: 0.7rem;
+  }
+
   .pet-form {
     border: 2px solid green;
     border-radius: 10px;
     padding: 1rem;
     font-size: 1.9vw;
     height: 65vh;
+
+    input {
+      margin-top: 0.15rem;
+      border: none;
+      /*overflow: auto;*/
+      outline: none;
+      border-bottom: 1.5px solid #008000;
+    }
+
+    .submit-pet {
+      border: 1px solid #008000;
+    }
+
+    #too-many {
+      margin-top: 2vw;
+    }
 
     .info-group {
       margin-top: 5vw;
@@ -93,6 +120,8 @@
 
       input#photo-upload {
         margin-left: 14vw;
+        border: none;
+        font-size: 1rem;
       }
 
       button.next-page, .submit-pet {

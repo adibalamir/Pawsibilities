@@ -14,12 +14,16 @@
 <section class="user-pets">
   <h2>Your pets</h2>
   <div class="owned-pets">
-    <% Pet.where(shelter_id: @shelter.shelter_id).each do |pet| %>
-      <%= link_to pet do %>
-        <div class="card" title=<%= pet.name %>>
-          <img src=<%= pet.cw_photo %> width="200" height="200"/><br/>
-        </div>
+    <% if Pet.where(shelter_id: @shelter.shelter_id).size > 0 %>
+      <% Pet.where(shelter_id: @shelter.shelter_id).each do |pet| %>
+        <%= link_to pet do %>
+          <div class="card" title=<%= pet.name %>>
+            <img src=<%= pet.cw_photo %> width="200" height="200"/><br/>
+          </div>
+        <% end %>
       <% end %>
+    <% else %>
+      <p>You haven't added any pets.</p>
     <% end %>
   </div>
 </section>
@@ -52,7 +56,7 @@
 
     </article>
 
-    <article class="info-group">
+    <article id="too-many" class="info-group">
 
       <div class="info">
         <p>What breed is it?</p>
@@ -69,6 +73,11 @@
         <%= f.select :size, Pet::SIZES, :prompt => "" %>
       </div>
 
+      <div class="info">
+        <p>How old are they?</p>
+        <%= f.select :age, Pet::AGES, :prompt => "" %>
+      </div>
+
       <span>
         <button class="prev-page btn btn-light btn-md">PREV</button>
 
@@ -79,10 +88,6 @@
 
     <article class="info-group large-info-group">
 
-      <div class="info">
-        <p>How old are they?</p>
-        <%= f.select :age, Pet::AGES, :prompt => "" %>
-      </div>
 
       <div class="info">
         <p>Please add a description:</p>
