@@ -1,11 +1,5 @@
 $(document).on('turbolinks:load', function() {
 
-  $('.pet-form').hide()
-
-  $('.show-form').on('click', function() {
-    $('.pet-form').toggle()
-  });
-
   $("#pet_animal_type").on('change', function(){
     var $animal_type = $(this).val()
     var $breed = $("#pet_breed")

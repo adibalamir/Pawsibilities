@@ -26,9 +26,8 @@
 
 
 <section class="form-area">
-  <button class="show-form">Add Pet</button>
+  <h2>Place a pet for adoption.</h2>
   <div class="pet-form">
-    Place a pet for adoption.
     <%= form_for :pet, url: '/pets' do |f| %>
 
       Choose your city.<br><%= f.select :city, Pet::CITIES, :prompt => "~Pick your City~" %><br>
