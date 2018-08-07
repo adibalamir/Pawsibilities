@@ -22,7 +22,7 @@
 //= require shelters
 
 
-//Making nav bar responsive - work in progress!
+//Main dropdown on responsive nav bar
 $(document).on('turbolinks:load', function() {
 
   $(".navbar-toggler").on("click", function() {
