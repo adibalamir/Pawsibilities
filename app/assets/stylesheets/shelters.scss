@@ -7,8 +7,8 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
   grid-template-areas:
-    'a b'
-    'c c';
+    'a a a'
+    'b c c';
 }
 
 .profile-information {
@@ -16,11 +16,19 @@
   text-align: left;
   justify-self: center;
   margin: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.6vw;
+  display: inline-flex;
+}
+
+.user-pets {
+  grid-area: b;
+  .owned-pets {
+    text-decoration: none;
+  }
 }
 
 .form-area {
-  grid-area: b;
+  grid-area: c;
   margin: 1rem;
   .pet-form {
     text-align: center;
@@ -29,13 +37,6 @@
     justify-self: center;
     padding: 1rem;
     font-size: 1.3rem
-  }
-}
-
-.user-pets {
-  grid-area: c;
-  .owned-pets {
-    text-decoration: none;
   }
 }
 

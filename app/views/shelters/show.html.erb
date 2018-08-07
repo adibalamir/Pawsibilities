@@ -3,12 +3,26 @@
 <main class="profile-grid">
 
 <div class="profile-information">
-  <dd>Name: <%= @shelter.name %></dd>
-  <dd>Email: <%= @shelter.email %></dd>
-  <dd>Phone: <%= @shelter.phone %></dd>
-  <dd>Address: <%= @shelter.address %></dd>
+  <p><%= @shelter.name %> &ensp; | &ensp;
+  <%= @shelter.email %> &ensp; | &ensp;
+  <%= @shelter.phone %> &ensp; | &ensp;
+  <%= @shelter.address %> &ensp; | &ensp; </p>
   <%= link_to 'Edit Profile', edit_shelter_path(@shelter) %>
 </div>
+
+
+<section class="user-pets">
+  <h2>Your pets</h2>
+  <div class="owned-pets">
+    <% Pet.where(shelter_id: @shelter.shelter_id).each do |pet| %>
+      <%= link_to pet do %>
+      <p><%= pet.name %></p>
+      <img src=<%= pet.cw_photo %> width="250" height="250"/><br/>
+      <% end %>
+    <% end %>
+  </div>
+</section>
+
 
 <section class="form-area">
   <button class="show-form">Add Pet</button>
@@ -28,21 +42,6 @@
 
       <%= f.submit "Submit", class: "btn btn-light btn-md submit" %>
 
-    <% end %>
-  </div>
-</section>
-
-</section>
-
-
-<section class="user-pets">
-  <h2>Your pets</h2>
-  <div class="owned-pets">
-    <% Pet.where(shelter_id: @shelter.shelter_id).each do |pet| %>
-      <%= link_to pet do %>
-      <p><%= pet.name %></p>
-      <img src=<%= pet.cw_photo %> width="250" height="250"/><br/>
-      <% end %>
     <% end %>
   </div>
 </section>
