@@ -28,7 +28,7 @@
   grid-area: b;
   margin: 1rem;
 
-  h2{
+  h2 {
     margin-bottom: 0.7rem;
   }
 
@@ -87,7 +87,7 @@
     border: 2px solid green;
     border-radius: 10px;
     padding: 1rem;
-    font-size: 1.9vw;
+    font-size: 1.5vw;
     height: 65vh;
 
     input {
@@ -98,16 +98,22 @@
       border-bottom: 1.5px solid #008000;
     }
 
+    textarea {
+      width: 500px;
+      height: 150px;
+      border: 1px solid black;
+    }
+
     .submit-pet {
       border: 1px solid #008000;
     }
 
     #too-many {
-      margin-top: 2vw;
+      margin-top: 1vw;
     }
 
     .info-group {
-      margin-top: 5vw;
+      margin-top: 4vw;
 
       .info {
         margin: 1.5vw;
