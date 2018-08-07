@@ -16,8 +16,9 @@
   <div class="owned-pets">
     <% Pet.where(shelter_id: @shelter.shelter_id).each do |pet| %>
       <%= link_to pet do %>
-      <p><%= pet.name %></p>
-      <img src=<%= pet.cw_photo %> width="250" height="250"/><br/>
+        <div class="card" title=<%= pet.name %>>
+          <img src=<%= pet.cw_photo %> width="200" height="200"/><br/>
+        </div>
       <% end %>
     <% end %>
   </div>
