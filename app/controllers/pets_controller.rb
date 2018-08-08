@@ -23,6 +23,7 @@ class PetsController < ApplicationController
   end
 
   def show
+
     @pet = Pet.find params[:id]
     @liked = LikePet.where(user_id: current_user, pet_id: @pet.id)
 
