@@ -1,6 +1,6 @@
-// Place all the styles related to the shelters controller here.
+/*// Place all the styles related to the shelters controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// You can use Sass (SCSS) here: http://sass-lang.com/*/
 
 .profile-grid {
   display: grid;
@@ -198,3 +198,46 @@
     margin: auto;
   }
 }
+
+/*-------Registration (most is inherited from "/users.scss"-------*/
+
+#shelter-registration {
+   width: 500px;
+   height: 500px;
+   margin: -260px auto auto -250px;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   display: inline-block;
+
+   #shelter_form {
+    color: #008000;
+    font-size: 1rem;
+    text-align: left;
+    width: 350px;
+    margin: auto;
+  }
+
+  img.shelter-registration-img {
+    position: absolute;
+    height: 12rem;
+    display: inline-block;
+    right: -21rem;
+    bottom: -5rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
