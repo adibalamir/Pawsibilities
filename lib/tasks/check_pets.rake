@@ -9,7 +9,7 @@ task :mail_check => :environment do
       uri = URI(user.query)
       res = Net::HTTP.get_response(uri)
       pets_count = res.read_body.to_i
-      if pets_count == 0
+      if pets_count > 0
         UserNotificationMailer.notification(user.id).deliver_now
         puts "Email sent."
       end
