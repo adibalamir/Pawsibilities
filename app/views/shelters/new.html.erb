@@ -1,12 +1,13 @@
 <%= render 'layouts/top_nav' %>
 
-<div class="registration">
+<div class="registration" id="shelter-registration">
 
 <h1>Register for an account!</h1>
+<h2>Registering for an account allows you to post pets for adoption.</h2>
 
  <p id="error"><%= flash[:error] %></p>
 
-<%= form_for :shelter, url: '/shelters' do |f| %>
+<%= form_for :shelter, url: '/shelters', html: {id: :shelter_form } do |f| %>
 
   Name: <%= f.text_field :name, :required => true, class: "form-input" %><br>
   Email: <%= f.email_field :email, :required => true, class: "form-input" %><br>
