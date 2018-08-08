@@ -235,9 +235,11 @@
 <%= submit_tag("Search", class: "btn btn-light dropdown") %>
 <% end %>
 
+<p class="pet-count">Found <b><%= @pets.count %></b> matches.</p>
+
 <% if params[:animal_type] != nil %>
 <div>
-  <p class="pet-count">Found <b><%= @pets.count %></b> matches.</p>
+
   <% if @pets.count == 0 %>
   <%= render 'search/user_form' %>
   <% end %>
