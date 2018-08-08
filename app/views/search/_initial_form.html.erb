@@ -1,241 +1,247 @@
 <%= form_tag("/search", method: "get", remote: true, class: 'search-form') do %>
 
-    <div class="dropdown">
-      <button type=button class="btn btn-light dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Animal Type
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"">
-          <% animal_types = ["Dog", "Cat", "Rabbit", "Reptile", "Horse", "Barnyard"] %>
-          <% animal_types.each do |animal_type| %>
-            <div class="dropdown-item">
-            <%= radio_button_tag("animal_type", value = animal_type, params[:animal_type] == animal_type ? params[:animal_type] : nil) %>
-            <%= label_tag(:animal_type, animal_type) %>
-            </div>
-          <% end %>
-          <div class="dropdown-item">
-          <%= radio_button_tag("animal_type", "Small &amp; Furry", params[:animal_type] == "Small &amp; Furry" ? params[:animal_type] : nil) %>
-          <%= label_tag "Small and Furry" %>
-          </div>
-      </div>
+<div class="dropdown">
+  <button type=button class="btn btn-light dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Animal Type
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"">
+    <% animal_types = ["Dog", "Cat", "Rabbit", "Reptile", "Horse", "Barnyard"] %>
+    <% animal_types.each do |animal_type| %>
+    <div class="dropdown-item">
+      <%= radio_button_tag("animal_type", value = animal_type, params[:animal_type] == animal_type ? params[:animal_type] : nil) %>
+      <%= label_tag(:animal_type, animal_type) %>
     </div>
+    <% end %>
+    <div class="dropdown-item">
+      <%= radio_button_tag("animal_type", "Small &amp; Furry", params[:animal_type] == "Small &amp; Furry" ? params[:animal_type] : nil) %>
+      <%= label_tag "Small and Furry" %>
+    </div>
+  </div>
+</div>
 
 
 <div class="dropdown">
-      <button type=button class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        City
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"">
-          <% cities = ["Ajax", "Courtice", "Pickering", "Oshawa", "Port Perry", "Bowmanville", "Ballantree", "Markham", "Uxbridge", "Scarborough", "Toronto", "Richmond Hill",  "Vaughan", "Newmarket", "Pefferlaw", "Lindsay", "Port Hope", "Etobicoke", "Omemee", "Whitby", "York", "Zephyr"] %>
-          <% cities.sort_by! {|word| word} %>
-          <% cities.each do |city| %>
-          <div class="dropdown-item">
-            <%= check_box_tag("city[]", city, @selected_cities.include?(city)) %>
-            <%= label_tag(city) %>
-          </div>
-          <% end %>
-      </div>
+  <button type=button class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    City
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"">
+    <% cities = ["Ajax", "Courtice", "Pickering", "Oshawa", "Port Perry", "Bowmanville", "Ballantree", "Markham", "Uxbridge", "Scarborough", "Toronto", "Richmond Hill",  "Vaughan", "Newmarket", "Pefferlaw", "Lindsay", "Port Hope", "Etobicoke", "Omemee", "Whitby", "York", "Zephyr"] %>
+    <% cities.sort_by! {|word| word} %>
+    <% cities.each do |city| %>
+    <div class="dropdown-item">
+      <%= check_box_tag("city[]", city, @selected_cities.include?(city)) %>
+      <%= label_tag(city) %>
     </div>
+    <% end %>
+  </div>
+</div>
 
 
-  <% if params[:animal_type] %>
-    <div class="dropdown">
-      <button type=button class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Age
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"">
-        <% ages = ["Baby", "Young", "Adult", "Senior"] %>
-        <% ages.each do |age| %>
-        <div class="dropdown-item">
-          <%= check_box_tag("age[]", value = age, @selected_ages.include?(age)) %>
-          <%= label_tag(age) %> <br/>
-        </div>
-        <% end %>
-      </div>
+<% if params[:animal_type] %>
+<div class="dropdown">
+  <button type=button class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Age
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"">
+    <% ages = ["Baby", "Young", "Adult", "Senior"] %>
+    <% ages.each do |age| %>
+    <div class="dropdown-item">
+      <%= check_box_tag("age[]", value = age, @selected_ages.include?(age)) %>
+      <%= label_tag(age) %> <br/>
     </div>
+    <% end %>
+  </div>
+</div>
 
 
-    <div class="dropdown">
-      <button type=button class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Size
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"">
-        <% sizes = ["S", "M", "L", "XL"] %>
-        <% sizes.each do |size| %>
-        <div class="dropdown-item">
-          <%= check_box_tag("size[]", value = size, @selected_sizes.include?(size)) %>
-          <%= label_tag(size) %> <br/>
-        </div>
-        <% end %>
-      </div>
+<div class="dropdown">
+  <button type=button class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Size
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"">
+    <% sizes = ["S", "M", "L", "XL"] %>
+    <% sizes.each do |size| %>
+    <div class="dropdown-item">
+      <%= check_box_tag("size[]", value = size, @selected_sizes.include?(size)) %>
+      <%= label_tag(size) %> <br/>
     </div>
+    <% end %>
+  </div>
+</div>
 
 
-    <div class="dropdown">
-      <button type=button class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Gender
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"">
-        <% genders = ["M", "F"] %>
-        <% genders.each do |gender| %>
-        <div class="dropdown-item">
-          <%= check_box_tag("gender[]", value = gender, @selected_genders.include?(gender)) %>
-          <%= label_tag(gender) %> <br/>
-        </div>
-        <% end %>
-      </div>
+<div class="dropdown">
+  <button type=button class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Gender
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"">
+    <% genders = ["M", "F"] %>
+    <% genders.each do |gender| %>
+    <div class="dropdown-item">
+      <%= check_box_tag("gender[]", value = gender, @selected_genders.include?(gender)) %>
+      <%= label_tag(gender) %> <br/>
     </div>
+    <% end %>
+  </div>
+</div>
 
 
-  <% if params[:animal_type] == "Dog" %>
+<% if params[:animal_type] == "Dog" %>
 
-    <div class="dropdown">
-      <button type=button class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Breed
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <% breeds = Pet::DOG_BREEDS %>
-        <% breeds.each do |breed| %>
-        <div class="dropdown-item">
-          <%= check_box_tag("breed[]", value = breed, @selected_breeds.include?(breed)) %>
-          <%= label_tag(breed) %> <br/>
-        </div>
-        <% end %>
-      </div>
+<div class="dropdown">
+  <button type=button class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Breed
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <% breeds = Pet::DOG_BREEDS %>
+    <% breeds.each do |breed| %>
+    <div class="dropdown-item">
+      <%= check_box_tag("breed[]", value = breed, @selected_breeds.include?(breed)) %>
+      <%= label_tag(breed) %> <br/>
     </div>
+    <% end %>
+  </div>
+</div>
 
-  <% end %>
+<% end %>
 
 
-  <% if params[:animal_type] == "Cat" %>
+<% if params[:animal_type] == "Cat" %>
 
-    <div class="dropdown">
-      <button type=button class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Breed
-      </button>
+<div class="dropdown">
+  <button type=button class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Breed
+  </button>
 
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <% breeds = Pet::CAT_BREEDS %>
-        <% breeds.each do |breed| %>
-          <div class="dropdown-item">
-          <%= check_box_tag("breed[]", value = breed, @selected_breeds.include?(breed)) %>
-          <%= label_tag(breed) %> <br/>
-          </div>
-        <% end %>
-      </div>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <% breeds = Pet::CAT_BREEDS %>
+    <% breeds.each do |breed| %>
+    <div class="dropdown-item">
+      <%= check_box_tag("breed[]", value = breed, @selected_breeds.include?(breed)) %>
+      <%= label_tag(breed) %> <br/>
     </div>
+    <% end %>
+  </div>
+</div>
 
-  <% end %>
+<% end %>
 
 
-  <% if params[:animal_type] == "Rabbit" %>
+<% if params[:animal_type] == "Rabbit" %>
 
-  <div class="dropdown">
-      <button type=button class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Breed
-      </button>
+<div class="dropdown">
+  <button type=button class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Breed
+  </button>
 
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <% breeds = Pet::RABBIT_BREEDS %>
-      <% breeds.each do |breed| %>
-        <div class="dropdown-item">
-          <%= check_box_tag("breed[]", value = breed, @selected_breeds.include?(breed)) %>
-          <%= label_tag(breed) %> <br/>
-        </div>
-        <% end %>
-      </div>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <% breeds = Pet::RABBIT_BREEDS %>
+    <% breeds.each do |breed| %>
+    <div class="dropdown-item">
+      <%= check_box_tag("breed[]", value = breed, @selected_breeds.include?(breed)) %>
+      <%= label_tag(breed) %> <br/>
     </div>
+    <% end %>
+  </div>
+</div>
 
-  <% end %>
+<% end %>
 
 
-  <% if params[:animal_type] == "Small &amp; Furry" %>
+<% if params[:animal_type] == "Small &amp; Furry" %>
 
-    <div class="dropdown">
-      <button type=button class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Breed
-      </button>
+<div class="dropdown">
+  <button type=button class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Breed
+  </button>
 
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <% breeds = Pet::SMALL_AND_FURRY %>
-      <% breeds.each do |breed| %>
-        <div class="dropdown-item">
-          <%= check_box_tag("breed[]", value = breed, @selected_breeds.include?(breed)) %>
-          <%= label_tag(breed) %> <br/>
-        </div>
-        <% end %>
-      </div>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <% breeds = Pet::SMALL_AND_FURRY %>
+    <% breeds.each do |breed| %>
+    <div class="dropdown-item">
+      <%= check_box_tag("breed[]", value = breed, @selected_breeds.include?(breed)) %>
+      <%= label_tag(breed) %> <br/>
     </div>
+    <% end %>
+  </div>
+</div>
 
-  <% end %>
+<% end %>
 
 
-  <% if params[:animal_type] == "Barnyard" %>
+<% if params[:animal_type] == "Barnyard" %>
 
-  <div class="dropdown">
-      <button type=button class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Breed
-      </button>
+<div class="dropdown">
+  <button type=button class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Breed
+  </button>
 
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <% breeds = Pet::BARNYARD_BREEDS %>
-      <% breeds.each do |breed| %>
-        <div class="dropdown-item">
-          <%= check_box_tag("breed[]", value = breed, @selected_breeds.include?(breed)) %>
-          <%= label_tag(breed) %> <br/>
-        </div>
-        <% end %>
-      </div>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <% breeds = Pet::BARNYARD_BREEDS %>
+    <% breeds.each do |breed| %>
+    <div class="dropdown-item">
+      <%= check_box_tag("breed[]", value = breed, @selected_breeds.include?(breed)) %>
+      <%= label_tag(breed) %> <br/>
     </div>
+    <% end %>
+  </div>
+</div>
 
-  <% end %>
+<% end %>
 
 
-  <% if params[:animal_type] == "Horse" %>
+<% if params[:animal_type] == "Horse" %>
 
-  <div class="dropdown">
-      <button type=button class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Breed
-      </button>
+<div class="dropdown">
+  <button type=button class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Breed
+  </button>
 
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <% breeds = Pet::HORSE_BREEDS %>
-      <% breeds.each do |breed| %>
-        <div class="dropdown-item">
-          <%= check_box_tag("breed[]", value = breed, @selected_breeds.include?(breed)) %>
-          <%= label_tag(breed) %> <br/>
-        </div>
-        <% end %>
-      </div>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <% breeds = Pet::HORSE_BREEDS %>
+    <% breeds.each do |breed| %>
+    <div class="dropdown-item">
+      <%= check_box_tag("breed[]", value = breed, @selected_breeds.include?(breed)) %>
+      <%= label_tag(breed) %> <br/>
     </div>
+    <% end %>
+  </div>
+</div>
 
-  <% end %>
+<% end %>
 
 
-  <% if params[:animal_type] == "Reptile" %>
+<% if params[:animal_type] == "Reptile" %>
 
-  <div class="dropdown">
-      <button type=button class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Breed
-      </button>
+<div class="dropdown">
+  <button type=button class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Breed
+  </button>
 
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <% breeds = Pet::REPTILE_BREEDS %>
-      <% breeds.each do |breed| %>
-        <div class="dropdown-item">
-          <%= check_box_tag("breed[]", value = breed, @selected_breeds.include?(breed)) %>
-          <%= label_tag(breed) %> <br/>
-        </div>
-        <% end %>
-      </div>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <% breeds = Pet::REPTILE_BREEDS %>
+    <% breeds.each do |breed| %>
+    <div class="dropdown-item">
+      <%= check_box_tag("breed[]", value = breed, @selected_breeds.include?(breed)) %>
+      <%= label_tag(breed) %> <br/>
     </div>
-  <% end %>
+    <% end %>
+  </div>
+</div>
+<% end %>
 
- <% end %>
+<% end %>
 
-    <%= submit_tag("Search", class: "btn btn-light dropdown") %>
+<%= submit_tag("Search", class: "btn btn-light dropdown") %>
 <% end %>
 
 <p class="pet-count">Found <b><%= @pets.count %></b> matches.</p>
+
+<% if params[:animal_type] != nil %>
+<div>
+
   <% if @pets.count == 0 %>
-    <%= render 'search/user_form' %>
+  <%= render 'search/user_form' %>
   <% end %>
+</div>
+<% end %>
