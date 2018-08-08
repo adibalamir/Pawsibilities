@@ -8,7 +8,9 @@
  <%= render 'layouts/top_nav' %>
  <% if @pets.empty? %>
 
- <p id= "no_match"> Sorry, the perfect pet you are trying to reach is unavailable at this time.</p>
+ <p class= "no_match"> Sorry, the perfect pet you are trying to reach is unavailable at this time.</p>
+
+ <%= image_tag "no-match.png", class: "no-match-img" %>
 
  <%if current_user %>
 
@@ -22,7 +24,8 @@
  </div>
 
  <% else %>
- <p>Please Login so we can notify you when we found the match.</p>
+
+ <p class= "no_match">Please Login so we can notify you when we found the match.</p>
  <a class="btn btn-light dropdown" href="/login/">Login to save your results</a>
 
  <% end%>

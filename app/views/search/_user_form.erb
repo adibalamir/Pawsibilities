@@ -1,6 +1,14 @@
+<% if current_user %>
 <%= form_tag("/update", method: "put") do %>
 <%= hidden_field_tag :query, ((request.original_url).sub! 'search', 'pets_count') %>
 <%= hidden_field_tag :found, value: 'false' %>
 
   <%= submit_tag("Notify me when match found", class: "btn btn-light dropdown") %>
+<% end %>
+
+<% else %>
+
+ <p>Please Login so we can notify you when we found the match.</p>
+ <a class="btn btn-light dropdown" href="/login/">Login to save your query</a>
+
 <% end %>
