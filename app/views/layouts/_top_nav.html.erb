@@ -20,14 +20,29 @@
 
       <% if current_user %>
 
-      <li class="nav-item">
-        <span class="nav-link">
-          <%= link_to "Favourites", user_likes_path(current_user), { :class=>"user-options" }%>
-        </span>
-      </li>
+        <% if !current_user.instance_of?(Shelter) %>
+
+          <li class="nav-item">
+            <span class="nav-link">
+              <%= link_to "Favourites", user_likes_path(current_user), { :class=>"user-options" }%>
+            </span>
+          </li>
+
+        <% end %>
 
       <li class="nav-item">
-        <span class="nav-link">Signed in as <%= current_user.email %> |
+        <span class="nav-link">
+
+          <% if current_user.instance_of?(Shelter) %>
+
+            Signed in as <%= link_to  current_user.name, shelter_path(current_user), { :class=>"user-options" } %> |
+
+          <% else %>
+
+            Signed in as <%= current_user.email %>
+
+          <% end %>
+
           <a class ="user-options" href="/logout">Logout</a>
         </span>
       </li>
@@ -38,8 +53,15 @@
         <a class="nav-link" href="/login">Login</a>
       </li>
 
-      <li class="nav-item">
-        <a class="nav-link" href="/signup">Registration</a>
+      <li class="nav-item dropdown">
+        <button class="nav-link" id="registration-dropdown" type="button" aria-controls="dropdown-menu" aria-expanded="false">
+          Registration
+          <i class="fas fa-chevron-circle-down"></i>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/signup/">Pet Seeker</a>
+          <a class="dropdown-item" href="/signup/pet_owners">Pet Owner</a>
+        </div>
       </li>
 
       <% end %>

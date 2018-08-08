@@ -22,11 +22,15 @@
 //= require shelters
 
 
-//Making nav bar responsive - work in progress!
+//Main dropdown on responsive nav bar
 $(document).on('turbolinks:load', function() {
 
   $(".navbar-toggler").on("click", function() {
     $(this).siblings("#navbarSupportedContent").slideToggle()
+  })
+
+  $("#registration-dropdown").on("click", function() {
+    $(this).siblings(".dropdown-menu").slideToggle()
   })
 
 });
