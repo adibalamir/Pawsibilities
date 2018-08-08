@@ -20,18 +20,22 @@
 
       <% if current_user %>
 
-      <li class="nav-item">
-        <span class="nav-link">
-          <%= link_to "Favourites", user_likes_path(current_user), { :class=>"user-options" }%>
-        </span>
-      </li>
+        <% if !current_user.instance_of?(Shelter) %>
+
+          <li class="nav-item">
+            <span class="nav-link">
+              <%= link_to "Favourites", user_likes_path(current_user), { :class=>"user-options" }%>
+            </span>
+          </li>
+
+        <% end %>
 
       <li class="nav-item">
         <span class="nav-link">
 
           <% if current_user.instance_of?(Shelter) %>
 
-            Signed in as <%= current_user.name %> |
+            Signed in as <%= link_to  current_user.name, shelter_path(current_user), { :class=>"user-options" } %> |
 
           <% else %>
 
