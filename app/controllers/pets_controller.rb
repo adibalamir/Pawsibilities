@@ -11,10 +11,12 @@ class PetsController < ApplicationController
     @pet =  Pet.new(pet_params)
     @pet.status = "A"
     @pet.shelter_id = current_user.shelter_id
+    @shelter = Shelter.find_by(shelter_id: @pet.shelter_id)
 
     if @pet.save
       session[:pet_id] = @pet.id
       session[:return_to] = request.referer
+      redirect_to @shelter
     else
       flash[:error] = "An error occured!"
 
@@ -36,6 +38,13 @@ class PetsController < ApplicationController
     if @pet.animal_type == "Cat"
       @highlights = JSON.parse(CatHighlight.find_by(breed: @pet.breed).highlights)
     end
+  end
+
+  def destroy
+    @pet = Pet.find(params[:id])
+    @shelter = Shelter.find_by(shelter_id: @pet.shelter_id)
+    @pet.destroy!
+    redirect_to @shelter
   end
 
   private

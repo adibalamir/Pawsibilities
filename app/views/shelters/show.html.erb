@@ -16,11 +16,14 @@
   <div class="owned-pets">
     <% if Pet.where(shelter_id: @shelter.shelter_id).size > 0 %>
       <% Pet.where(shelter_id: @shelter.shelter_id).each do |pet| %>
+      <div class="the_pet">
         <%= link_to pet do %>
           <div class="card" title=<%= pet.name %>>
             <img src=<%= pet.cw_photo %> width="200" height="200"/><br/>
           </div>
         <% end %>
+        <%= link_to '<i class="far fa-times-circle"></i>'.html_safe, pet_path(pet.id), class: "destroy_pet", method: :delete, data: { confirm: 'Are you sure you want to remove this pet?' } %>
+      </div>
       <% end %>
     <% else %>
       <p>You haven't added any pets.</p>

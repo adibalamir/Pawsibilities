@@ -73,7 +73,23 @@
       color: black;
     }
   }
+
+  .destroy_pet {
+    color: #d29d23;
+    display: inline;
+    position: relative;
+    z-index: 10;
+    float: right;
+    top: -18rem;
+    right: 0.25rem;
+    font-size: 1.25rem;
+    opacity: 0;
+  }
 }
+
+div.the_pet:hover .destroy_pet {
+    opacity: 1;
+  }
 
 .form-area {
   grid-area: c;
